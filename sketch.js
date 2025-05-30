@@ -916,13 +916,13 @@ function ticket() {
     }
   }
   if (answer6 == "spring") {
-    fill(212, 152, 205, t);
+    fill(212, 182, 205, t);
     if (t = 100) { emotions = "은은한 봄바람" } else { emotions = '봄날의 햇살' }
   } else if (answer6 == "summer") {
     fill(146, 214, 206, t);
     if (t = 100) { emotions = "고요한 밤바다" } else { emotions = '푸르른 파도' }
   } else if (answer6 == "autumn") {
-    fill(199, 96, 76, t);
+    fill(220, 96, 76, t);
     if (t = 100) { emotions = "잔잔한 가을바람" } else { emotions = '붉은 노을빛' }
   } else if (answer6 == "winter") {
     fill(233, 244, 247, t);
