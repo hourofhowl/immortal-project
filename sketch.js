@@ -727,7 +727,7 @@ function mouseClicked() {
         seasonQuestion++;
 
         if (seasonQuestion > 5) {
-          stage = 'default';
+          
           state = 'question2';
           select = null;
         }
