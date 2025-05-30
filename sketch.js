@@ -186,11 +186,11 @@ function start() {
   image(title, width / 2, height / 2);
 
   textFont(font1);
-  textSize(20);
+  textSize(18);
   textAlign(CENTER);
   if (floor(millis() / 500) % 2 == 0) {
     fill(250);
-    text("Press Any Key To Start", width / 2, 420);
+    text("Press Any Key To Start", width / 2, 410);
   }
 }
 
@@ -1038,7 +1038,7 @@ function ticket() {
   textSize(18);
   text(date, 556, 468-35);
   textAlign(CENTER);
-  text(geiminiInput,width/2,600);
+  text(geminiInput,width/2,600);
 
 
   textFont(font3);
