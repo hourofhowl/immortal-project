@@ -241,8 +241,21 @@ function question() {
 
   switch (stage) {
     case 0:
+     let seasonX=width/2, seasonY=height/2;
+     let xPlus = true;
+      if (xPlus == true) {
+        seasonX+=0.01
+        if (seasonX >= width/2 + 50) xPlus = false;
+      }
+      if (xPlus == false){
+        seasonX -=0.01
+        if(seasonX <=width/2 -50 ) xPlus = true;
+      }
+     
+    
+     
 
-      image(spring[seasonQuestion], width / 2, height / 2);
+      image(spring[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
         if (mouseX < width / 2 + 115 && mouseX > width / 2 - 115 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) { //부드럽게 스며든다
           fill(255, 70);
