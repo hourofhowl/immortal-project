@@ -314,7 +314,7 @@ function question() {
       }
       break;
     case 1:
-      image(summer[seasonQuestion], width / 2, height / 2);
+      image(summer[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
         if (mouseX < 455 && mouseX > 235 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
           fill(255, 70);
@@ -365,7 +365,7 @@ function question() {
       }
       break;
     case 2:
-      image(autumn[seasonQuestion], width / 2, height / 2);
+      image(autumn[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
         if (mouseX < 815 && mouseX > 495 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
           fill(255, 70);
@@ -419,7 +419,7 @@ function question() {
       }
       break;
     case 3:
-      image(winter[seasonQuestion], width / 2, height / 2);
+      image(winter[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
         if (mouseX < 450 && mouseX > 210 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
           fill(255, 70);
