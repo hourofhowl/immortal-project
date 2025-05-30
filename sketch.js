@@ -6,7 +6,7 @@ let title;
 let font1, font2, font3, font4;
 let anim = [];
 let tunnel;
-
+let endTime = null;
 let current = 0;
 let state = 'start';
 let spring = [], summer = [], autumn = [], winter = [];
@@ -90,14 +90,14 @@ function preload() {
   font3 = loadFont("ticket/name_Pretendard-Medium.otf");
   font4 = loadFont("ticket/date_SometypeMono-Medium.ttf")
 }
-  
+
 function setup() {
   createCanvas(1280, 720);
   tunnel = new Tunnel(8, 800); // 단위 개수, 깊이
   wave = new Wave(waveSpeed);
-  randomDice = int(random(0,2));
+  randomDice = int(random(0, 2));
 
-  
+
   noStroke();
 
   //이름 입력란
@@ -243,7 +243,7 @@ function keyPressed() {
     if (input && keyCode === ENTER) {
       input = false;
     }
-   
+
   }
 }
 
@@ -543,7 +543,7 @@ function mouseClicked() {
       if (select !== null) {
         seasonQuestion++;
 
-        if (seasonQuestion >5) {
+        if (seasonQuestion > 5) {
           stage = 1;
           state = 'question';
           seasonQuestion = 1;
@@ -727,10 +727,11 @@ function mouseClicked() {
         seasonQuestion++;
 
         if (seasonQuestion > 5) {
-           console.log("✅ state:", state);
-           currentRect = 0;
+          console.log("✅ state:", state);
+          currentRect = 0;
           state = 'question2';
           select = null;
+          endTime = millis();
           seqsonQuestion = 1;
           step = 0;
         }
@@ -740,19 +741,21 @@ function mouseClicked() {
   if (state == 'question2') {
     if (step == 0) {
       console.log("now in seasonQ");
-      let select = null;
-      if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 320 && mouseY > 255) {
-        select = "spring";
-      } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 410 && mouseY > 345) {
-        select = "summer";
-      } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 500 && mouseY > 435) {
-        select = "autumn";
-      } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 590 && mouseY > 525) {
-        select = 'winter';
-      }
-      if (select != null) {
-        answer6.push(select);
-        step = 1
+      if (endTime !== null && millis() - endTime > 500) {
+        let select = null;
+        if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 320 && mouseY > 255) {
+          select = "spring";
+        } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 410 && mouseY > 345) {
+          select = "summer";
+        } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 500 && mouseY > 435) {
+          select = "autumn";
+        } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 590 && mouseY > 525) {
+          select = 'winter';
+        }
+        if (select != null) {
+          answer6.push(select);
+          step = 1
+        }
       }
     }
     if (step == 1) {
@@ -889,28 +892,28 @@ class showBlob {
 
 function ticket() {
   background(0, 70);
-  
+
 
   //1. 배경 모션(청각_answer4)
   for (let i = 0; i < answer4.length; i++) {
     if (answer4[i] == 'a') {
-      countA_4 ++
-    } else if (answer4[i]=='b'){
-      countB_4 ++
+      countA_4++
+    } else if (answer4[i] == 'b') {
+      countB_4++
     }
 
   }
-  if (countA_4>countB_4) {
+  if (countA_4 > countB_4) {
     waveSpeed = 0.01
     ear = '숲속의 고요';
-  } else if (countA_4 == countB_4){
+  } else if (countA_4 == countB_4) {
     waveSpeed = 0.04
-    if (randomDice == 0) {ear = '숲속의 고요'} else {ear = '신호의 파동'}
-  } else if(countA_4<countB_4){
+    if (randomDice == 0) { ear = '숲속의 고요' } else { ear = '신호의 파동' }
+  } else if (countA_4 < countB_4) {
     waveSpeed = 0.07
     ear = '신호의 파동';
   }
-  wave.speed=waveSpeed;
+  wave.speed = waveSpeed;
   wave.update();
   wave.display();
 
@@ -925,19 +928,19 @@ function ticket() {
   }
   if (answer6 == "spring") {
     fill(212, 152, 205, t);
-    if(t=100) {emotions = "은은한 봄바람"} else {emotions= '봄날의 햇살'}
+    if (t = 100) { emotions = "은은한 봄바람" } else { emotions = '봄날의 햇살' }
   } else if (answer6 == "summer") {
     fill(146, 214, 206, t);
-     if(t=100) {emotions = "고요한 밤바다"} else {emotions= '푸르른 파도'}
+    if (t = 100) { emotions = "고요한 밤바다" } else { emotions = '푸르른 파도' }
   } else if (answer6 == "autumn") {
     fill(199, 96, 76, t);
-     if(t=100) {emotions = "잔잔한 가을바람"} else {emotions= '붉은 노을빛'}
+    if (t = 100) { emotions = "잔잔한 가을바람" } else { emotions = '붉은 노을빛' }
   } else if (answer6 == "winter") {
     fill(233, 244, 247, t);
-     if(t=100) {emotions = "깊은 겨울 밤결"} else {emotions= '눈부신 서리'}
+    if (t = 100) { emotions = "깊은 겨울 밤결" } else { emotions = '눈부신 서리' }
   }
 
- 
+
   strokeWeight(1);
   stroke(0);
   rectMode(CORNER);
@@ -961,8 +964,8 @@ function ticket() {
   let arrayQ2 = [countA_2, countB_2, countC_2, countD_2, countE_2];
   let maxQ2 = Math.max(...arrayQ2)
   if (countA_2 >= maxQ2) {
-      image(texture[1], width / 2, height / 2);
-      smell = '조약돌';
+    image(texture[1], width / 2, height / 2);
+    smell = '조약돌';
 
   } else if (countB_2 >= maxQ2) {
     image(texture[2], width / 2, height / 2);
@@ -972,17 +975,17 @@ function ticket() {
     smell = '나무';
 
   } else if (countD_2 >= maxQ2) {
-   image(texture[4], width / 2, height / 2);
-   smell = '물결';
+    image(texture[4], width / 2, height / 2);
+    smell = '물결';
 
   } else if (countE_2 >= maxQ2) {
-     image(texture[5], width / 2, height / 2);
-     smell = '별';
+    image(texture[5], width / 2, height / 2);
+    smell = '별';
 
   }
 
   //4. 메인 이미지(촉각_answer1)
-for (let i = 0; i < answer1.length; i++) {
+  for (let i = 0; i < answer1.length; i++) {
     if (answer1[i] == 'a') {
       countA_1++
     } else if (answer1[i] == 'b') {
@@ -1023,34 +1026,35 @@ for (let i = 0; i < answer1.length; i++) {
       countA_3++
     } else if (answer3[i] == 'b') {
       countB_3++
-       }
+    }
 
   }
-  if( countA_3 > countB_3){
-    if(randomDice==0){
-    image(dice[5], width / 2, height / 2);  
-    } else {image(dice[6], width / 2, height / 2);}
+  if (countA_3 > countB_3) {
+    if (randomDice == 0) {
+      image(dice[5], width / 2, height / 2);
+    } else { image(dice[6], width / 2, height / 2); }
     taste = '그것을 기꺼이 끌어안는 품';
   }
 
-  if( countA_3 < countB_3){
-    if(randomDice==0){
-    image(dice[1], width / 2, height / 2);  
-    } else {image(dice[2], width / 2, height / 2);}
+  if (countA_3 < countB_3) {
+    if (randomDice == 0) {
+      image(dice[1], width / 2, height / 2);
+    } else { image(dice[2], width / 2, height / 2); }
     taste = '그로부터 담담하게 자리잡은 돌벽';
   }
 
-  if( countA_3 == countB_3){
-    if(randomDice==0){
-    image(dice[3], width / 2, height / 2);  
-    taste = '그것을 기까이 끌어안는 품';
-    } else {image(dice[4], width / 2, height / 2);
+  if (countA_3 == countB_3) {
+    if (randomDice == 0) {
+      image(dice[3], width / 2, height / 2);
+      taste = '그것을 기까이 끌어안는 품';
+    } else {
+      image(dice[4], width / 2, height / 2);
       taste = '그로부터 담담하게 자리잡은 돌벽';
     }
   }
 
-    if(geminiCalled==false){gemini()}
-    
+  if (geminiCalled == false) { gemini() }
+
   //주관식 답변 결과
   textAlign(CENTER);
   stroke(0);
@@ -1063,13 +1067,13 @@ for (let i = 0; i < answer1.length; i++) {
   textSize(18);
   text(date, 556, 468);
 
-  
+
   textFont(font3);
-  text(geminiOutput,485,432);
+  text(geminiOutput, 485, 432);
 
 
 
-  
+
   //마지막에 티켓 고정이미지, qr 안내
   image(tk, width / 2, height / 2);
   image(qrguide, width / 2, height / 2)
@@ -1078,19 +1082,19 @@ for (let i = 0; i < answer1.length; i++) {
 function gemini() {
 
   //gemini
- 
-  geminiInput = "당신의 세계에선 "+emotions + " 속 "+touch+" "+smell+" 이/가 느껴져요. 또한, "+ear+", "+taste+"을/를 가졌군요. "
-  generateContent(geminiInput,function(responseText){
+
+  geminiInput = "당신의 세계에선 " + emotions + " 속 " + touch + " " + smell + " 이/가 느껴져요. 또한, " + ear + ", " + taste + "을/를 가졌군요. "
+  generateContent(geminiInput, function (responseText) {
 
     console.log("Sketch.js에서 받은 Gemini 응답:", responseText);
     geminiOutput = responseText
-    
 
-  }); 
+
+  });
 
   geminiCalled = true;
 
-  
+
 
 }
 
