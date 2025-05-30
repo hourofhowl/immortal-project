@@ -241,14 +241,16 @@ function question() {
 
   switch (stage) {
     case 0:
+     
      let seasonX=width/2, seasonY=height/2;
      let xPlus = true;
+     let xSpeed = 0.1
       if (xPlus == true) {
-        seasonX+=0.01
+        seasonX+=xSpeed
         if (seasonX >= width/2 + 50) xPlus = false;
       }
       if (xPlus == false){
-        seasonX -=0.01
+        seasonX -=xSpeed
         if(seasonX <=width/2 -50 ) xPlus = true;
       }
      
