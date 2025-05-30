@@ -57,7 +57,7 @@ class Tunnel {
     let doorH = this.door.size * 4 * doorScale;
     let doorY = height / 2 + doorH / 2; // 문 아랫 y좌표
 
-    // 🔥 바닥 세로 그리드 그리기
+    // 바닥 세로 그리드 그리기
     strokeWeight(1)
     stroke(120);
     let numLines = 9;
@@ -80,7 +80,7 @@ class Tunnel {
       line(width / 2 + startX, startY, width / 2 + endX, endY);
     }
 
-    // 🔥 ㄷ자 개체들
+    // ㄷ자 개체들
     for (let ring of this.rings) {
       let brightness = map(ring.z, this.depth, 0, 80, 255);
       stroke(brightness);
@@ -100,7 +100,7 @@ class Tunnel {
       pop();
     }
 
-    // 🔥 문 그리기
+    // 문 그리기
     let doorBrightness = map(this.door.z, this.depth, 0, 100, 600);
     fill(doorBrightness);
     noStroke();

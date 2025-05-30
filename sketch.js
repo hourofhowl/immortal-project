@@ -944,7 +944,7 @@ function ticket() {
   strokeWeight(1);
   stroke(0);
   rectMode(CORNER);
-  rect(250, 225.5, 780, 270);
+  rect(250, 225.5-35, 780, 270);
 
   //3. 티켓 질감(후각_answer2)
   for (let i = 0; i < answer2.length; i++) {
@@ -1062,14 +1062,14 @@ function ticket() {
   fill(50);
   textSize(16);
   textFont(font3);
-  text(name, 404, 387);
+  text(name, 404, 387-35);
   textFont(font4);
   textSize(18);
-  text(date, 556, 468);
+  text(date, 556, 468-35);
 
 
   textFont(font3);
-  text(geminiOutput, 485, 432);
+  text(geminiOutput, 485, 432-35);
 
 
 
