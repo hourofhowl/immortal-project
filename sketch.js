@@ -964,22 +964,22 @@ function ticket() {
   let arrayQ2 = [countA_2, countB_2, countC_2, countD_2, countE_2];
   let maxQ2 = Math.max(...arrayQ2)
   if (countA_2 >= maxQ2) {
-    image(texture[1], width / 2, height / 2);
+    image(texture[1], width / 2, height / 2-35);
     smell = '조약돌';
 
   } else if (countB_2 >= maxQ2) {
-    image(texture[2], width / 2, height / 2);
+    image(texture[2], width / 2, height / 2-35);
     smell = '모래';
   } else if (countC_2 >= maxQ2) {
-    image(texture[3], width / 2, height / 2);
+    image(texture[3], width / 2, height / 2-35);
     smell = '나무';
 
   } else if (countD_2 >= maxQ2) {
-    image(texture[4], width / 2, height / 2);
+    image(texture[4], width / 2, height / 2-35);
     smell = '물결';
 
   } else if (countE_2 >= maxQ2) {
-    image(texture[5], width / 2, height / 2);
+    image(texture[5], width / 2, height / 2-35);
     smell = '별';
 
   }
