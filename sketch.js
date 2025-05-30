@@ -731,6 +731,7 @@ function mouseClicked() {
            currentRect = 0;
           state = 'question2';
           select = null;
+          seqsonQuestion = 1;
           step = 0;
         }
       }
