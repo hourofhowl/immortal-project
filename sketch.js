@@ -727,7 +727,7 @@ function mouseClicked() {
         seasonQuestion++;
 
         if (seasonQuestion > 5) {
-          
+           console.log("✅ state:", state);
           state = 'question2';
           select = null;
         }
