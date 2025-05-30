@@ -2,7 +2,7 @@ const GEMINI_API_KEY = 'AIzaSyCrZCoVlHR1njeO15_k4qARL1rRyL9PRqc'
 let myInput;
 let geminiCalled = false;
 
-let seasonX=width/2, seasonY=height/2;
+let seasonX, seasonY;
      let xPlus = true;
      let xSpeed = 0.1
 
@@ -100,6 +100,8 @@ function setup() {
   tunnel = new Tunnel(8, 800); // 단위 개수, 깊이
   wave = new Wave(waveSpeed);
   randomDice = int(random(0, 2));
+  seasonX = width/2 
+  seasonY = height/2
 
 
   noStroke();
@@ -240,7 +242,7 @@ function question() {
   imageMode(CENTER)
   rectMode(CENTER);
   noStroke();
-  
+
  if (xPlus == true) {
         seasonX+=xSpeed
         if (seasonX >= width/2 + 50) xPlus = false;
