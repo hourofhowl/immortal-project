@@ -194,35 +194,6 @@ function start() {
   }
 }
 
-// //터널 애니메이션
-// function animate() {
-//   background(0);
-//   if (frameCount % 30 == 0 && current < anim.length) {
-//     current++
-//   }
-//   if (current < anim.length) {
-//     imageMode(CENTER);
-//     image(anim[current], width / 2, height / 2);
-//   } else {
-//     imageMode(CENTER);
-//     image(anim[anim.length - 1], width / 2, height / 2);
-//   }
-
-//   fill(255);
-//   textSize(25);
-//   textFont(font2);
-//   if (current < 8) {
-//     text("길가에 핀 꽃에 다가가 냄새를 맡아본 적 있나요?", width / 2, height - 150);
-//   } else if (current < 16) {
-//     text("피부 위로 흐르는 땀의 느낌은 어떤가요?", width / 2, height - 150);
-//   } else if (current < 24) {
-//     text("당신의 '삶'은 어떤 감각들로 채워져 있나요?", width / 2, height - 150);
-//   } else if (current < 30) {
-//     text("잠들어있던 감각을 깨워 삶을 들여다보세요.", width / 2, height - 150)
-//   } else if (current > 31) {
-//     background(0);
-//   }
-// }
 
 // 스테이지 전환
 
