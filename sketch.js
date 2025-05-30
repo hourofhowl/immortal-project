@@ -240,14 +240,8 @@ function question() {
   imageMode(CENTER)
   rectMode(CENTER);
   noStroke();
-
-
-
-  switch (stage) {
-    case 0:
-     
-     
-      if (xPlus == true) {
+  
+ if (xPlus == true) {
         seasonX+=xSpeed
         if (seasonX >= width/2 + 50) xPlus = false;
       }
@@ -256,6 +250,13 @@ function question() {
         if(seasonX <=width/2 -50 ) xPlus = true;
       }
     
+
+
+  switch (stage) {
+    case 0:
+     
+     
+     
 
       image(spring[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
