@@ -726,8 +726,9 @@ function mouseClicked() {
       if (select !== null) {
         seasonQuestion++;
 
-        if (seasonQuestion > 6) {
+        if (seasonQuestion > 5) {
            console.log("✅ state:", state);
+           currentRect = 0;
           state = 'question2';
           select = null;
           seasonQuestion = 0;
