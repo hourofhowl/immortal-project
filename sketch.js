@@ -731,6 +731,7 @@ function mouseClicked() {
           state = 'question2';
           select = null;
           seasonQuestion = 0;
+          step = 0;
         }
       }
     }
