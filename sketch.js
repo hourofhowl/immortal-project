@@ -275,7 +275,7 @@ function question() {
       if (seasonQuestion == 1) {
         if (mouseX < width / 2 + 115 && mouseX > width / 2 - 115 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) { //부드럽게 스며든다
           fill(255, 70);
-          rect(width/2 , height/2+15 , 230, 50);
+          rect(width/2, height/2+15 , 230, 50);
         } else if (mouseX < 1200 && mouseX > 970 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
           fill(255, 70);
           rect(1085, height / 2 + 15, 230, 50);
