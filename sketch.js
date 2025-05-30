@@ -731,7 +731,6 @@ function mouseClicked() {
            currentRect = 0;
           state = 'question2';
           select = null;
-          seasonQuestion = 0;
           step = 0;
         }
       }
