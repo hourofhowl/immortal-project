@@ -543,7 +543,7 @@ function mouseClicked() {
       if (select !== null) {
         seasonQuestion++;
 
-        if (seasonQuestion > 5) {
+        if (seasonQuestion >5) {
           stage = 1;
           state = 'question';
           seasonQuestion = 1;
@@ -730,6 +730,7 @@ function mouseClicked() {
            console.log("✅ state:", state);
           state = 'question2';
           select = null;
+          seasonQuestion = 0;
         }
       }
     }
