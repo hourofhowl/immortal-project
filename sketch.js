@@ -2,6 +2,10 @@ const GEMINI_API_KEY = 'AIzaSyCrZCoVlHR1njeO15_k4qARL1rRyL9PRqc'
 let myInput;
 let geminiCalled = false;
 
+let seasonX=width/2, seasonY=height/2;
+     let xPlus = true;
+     let xSpeed = 0.1
+
 let title;
 let font1, font2, font3, font4;
 let anim = [];
@@ -242,9 +246,7 @@ function question() {
   switch (stage) {
     case 0:
      
-     let seasonX=width/2, seasonY=height/2;
-     let xPlus = true;
-     let xSpeed = 0.1
+     
       if (xPlus == true) {
         seasonX+=xSpeed
         if (seasonX >= width/2 + 50) xPlus = false;
@@ -253,9 +255,7 @@ function question() {
         seasonX -=xSpeed
         if(seasonX <=width/2 -50 ) xPlus = true;
       }
-     
     
-     
 
       image(spring[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
