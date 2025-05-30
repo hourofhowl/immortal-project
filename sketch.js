@@ -1069,7 +1069,8 @@ function ticket() {
 
 
   textFont(font3);
-  text(geminiOutput, 485, 432-35);
+  textMode(LEFT)
+  text(geminiOutput, 272, 432-35);
 
 
 
