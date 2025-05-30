@@ -741,7 +741,7 @@ function mouseClicked() {
   if (state == 'question2') {
     if (step == 0) {
       console.log("now in seasonQ");
-      if (endTime !== null && millis() - endTime > 500) {
+      if (endTime != null && millis() - endTime > 500) {
         let select = null;
         if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 320 && mouseY > 255) {
           select = "spring";
