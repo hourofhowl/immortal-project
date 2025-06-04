@@ -907,7 +907,7 @@ function question2() {
             
       if(currentRect==0){
            image(load[1], width/2, height/2)
-      }else{image(load[currentRect+1], width/2, height/2);}
+      }else{image(load[currentRect+1], width/2, height/2)}
             
       for (i = 0; i < currentRect; i++) {
         x = 535 + i * 25;
