@@ -936,20 +936,20 @@ function ticket() {
     if (0 < tkColor < 250) {
       t = 100;
     } else if (300 < tkColor < 400) {
-      t = 255;
+      t = 200;
     }
   }
   if (answer6 == "spring") {
-    fill(212, 182, 205, t);
+    fill(255, 188, 84, t);
     if (t = 100) { emotions = "은은한 봄바람" } else { emotions = '봄날의 햇살' }
   } else if (answer6 == "summer") {
-    fill(146, 214, 206, t);
+    fill(48, 252, 255, t);
     if (t = 100) { emotions = "고요한 밤바다" } else { emotions = '푸르른 파도' }
   } else if (answer6 == "autumn") {
-    fill(220, 96, 76, t);
+    fill(253, 35, 1, t);
     if (t = 100) { emotions = "잔잔한 가을바람" } else { emotions = '붉은 노을빛' }
   } else if (answer6 == "winter") {
-    fill(233, 244, 247, t);
+    fill(238, 246, 255, t);
     if (t = 100) { emotions = "깊은 겨울 밤결" } else { emotions = '눈부신 서리' }
   }
 
