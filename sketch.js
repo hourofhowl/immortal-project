@@ -240,10 +240,6 @@ function keyPressed() {
     if (input && keyCode === BACKSPACE) {
       name = name.slice(0, -1);
     }
-    if (input && keyCode === ENTER) {
-      input = false;
-    }
-
   }
 }
 
