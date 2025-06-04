@@ -108,7 +108,7 @@ function setup() {
   noStroke();
 
   for (let i = 0; i < 4; i++) {
-    blobs.push(new showBlob(random(width), random(height), random(150, 250), random(1000), random(0.0001, 0.0004), color(0, 100, 255, 30), color(200, 255, 255, 10)));
+    blobs.push(new showBlob(random(width), random(height), random(150, 250), random(1000), random(0.0003, 0.0008), color(0, 100, 255, 30), color(200, 255, 255, 10)));
   }
      
   //이름 입력란
