@@ -338,8 +338,7 @@ function question() {
           }
           image(illu2, width/2, height/2);
           if (millis() - show > 5000) {
-          illu = false;
-          show=null;}
+          illu = false;}
      }else{
       image(summer[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
@@ -402,8 +401,7 @@ function question() {
           }
           image(illu3, width/2, height/2);
           if (millis() - show > 5000) {
-          illu = false;
-          show=null;}
+          illu = false;}
      }else{
       image(autumn[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
@@ -469,8 +467,7 @@ function question() {
           }
           image(illu4, width/2, height/2);
           if (millis() - show > 5000) {
-          illu = false;
-          show=null;}
+          illu = false;}
      }else{
       image(winter[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
