@@ -272,6 +272,7 @@ function question() {
           image(illu1, width/2, height/2);
           if (millis() - show > 5000) {
           illu = false;
+          }
      }else{
       image(spring[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
