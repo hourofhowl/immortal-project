@@ -264,7 +264,7 @@ function question() {
 
 
   switch (stage){
-    case 0:
+    case 0:{
      if(illu){
           if(show==null){
             show=millis();
@@ -327,6 +327,7 @@ function question() {
         }
        }
       }
+    }
       break;
           
     case 1:
