@@ -258,10 +258,6 @@ function question() {
 
   switch (stage) {
     case 0:
-     
-     
-     
-
       image(spring[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
         if (mouseX < width / 2 + 115 && mouseX > width / 2 - 115 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) { //부드럽게 스며든다
@@ -766,7 +762,7 @@ function mouseClicked() {
     }
     if (step == 2) {
       if (mouseX > width / 2 - 310 && mouseX < width / 2 + 175 &&
-        mouseY > height / 2 + 20 && mouseY < height / 2 + 85) {
+        mouseY > height / 2 + 45 && mouseY < height / 2 + 110) {
         dateInput.show();
         dateInput.value(date);
         dateInput.elt.focus();
@@ -839,7 +835,7 @@ function question2() {
         fill(255);
         noStroke();
         textAlign(CENTER, CENTER);
-        text(date, 572.5, 412.5);
+        text(date, 572.5, 437.5);
       }
       if(mouseX<948&&mouseX>854&&mouseY<444&&mouseY>382){
           fill(255, 70);
