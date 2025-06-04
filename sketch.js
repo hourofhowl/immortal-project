@@ -1180,6 +1180,21 @@ function ticket() {
      text("주사위의 숫자가 커질수록", 100, 495);
      text("세상을 기꺼이 끌어안으려는 품과 같은 사람일 것입니다.", 100, 525);
   }
+
+  if(mouseX>20&&mouseX<200&&mouseY<400&&mouseY>200){
+     fill(255, 70);
+     stroke(255);
+     strokeWeight(1);
+     ellipse(185, 320, 50);
+     line(280, 420, 220, 420);
+     fill(255, 70);
+     stroke(0);
+     rectMode(CENTER);
+     rect(120, 420, 200, 240);
+     textAlign(CENTER);
+     textSize(10);
+     textFont(font2);
+  }
 }
 
 function gemini() {
