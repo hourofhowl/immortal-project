@@ -37,6 +37,7 @@ let dateInput;
 let currentRect = 0;
 let tkColor;
 let t;
+let next=false;
 
 let countA_1 = 0, countA_2 = 0, countA_3 = 0, countA_4 = 0, countA_5 = 0;
 let countB_1 = 0, countB_2 = 0, countB_3 = 0, countB_4 = 0, countB_5 = 0;
@@ -106,14 +107,15 @@ function setup() {
 
   noStroke();
 
-  //이름 입력란
   for (let i = 0; i < 4; i++) {
     blobs.push(new showBlob(random(width), random(height), random(150, 250), random(1000), random(0.0001, 0.0004), color(0, 100, 255, 30), color(200, 255, 255, 10)));
   }
+     
+  //이름 입력란
   nameInput = createInput();
-  nameInput.position(width / 2 - 222, height / 2 - 45);
+  nameInput.position(width / 2 - 310, height / 2 + 20);
   nameInput.style('font-size', '35px');
-  nameInput.size(480, 65);
+  nameInput.size(485, 65);
   nameInput.style('text-align', 'center');
   nameInput.style('border', 'none');
   nameInput.style('outline', 'none');
@@ -137,7 +139,7 @@ function setup() {
 
   //날짜 입력란
   dateInput = createInput();
-  dateInput.position(width / 2 - 245, height / 2 - 20);
+  dateInput.position(width / 2 - 310, height / 2 + 20);
   dateInput.style('font-size', '35px');
   dateInput.size(485, 65);
   dateInput.style('text-align', 'center');
@@ -196,7 +198,7 @@ function start() {
   textAlign(CENTER);
   if (floor(millis() / 500) % 2 == 0) {
     fill(250);
-    text("Press Any Key To Start", width / 2, 410);
+    text("Press Any Key To Start", width / 2, height/2);
   }
 }
 
@@ -732,13 +734,13 @@ function mouseClicked() {
       console.log("now in seasonQ");
       if (endTime != null && millis() - endTime > 500) {
         let select = null;
-        if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 320 && mouseY > 255) {
+        if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 314 && mouseY > 252) {
           select = "spring";
         } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 410 && mouseY > 345) {
           select = "summer";
-        } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 500 && mouseY > 435) {
+        } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 502 && mouseY > 437) {
           select = "autumn";
-        } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 590 && mouseY > 525) {
+        } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 595 && mouseY > 530) {
           select = 'winter';
         }
         if (select != null) {
@@ -748,24 +750,30 @@ function mouseClicked() {
       }
     }
     if (step == 1) {
-      if (mouseX > width / 2 - 220 && mouseX < width / 2 + 260 &&
-        mouseY > height / 2 - 45 && mouseY < height / 2 - 13) {
+      if (mouseX > width / 2 - 310 && mouseX < width / 2 + 175 &&
+        mouseY > height / 2 + 20 && mouseY < height / 2 + 85) {
         nameInput.show();
         nameInput.value(name);
         nameInput.elt.focus();
         input = true;
+           if(mouseX<948&&mouseX>854&&mouseY<444&&mouseY>382){
+                next=true;
+           }
       } else {
         nameInput.hide();
         input = false;
       }
     }
     if (step == 2) {
-      if (mouseX > width / 2 - 245 && mouseX < width / 2 + 240 &&
-        mouseY > height / 2 - 20 && mouseY < height / 2 + 45) {
+      if (mouseX > width / 2 - 310 && mouseX < width / 2 + 175 &&
+        mouseY > height / 2 + 20 && mouseY < height / 2 + 85) {
         dateInput.show();
         dateInput.value(date);
         dateInput.elt.focus();
         input = true;
+           if(mouseX<948&&mouseX>854&&mouseY<444&&mouseY>382){
+                next=true;
+           }
       } else {
         dateInput.hide();
         input = false;
@@ -794,18 +802,18 @@ function question2() {
   switch (step) {
     case 0:
       image(personal[1], width / 2, height / 2);
-      if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 320 && mouseY > 255) {
+      if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 314 && mouseY > 252) {
         fill(255, 70);
-        rect(width / 2, 287.5, 510, 65, 20);
+        rect(width / 2, 283, 510, 65, 20);
       } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 410 && mouseY > 345) {
         fill(255, 70);
         rect(width / 2, 377.5, 510, 65, 20);
-      } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 500 && mouseY > 435) {
+      } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 502 && mouseY > 437) {
         fill(255, 70);
-        rect(width / 2, 467.5, 510, 65, 20);
-      } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 590 && mouseY > 525) {
+        rect(width / 2, 469.5, 510, 65, 20);
+      } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 595 && mouseY > 530) {
         fill(255, 70);
-        rect(width / 2, 557.5, 510, 65, 20);
+        rect(width / 2, 562.5, 510, 65, 20);
       }
       break;
     case 1:
@@ -814,18 +822,34 @@ function question2() {
         fill(255);
         noStroke();
         textAlign(CENTER, CENTER);
-        text(name, width / 2 + 20, height / 2 - 13);
+        text(name, 572.5, 412.5);
       }
+     if(mouseX<948&&mouseX>854&&mouseY<444&&mouseY>382){
+          fill(255, 70);
+          noStroke();
+          rect(901, 413,94, 62);
+     }
+     if(next){
+      next=false;
       break;
+     }
     case 2:
       image(personal[3], width / 2, height / 2);
       if (!input) {
         fill(255);
         noStroke();
         textAlign(CENTER, CENTER);
-        text(date, width / 2 - 3, height / 2 + 13);
+        text(date, 572.5, 412.5);
       }
-      break;
+      if(mouseX<948&&mouseX>854&&mouseY<444&&mouseY>382){
+          fill(255, 70);
+          noStroke();
+          rect(901, 413,94, 62);
+      }
+      if(next){
+       next=false;
+       break;
+      }
     case 3:
       image(interlude, width / 2, height / 2);
       if (frameCount % 100 == 0 && currentRect < 10) {
