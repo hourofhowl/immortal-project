@@ -198,7 +198,7 @@ function start() {
   textAlign(CENTER);
   if (floor(millis() / 500) % 2 == 0) {
     fill(250);
-    text("Press Any Key To Start", width / 2, height/2);
+    text("Press Any Key To Start", width / 2, height/2+50);
   }
 }
 
