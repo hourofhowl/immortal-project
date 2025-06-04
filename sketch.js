@@ -38,6 +38,9 @@ let currentRect = 0;
 let tkColor;
 let t;
 let next=false;
+let illu1, illu2, illu3, illu4;
+let illu=true;
+let show;
 
 let countA_1 = 0, countA_2 = 0, countA_3 = 0, countA_4 = 0, countA_5 = 0;
 let countB_1 = 0, countB_2 = 0, countB_3 = 0, countB_4 = 0, countB_5 = 0;
@@ -64,6 +67,10 @@ function preload() {
   //   anim[i] = loadImage("assets/tunnel_"+i+".png");
   // }
 
+  illu1=loadImage("spring/spring.png");
+  illu2=loadImage("summer/summer.png");
+  illu3=loadImage("autumn/fall.png");
+  illu4=loadImage("winter/winter.png");
   for (let i = 1; i < 6; i++) {
     spring[i] = loadImage("spring/q1_" + i + ".png");
   }
@@ -210,8 +217,6 @@ function start() {
 function keyPressed() {
   if (state == 'start') {
     state = 'anim';
-
-
   } else if (state == 'anim') {
     state = 'notice';
   }
@@ -260,6 +265,13 @@ function question() {
 
   switch (stage) {
     case 0:
+     if(illu){
+          show=millis();
+          image(illu1, width/2, height/2);
+          if (millis() - show > 5000) {
+          illu = false;
+          show=null;}
+     }else{
       image(spring[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
         if (mouseX < width / 2 + 115 && mouseX > width / 2 - 115 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) { //부드럽게 스며든다
@@ -310,7 +322,9 @@ function question() {
         } else if (mouseX < 378 && mouseX > 158 && mouseY > height / 2 - 25 && mouseY < height / 2 + 25) {
           fill(255, 70);
           rect(218, height / 2, 320, 50);
+          illu=true;
         }
+       }
       }
       break;
     case 1:
