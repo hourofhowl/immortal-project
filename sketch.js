@@ -139,7 +139,7 @@ function setup() {
 
   //날짜 입력란
   dateInput = createInput();
-  dateInput.position(width / 2 - 310, height / 2 + 20);
+  dateInput.position(width / 2 - 310, height / 2 + 45);
   dateInput.style('font-size', '35px');
   dateInput.size(485, 65);
   dateInput.style('text-align', 'center');
@@ -767,7 +767,7 @@ function mouseClicked() {
         dateInput.value(date);
         dateInput.elt.focus();
         input = true;
-           if(mouseX<948&&mouseX>854&&mouseY<444&&mouseY>382){
+           if(mouseX<948&&mouseX>854&&mouseY<470&&mouseY>405){
                 next=true;
            }
       } else {
@@ -823,7 +823,7 @@ function question2() {
      if(mouseX<948&&mouseX>854&&mouseY<444&&mouseY>382){
           fill(255, 70);
           noStroke();
-          rect(901, 413,94, 62);
+          rect(901, 413,94, 62, 20);
      }
      if(next){
       next=false;
@@ -837,10 +837,10 @@ function question2() {
         textAlign(CENTER, CENTER);
         text(date, 572.5, 437.5);
       }
-      if(mouseX<948&&mouseX>854&&mouseY<444&&mouseY>382){
+      if(mouseX<948&&mouseX>854&&mouseY<470&&mouseY>405){
           fill(255, 70);
           noStroke();
-          rect(901, 413,94, 62);
+          rect(901, 413,94, 62, 20);
       }
       if(next){
        next=false;
