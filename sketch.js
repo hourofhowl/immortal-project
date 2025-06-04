@@ -550,7 +550,7 @@ function mouseClicked() {
     if (stage == 0) {
       let select = null;
       if (seasonQuestion == 1) {
-        if (mouseX < 742 && mouseX > 538 && mouseY > height / 2 + 95 && mouseY < height / 2 + 14) {
+        if (mouseX < 742 && mouseX > 538 && mouseY > height / 2 + 95 && mouseY < height / 2 + 145) {
           select = ['a', 'd'];
           answer1.push(select);
         } else if (mouseX < 1170 && mouseX > 990 && mouseY > height / 2 + 95 && mouseY < height / 2 + 145) {
