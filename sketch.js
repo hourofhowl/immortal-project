@@ -325,11 +325,11 @@ function question() {
           fill(255, 70);
           rect(218, height / 2, 320, 50);
         }
-        illu=true;
        }
       }
       break;
     case 1:
+     illu=true;
      if(illu){
           if(show==null){
             show=millis();
@@ -388,10 +388,10 @@ function question() {
           rect(853, height / 2 + 15, 90, 50);
         }
        }
-       illu=true;
       }
       break;
     case 2:
+     illu=true;
      if(illu){
           if(show==null){
             show=millis();
@@ -453,10 +453,10 @@ function question() {
           rect(918, height / 2 + 15, 160, 50);
         }
        }
-       illu=true;
       }
       break;
     case 3:
+     illu=true;
      if(illu){
           if(show==null){
             show=millis();
@@ -900,8 +900,12 @@ function question2() {
       if (frameCount % 70 == 0 && currentRect < 10) {
         currentRect++;
       }
+            
+      if(currentRect==0){
+           image(load[1], width/2, height/2)
+      }else(image(load[currentRect+1], width/2, height/2);
+            
       for (i = 0; i < currentRect; i++) {
-        image(load[currentRect], width / 2, height / 2);
         x = 535 + i * 25;
         y = 285;
         stroke(255);
