@@ -57,7 +57,7 @@ let geminiOutput = '';
 
 
 function preload() {
-  title = loadImage("title/Title (1).png");
+  title = loadImage("title/Intro_Title.png");
   font1 = loadFont("Press_Start_2P/PressStart2P-Regular.ttf");
   // for (let i =0; i < 32; i++){
   //   anim[i] = loadImage("assets/tunnel_"+i+".png");
