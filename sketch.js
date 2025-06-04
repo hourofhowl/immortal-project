@@ -41,6 +41,7 @@ let next=false;
 let illu1, illu2, illu3, illu4;
 let illu=true;
 let show=null;
+let enterSummer=false, enterAutumn=false, enterWinter=false;
 
 let countA_1 = 0, countA_2 = 0, countA_3 = 0, countA_4 = 0, countA_5 = 0;
 let countB_1 = 0, countB_2 = 0, countB_3 = 0, countB_4 = 0, countB_5 = 0;
@@ -331,8 +332,11 @@ function question() {
       break;
           
     case 1:
+     if(!enterSummer){
      illu=true;
      show=null;
+     enterSummer=true;
+     }
      if(illu){
           if(show==null){
             show=millis();
@@ -394,8 +398,11 @@ function question() {
       break;
             
     case 2:
+     if(!enterAutumn){
      illu=true;
      show=null;
+     enterAutumn=true;
+     }
      if(illu){
           if(show==null){
             show=millis();
@@ -460,8 +467,11 @@ function question() {
       break;
             
     case 3:
+     if(!enterWinter){
      illu=true;
      show=null;
+     enterWinter=true;
+     }
      if(illu){
           if(show==null){
             show=millis();
