@@ -865,8 +865,7 @@ function question2() {
     case 3:
       if (frameCount % 70 == 0 && currentRect < 10) {
         currentRect++;
-        currentRect=i;
-        image(load[i], width / 2, height / 2);
+        image(load[currentRect], width / 2, height / 2);
       }
       for (i = 0; i < currentRect; i++) {
         x = 535 + i * 25;
