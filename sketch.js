@@ -40,7 +40,7 @@ let t;
 let next=false;
 let illu1, illu2, illu3, illu4;
 let illu=true;
-let show;
+let show=null;
 
 let countA_1 = 0, countA_2 = 0, countA_3 = 0, countA_4 = 0, countA_5 = 0;
 let countB_1 = 0, countB_2 = 0, countB_3 = 0, countB_4 = 0, countB_5 = 0;
@@ -266,7 +266,9 @@ function question() {
   switch (stage) {
     case 0:
      if(illu){
-          show=millis();
+          if(show==null){
+            show=millis();
+          }
           image(illu1, width/2, height/2);
           if (millis() - show > 5000) {
           illu = false;
