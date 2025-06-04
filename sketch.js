@@ -1182,9 +1182,7 @@ function ticket() {
      text("주사위의 숫자가 커질수록", 120, 465);
      text("세상을 기꺼이", 120, 485);
      text("끌어안으려는 품과 같은 사람일 것입니다.", 120, 505);
-  }
-
-  if(mouseX>20&&mouseX<200&&mouseY<400&&mouseY>200){
+  } else if(mouseX>20&&mouseX<200&&mouseY<400&&mouseY>200){
      fill(255, 70);
      stroke(255);
      strokeWeight(1);
@@ -1196,8 +1194,13 @@ function ticket() {
      rectMode(CENTER);
      rect(385, 120, 400, 160);
      textAlign(CENTER);
-     textSize(10);
+     textSize(8);
      textFont(font2);
+     text("티켓 뒤로 당신의 파동이 흐르고 있네요.", 385, 60);
+     text("그것의 진폭과 움직이는 속도는 당신의 것과 닮아 있을 것입니다.", 385, 80);
+     text("당신이 디지털 세상의 신속함에 발맞춰 함께 빨라졌는지,", 385, 100);
+     text("아니면 아직은 자연의 느릿함을 그리워하고 있는지,", 385, 120);
+     text("그에 따라 파동은 재빠르게 일렁이거나, 혹은 잔잔히 퍼져나갈 것입니다.", 385, 140);
   }
 }
 
