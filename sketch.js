@@ -324,8 +324,8 @@ function question() {
         } else if (mouseX < 378 && mouseX > 158 && mouseY > height / 2 - 25 && mouseY < height / 2 + 25) {
           fill(255, 70);
           rect(218, height / 2, 320, 50);
-          illu=true;
         }
+        illu=true;
        }
       }
       break;
@@ -386,9 +386,9 @@ function question() {
         } else if (mouseX < 898 && mouseX > 808 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
           fill(255, 70);
           rect(853, height / 2 + 15, 90, 50);
-          illu=true;
         }
        }
+       illu=true;
       }
       break;
     case 2:
@@ -451,9 +451,9 @@ function question() {
         } else if (mouseX < 998 && mouseX > 838 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
           fill(255, 70);
           rect(918, height / 2 + 15, 160, 50);
-          illu=true;
         }
        }
+       illu=true;
       }
       break;
     case 3:
@@ -900,10 +900,8 @@ function question2() {
       if (frameCount % 70 == 0 && currentRect < 10) {
         currentRect++;
       }
-      for (let i = 0; i < currentRect; i++) {
-         image(load[i], width / 2, height / 2);
-      }
       for (i = 0; i < currentRect; i++) {
+        image(load[currentRect], width / 2, height / 2);
         x = 535 + i * 25;
         y = 285;
         stroke(255);
