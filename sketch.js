@@ -19,7 +19,7 @@ let answer1 = [], answer2 = [], answer3 = [], answer4 = [], answer5 = [], answer
 let noticeTime = null;
 let seasonQuestion = 1;
 let personal = [];
-let interlude;
+let load=[];
 let blobs = [];
 let step = 0;
 let dice = [];
@@ -80,7 +80,9 @@ function preload() {
   for (let i = 1; i < 4; i++) {
     personal[i] = loadImage("fq/fq_" + i + ".png");
   }
-  interlude = loadImage("fq/Interlude.png")
+  for (let i = 1; i < 12; i++) {
+    load[i] = loadImage("fq/load_" + i + ".png");
+  }
   for (let i = 1; i < 7; i++) {
     dice[i] = loadImage("dice/tk_dice" + i + ".png");
   }
@@ -847,13 +849,14 @@ function question2() {
       }
       break;
     case 3:
-      image(interlude, width / 2, height / 2);
       if (frameCount % 70 == 0 && currentRect < 10) {
         currentRect++;
+        currentRect=i;
+        image(load[i], width / 2, height / 2);
       }
       for (i = 0; i < currentRect; i++) {
         x = 535 + i * 25;
-        y = 480;
+        y = 285;
         stroke(255);
         strokeWeight(3);
         noFill();
