@@ -299,12 +299,12 @@ function question() {
         }
       }
       if (seasonQuestion == 2) {
-        if (mouseX < width / 2 - 225 && mouseX > width / 2 - 345 && mouseY > height / 2 - 25 && mouseY < height / 2 + 25) {
+        if (mouseX < 400 && mouseX > 270 && mouseY > height / 2 +100- 25 && mouseY < height / 2 +100+ 25) {
+          fill(255, 50);
+          rect(335, height / 2+100, 130, 50);
+        } else if (mouseX < 988 && mouseX > 894 &&  mouseY > height / 2 +100- 25 && mouseY < height / 2 +100+ 25) {
           fill(255, 70);
-          rect(width / 2 - 285, height / 2, 120, 50);
-        } else if (mouseX < width / 2 + 320 && mouseX > width / 2 + 200 && mouseY > height / 2 - 25 && mouseY < height / 2 + 25) {
-          fill(255, 70);
-          rect(width / 2 + 260, height / 2, 120, 50);
+          rect(941, height / 2+100, 94, 50);
         }
       }
       if (seasonQuestion == 3) {
@@ -565,10 +565,10 @@ function mouseClicked() {
         }
       }
       if (seasonQuestion == 2) {
-        if (mouseX < width / 2 - 225 && mouseX > width / 2 - 345 && mouseY > height / 2 - 25 && mouseY < height / 2 + 25) {
+        if (mouseX < 400 && mouseX > 270 && mouseY > height / 2 +100- 25 && mouseY < height / 2 +100+ 25) {
           select = ['d', 'e'];
           answer2.push(select);
-        } else if (mouseX < width / 2 + 320 && mouseX > width / 2 + 200 && mouseY > height / 2 - 25 && mouseY < height / 2 + 25) {
+        } else if (mouseX < 988 && mouseX > 894 &&  mouseY > height / 2 +100- 25 && mouseY < height / 2 +100+ 25) {
           select = ['a', 'b', 'c'];
           answer2.push(select);
         }
