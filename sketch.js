@@ -291,15 +291,15 @@ function question() {
       image(spring[seasonQuestion], seasonX, seasonY);
       image(springText[seasonQuestion], width/2, height/2);
       if (seasonQuestion == 1) {
-        if (mouseX < width / 2 + 115 && mouseX > width / 2 - 115 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) { //부드럽게 스며든다
-          fill(255, 70);
-          rect(width/2, height/2+15 , 230, 50);
-        } else if (mouseX < 1200 && mouseX > 970 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
-          fill(255, 70);
-          rect(1085, height / 2 + 15, 230, 50);
-        } else if (mouseX < 310 && mouseX > 80 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
-          fill(255, 70);
-          rect(195, height / 2 + 15, 230, 50);
+        if (mouseX < 742 && mouseX > 538 && mouseY > height / 2 + 95 && mouseY < height / 2 + 145) {
+          fill(255, 50);
+          rect(width/2, height/2+120 , 200, 50);
+        } else if (mouseX < 1170 && mouseX > 990 && mouseY > height / 2 + 95 && mouseY < height / 2 + 145) {
+          fill(255, 50);
+          rect(1080, height / 2 + 120, 180, 50);
+        } else if (mouseX < 290 && mouseX > 110 &&mouseY > height / 2 + 95 && mouseY < height / 2 + 145) {
+          fill(255, 50);
+          rect(200, height / 2 + 120, 180, 50);
         }
       }
       if (seasonQuestion == 2) {
@@ -557,13 +557,13 @@ function mouseClicked() {
     if (stage == 0) {
       let select = null;
       if (seasonQuestion == 1) {
-        if (mouseX < width / 2 + 115 && mouseX > width / 2 - 115 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
+        if (mouseX < 742 && mouseX > 538 && mouseY > height / 2 + 95 && mouseY < height / 2 + 14) {
           select = ['a', 'd'];
           answer1.push(select);
-        } else if (mouseX < 1200 && mouseX > 970 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
+        } else if (mouseX < 1170 && mouseX > 990 && mouseY > height / 2 + 95 && mouseY < height / 2 + 145) {
           select = 'c';
           answer1.push(select);
-        } else if (mouseX < 310 && mouseX > 80 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
+        } else if (mouseX < 290 && mouseX > 110 &&mouseY > height / 2 + 95 && mouseY < height / 2 + 145) {
           select = ['b', 'c'];
           answer1.push(select);
         }
@@ -1337,7 +1337,6 @@ function gemini() {
   generateContent(geminiInput, function (responseText) {
 
     console.log("Sketch.js에서 받은 Gemini 응답:", responseText);
-    textFont(font2);
     geminiOutput = responseText
 
 
