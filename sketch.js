@@ -848,7 +848,7 @@ function question2() {
       break;
     case 3:
       image(interlude, width / 2, height / 2);
-      if (frameCount % 100 == 0 && currentRect < 10) {
+      if (frameCount % 70 == 0 && currentRect < 10) {
         currentRect++;
       }
       for (i = 0; i < currentRect; i++) {
