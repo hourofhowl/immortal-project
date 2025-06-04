@@ -289,6 +289,7 @@ function question() {
           }
      }else{
       image(spring[seasonQuestion], seasonX, seasonY);
+      image(springText[seasonQuestion], width/2, height/2);
       if (seasonQuestion == 1) {
         if (mouseX < width / 2 + 115 && mouseX > width / 2 - 115 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) { //부드럽게 스며든다
           fill(255, 70);
@@ -359,6 +360,7 @@ function question() {
           illu = false;}
      }else{
       image(summer[seasonQuestion], seasonX, seasonY);
+      image(summerText[seasonQuestion], width/2, height/2);
       if (seasonQuestion == 1) {
         if (mouseX < 455 && mouseX > 235 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
           fill(255, 70);
@@ -425,6 +427,7 @@ function question() {
           illu = false;}
      }else{
       image(autumn[seasonQuestion], seasonX, seasonY);
+      image(autumnText[seasonQuestion], width/2, height/2);
       if (seasonQuestion == 1) {
         if (mouseX < 815 && mouseX > 495 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
           fill(255, 70);
@@ -494,6 +497,7 @@ function question() {
           illu = false;}
      }else{
       image(winter[seasonQuestion], seasonX, seasonY);
+      image(winterText[seasonQuestion], width/2, height/2);
       if (seasonQuestion == 1) {
         if (mouseX < 450 && mouseX > 210 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
           fill(255, 70);
