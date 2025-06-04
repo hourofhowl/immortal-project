@@ -385,15 +385,15 @@ function question() {
         }
       }
       if (seasonQuestion == 4) {
-        if (mouseX < 730 && mouseX > 570 && mouseY > 435 && mouseY < 485) {
+        if (mouseX < 730 && mouseX > 570 && mouseY > 430 && mouseY < 490) {
           fill(255, 50);
-          rect(650, 460, 160, 50);
-        } else if (mouseX < 1150 && mouseX > 970 && mouseY > 435 && mouseY < 485) {
+          rect(650, 460, 160, 60);
+        } else if (mouseX < 1150 && mouseX > 970 && mouseY > 430 && mouseY < 490) {
           fill(255, 50);
-          rect(1060, 460, 180, 50);
-        } else if (mouseX < 325 && mouseX > 125 && mouseY > 435 && mouseY < 485) {
+          rect(1060, 460, 180, 60);
+        } else if (mouseX < 325 && mouseX > 125 && mouseY > 430 && mouseY < 490) {
           fill(255, 50);
-          rect(225, 460, 200, 50);
+          rect(225, 460, 200, 60);
         }
       }
       if (seasonQuestion == 5) {
@@ -402,10 +402,10 @@ function question() {
           rect(647.5, 440, 255, 50);
         } else if (mouseX < 1169 && mouseX > 1005 &&mouseY > 415 && mouseY < 465) {
           fill(255, 50);
-          rect(1087, 460, 164, 50);
+          rect(1087, 440, 164, 50);
         } else if (mouseX < 290 && mouseX > 110 && mouseY > 415 && mouseY < 465) {
           fill(255, 50);
-          rect(200, 460, 180, 50);
+          rect(200, 440, 180, 50);
         }
        }
       }
@@ -646,13 +646,13 @@ function mouseClicked() {
         }
       }
       if (seasonQuestion == 4) {
-        if (mouseX < 730 && mouseX > 570 && mouseY > 435 && mouseY < 485) {
+        if (mouseX < 730 && mouseX > 570 && mouseY > 430 && mouseY < 490) {
           select = 'a';
           answer4.push(select);
-        } else if (mouseX < 1150 && mouseX > 970 && mouseY > 435 && mouseY < 485) {
+        } else if (mouseX < 1150 && mouseX > 970 && mouseY > 430 && mouseY < 490) {
           select = 'b';
           answer4.push(select);
-        } else if (mouseX < 325 && mouseX > 125 && mouseY > 435 && mouseY < 485) {
+        } else if (mouseX < 325 && mouseX > 125 && mouseY > 430 && mouseY < 490) {
           select = 'a';
           answer4.push(select);
         }
