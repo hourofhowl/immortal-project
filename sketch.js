@@ -1188,11 +1188,11 @@ function ticket() {
      strokeWeight(1);
      ellipse(185, 320, 50);
      line(185, 295, 185, 120);
-     line(185, 120, 250, 120);
+     line(185, 120, 230, 120);
      fill(255, 70);
      stroke(0);
      rectMode(CENTER);
-     rect(385, 120, 270, 120);
+     rect(385, 120, 310, 120);
      textAlign(CENTER);
      textSize(10);
      textFont(font2);
