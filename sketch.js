@@ -330,6 +330,15 @@ function question() {
       }
       break;
     case 1:
+     if(illu){
+          if(show==null){
+            show=millis();
+          }
+          image(illu2, width/2, height/2);
+          if (millis() - show > 5000) {
+          illu = false;
+          show=null;}
+     }else{
       image(summer[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
         if (mouseX < 455 && mouseX > 235 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
@@ -377,10 +386,21 @@ function question() {
         } else if (mouseX < 898 && mouseX > 808 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
           fill(255, 70);
           rect(853, height / 2 + 15, 90, 50);
+          illu=true;
         }
+       }
       }
       break;
     case 2:
+     if(illu){
+          if(show==null){
+            show=millis();
+          }
+          image(illu3, width/2, height/2);
+          if (millis() - show > 5000) {
+          illu = false;
+          show=null;}
+     }else{
       image(autumn[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
         if (mouseX < 815 && mouseX > 495 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
@@ -431,10 +451,21 @@ function question() {
         } else if (mouseX < 998 && mouseX > 838 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
           fill(255, 70);
           rect(918, height / 2 + 15, 160, 50);
+          illu=true;
         }
+       }
       }
       break;
     case 3:
+     if(illu){
+          if(show==null){
+            show=millis();
+          }
+          image(illu4, width/2, height/2);
+          if (millis() - show > 5000) {
+          illu = false;
+          show=null;}
+     }else{
       image(winter[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
         if (mouseX < 450 && mouseX > 210 && mouseY > height / 2 - 10 && mouseY < height / 2 + 40) {
@@ -483,6 +514,7 @@ function question() {
           fill(255, 70);
           rect(966, height / 2 + 15, 260, 50);
         }
+       }
       }
       break;
     default:
