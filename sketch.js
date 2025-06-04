@@ -263,7 +263,7 @@ function question() {
     
 
 
-  switch (stage) {
+  switch (stage){
     case 0:
      if(illu){
           if(show==null){
@@ -327,6 +327,7 @@ function question() {
        }
       }
       break;
+          
     case 1:
      illu=true;
      show=null;
@@ -390,6 +391,7 @@ function question() {
        }
       }
       break;
+            
     case 2:
      illu=true;
      show=null;
@@ -456,6 +458,7 @@ function question() {
        }
       }
       break;
+            
     case 3:
      illu=true;
      show=null;
