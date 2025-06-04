@@ -900,7 +900,7 @@ class showBlob {
 }
 
 function ticket() {
-  background(0, 70);
+  background(200);
 
 
   //1. 배경 모션(청각_answer4)
@@ -1084,11 +1084,30 @@ function ticket() {
   text(geminiOutput, 272, 432-35);
 
 
-
-
   //마지막에 티켓 고정이미지, qr 안내
   image(tk, width / 2, height / 2);
-  image(qrguide, width / 2, height / 2)
+  image(qrguide, width / 2, height / 2);
+
+     
+  //해설
+  if(mouseX>272&&mouseX<303&&mouseY<437&&mouseY>406){
+     fill(255, 70);
+     stroke(255);
+     strokeWeight(1);
+     ellipse(285, 420, 5);
+     line(280, 420, 180, 420);
+     fill(255, 70);
+     stroke(0);
+     rectMode(CENTER);
+     rect(100, 420, 80, 100);
+     textAlign(CENTER);
+     textSize(15);
+     textFont(font2);
+     text("당신이 세상에 대한 느끼는 거리감에 따라 주사위 안 숫자가 달라집니다.", 100, 50);
+     text("당신에게 세상이 친밀하고 충만하게 다가오는지, 아니면 약간은 낯설거나 거리감이 느껴지는지에 따라 말이지요.", 100, 150);
+     text("주사위의 숫자가 작아질수록 당신은 세상에 담담히 자리잡은 돌벽과 같을 것이고,", 100, 250);
+     text("주사위의 숫자가 커질수록 세상을 기꺼이 끌어안으려는 품과 같은 사람일 것입니다.", 100, 350)
+  }
 }
 
 function gemini() {
@@ -1099,6 +1118,7 @@ function gemini() {
   generateContent(geminiInput, function (responseText) {
 
     console.log("Sketch.js에서 받은 Gemini 응답:", responseText);
+    textFont(font2);
     geminiOutput = responseText
 
 
