@@ -823,7 +823,7 @@ function question2() {
      if(mouseX<948&&mouseX>854&&mouseY<444&&mouseY>382){
           fill(255, 70);
           noStroke();
-          rect(901, 413,94, 62, 20);
+          rect(901, 413,94, 62, 10);
      }
      if(next){
       next=false;
@@ -840,7 +840,7 @@ function question2() {
       if(mouseX<948&&mouseX>854&&mouseY<470&&mouseY>405){
           fill(255, 70);
           noStroke();
-          rect(901, 413,94, 62, 20);
+          rect(901, 438,94, 62, 10);
       }
       if(next){
        next=false;
