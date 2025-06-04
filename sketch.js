@@ -827,8 +827,8 @@ function question2() {
      }
      if(next){
       next=false;
-      break;
      }
+     break;
     case 2:
       image(personal[3], width / 2, height / 2);
       if (!input) {
@@ -844,8 +844,8 @@ function question2() {
       }
       if(next){
        next=false;
-       break;
       }
+      break;
     case 3:
       image(interlude, width / 2, height / 2);
       if (frameCount % 100 == 0 && currentRect < 10) {
