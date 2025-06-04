@@ -272,7 +272,6 @@ function question() {
           image(illu1, width/2, height/2);
           if (millis() - show > 5000) {
           illu = false;
-          show=null;}
      }else{
       image(spring[seasonQuestion], seasonX, seasonY);
       if (seasonQuestion == 1) {
@@ -330,6 +329,7 @@ function question() {
       break;
     case 1:
      illu=true;
+     show=null;
      if(illu){
           if(show==null){
             show=millis();
@@ -392,6 +392,7 @@ function question() {
       break;
     case 2:
      illu=true;
+     show=null;
      if(illu){
           if(show==null){
             show=millis();
@@ -457,6 +458,7 @@ function question() {
       break;
     case 3:
      illu=true;
+     show=null;
      if(illu){
           if(show==null){
             show=millis();
