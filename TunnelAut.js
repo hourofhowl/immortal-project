@@ -1,4 +1,4 @@
-class Tunnel {
+class TunnelAut {
   constructor(numRings, depth) {
     this.numRings = numRings;
     this.depth = depth;

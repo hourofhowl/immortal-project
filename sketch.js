@@ -9,7 +9,13 @@ let seasonX, seasonY;
 let title;
 let font1, font2, font3, font4;
 let anim = [];
+
 let tunnel;
+let tunnelSpr;
+let tunnelSum;
+let tunnelAut;
+let tunnelWin;
+
 let endTime = null;
 let current = 0;
 let state = 'start';
@@ -43,6 +49,8 @@ let illu1, illu2, illu3, illu4;
 let illu=true;
 let show=null;
 let enterSummer=false, enterAutumn=false, enterWinter=false;
+
+let stageScene;
 
 let countA_1 = 0, countA_2 = 0, countA_3 = 0, countA_4 = 0, countA_5 = 0;
 let countB_1 = 0, countB_2 = 0, countB_3 = 0, countB_4 = 0, countB_5 = 0;
@@ -121,7 +129,12 @@ function preload() {
 
 function setup() {
   createCanvas(1280, 720);
-  tunnel = new Tunnel(8, 800); // 단위 개수, 깊이
+  tunnel = new Tunnel(6, 800); // 단위 개수, 깊이
+  tunnelSpr = new TunnelSpr(6,800);
+  tunnelSum = new TunnelSum(6,800);
+  tunnelAut = new TunnelAut(6,800);
+  tunnelWin = new TunnelWin(6,800);
+
   wave = new Wave(waveSpeed);
   randomDice = int(random(0, 2));
   seasonX = width/2 
@@ -275,13 +288,16 @@ function question() {
 
   switch (stage){
     case 0:{
-     if(illu){
+     stageScene = 'illu'
+     if(stageScene == 'illu'){
           if(show==null){
             show=millis();
           }
           image(illu1, width/2, height/2);
           if (millis() - show > 5000) {
-          illu = false;
+          
+          tunnelSpr.update();
+          tunnelSpr.display();
           }
      }else{
       image(spring[seasonQuestion], seasonX, seasonY);

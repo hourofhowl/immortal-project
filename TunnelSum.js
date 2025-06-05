@@ -1,4 +1,4 @@
-class Tunnel {
+class TunnelSum {
   constructor(numRings, depth) {
     this.numRings = numRings;
     this.depth = depth;

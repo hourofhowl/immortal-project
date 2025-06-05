@@ -1,4 +1,4 @@
-class Tunnel {
+class TunnelSpr {
   constructor(numRings, depth) {
     this.numRings = numRings;
     this.depth = depth;
@@ -46,7 +46,7 @@ class Tunnel {
   display() {
     // 화면 초기화
     noStroke();
-    fill(0);
+    fill(255,188,84);
     rect(0, 0, 1280, 720);
     noFill();
     strokeWeight(3);
@@ -146,8 +146,8 @@ class Tunnel {
 
     if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
 
-      state = "notice"
-      noticeTime = millis();
+      scene = 'question';
+      
     }
 
   }
