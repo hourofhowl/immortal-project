@@ -1188,7 +1188,7 @@ function ticket() {
      rectMode(CENTER);
      rect(120, 420, 200, 240);
      textAlign(CENTER);
-     textSize(10);
+     textSize(13);
      textFont(font2);
      text("당신이 세상에 대해 느끼는 거리감에 따라", 120, 315);
      text("주사위 안 숫자가 달라집니다.", 120, 335);
@@ -1213,7 +1213,7 @@ function ticket() {
      rectMode(CENTER);
      rect(385, 120, 310, 120);
      textAlign(CENTER);
-     textSize(10);
+     textSize(13);
      textFont(font2);
      text("티켓 뒤로 당신의 파동이 흐르고 있네요.", 385, 75);
      text("그것의 진폭과 움직이는 속도는 당신의 것과 닮아 있을 것입니다.", 385, 100);
@@ -1231,7 +1231,7 @@ function ticket() {
      rectMode(CENTER);
      rect(1155, 320, 220, 220);
      textAlign(CENTER);
-     textSize(10);
+     textSize(13);
      textFont(font2);
      if (countA_1 >= maxQ1) {
           text("몽글몽글 피어오른 구름:", 1155, 240);
@@ -1287,10 +1287,10 @@ function ticket() {
      fill(255, 70);
      stroke(0);
      rectMode(CENTER);
-     rect(560, 515, 260, 100);
-     rect(860, 515, 300, 100);
+     rect(560, 515, 280, 100);
+     rect(860, 515, 320, 100);
      textAlign(CENTER);
-     textSize(10);
+     textSize(13);
      textFont(font2);
      text("내면 깊숙한 곳을 감싸고 있는 당신의 감정 상태는 어떠한가요?", 560, 480);
      text("그 미묘한 감정들이,", 560, 505);
@@ -1323,10 +1323,11 @@ function ticket() {
           text("흐르는 물결처럼 자연스럽고 풍성하게 받아들이는 것 같습니다.", 860, 555);
      } else if (countE_2 >= maxQ2) {
           text("반짝이는 별:", 860, 475);
-          text("당신이 세상에서 비롯되는 갖가지 향기를 어떻게 인지하는가에 따라", 860, 495);
-          text("티켓의 질감이 표현될 것입니다.", 860, 515);
-          text("당신은 제각기 반짝이는 별들처럼,", 860, 535);
-          text("개성넘치고 톡톡 튀는 방식으로 외부의 향기를 받아들이는 것 같습니다.", 860, 555);
+          text("당신이 세상에서 비롯되는 갖가지 향기를 어떻게 인지하는가에 따라", 860, 490);
+          text("티켓의 질감이 표현될 것입니다.", 860, 505);
+          text("당신은 제각기 반짝이는 별들처럼,", 860, 520);
+          text("개성넘치고 톡톡 튀는 방식으로", 860, 535);
+          text("외부의 향기를 받아들이는 것 같습니다.", 860, 535);
      }
   }
 }
