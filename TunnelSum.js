@@ -30,12 +30,12 @@ class TunnelSum {
   update() {
     if (this.runTime===null) this.runTime = millis();
     for (let ring of this.rings) {
-      let dz = (this.depth + 50 - ring.z) * 0.003;
+      let dz = (this.depth + 50 - ring.z) * 0.01;
       ring.z -= dz;
 
     }
 
-    let dz = (this.depth + 50 - this.door.z) * 0.003;
+    let dz = (this.depth + 50 - this.door.z) * 0.01;
     this.door.z -= dz;
 
 
@@ -46,8 +46,8 @@ class TunnelSum {
   display() {
     // 화면 초기화
     noStroke();
-    fill(0);
-    rect(0, 0, 1280, 720);
+    fill(48,250,255);
+    rect(width/2, height/2, 1280, 720);
     noFill();
     strokeWeight(3);
 
@@ -59,7 +59,7 @@ class TunnelSum {
 
     // 바닥 세로 그리드 그리기
     strokeWeight(1)
-    stroke(120);
+    stroke(10);
     let numLines = 9;
     for (let i = -numLines / 2; i <= numLines / 2; i++) {
       let x = i * 40;  // 그리드 간격
@@ -82,7 +82,7 @@ class TunnelSum {
 
     // ㄷ자 개체들
     for (let ring of this.rings) {
-      let brightness = map(ring.z, this.depth, 0, 80, 255);
+      let brightness = 0;
       stroke(brightness);
 
       let scaleFactor = map(ring.z, this.depth, 0, 0.2, 3.0);
@@ -101,7 +101,7 @@ class TunnelSum {
     }
 
     // 문 그리기
-    let doorBrightness = map(this.door.z, this.depth, 0, 100, 600);
+    let doorBrightness = 255;
     fill(doorBrightness);
     noStroke();
 
@@ -134,7 +134,7 @@ class TunnelSum {
     }
 
     if (alpha > 0) {
-      background(0, alpha)
+      background(255, alpha)
     }
 
 
@@ -146,8 +146,8 @@ class TunnelSum {
 
     if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
 
-      state = "notice"
-      noticeTime = millis();
+      stageScene = 'illu';
+      
     }
 
   }

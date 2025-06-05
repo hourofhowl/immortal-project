@@ -50,7 +50,7 @@ let illu=true;
 let show=null;
 let enterSummer=false, enterAutumn=false, enterWinter=false;
 
-let stageScene;
+let stageScene = 'illu';
 
 let countA_1 = 0, countA_2 = 0, countA_3 = 0, countA_4 = 0, countA_5 = 0;
 let countB_1 = 0, countB_2 = 0, countB_3 = 0, countB_4 = 0, countB_5 = 0;
@@ -288,7 +288,7 @@ function question() {
 
   switch (stage){
     case 0:{
-     stageScene = 'illu'
+   
      if(stageScene == 'illu'){
           if(show==null){
             show=millis();
@@ -299,7 +299,9 @@ function question() {
           tunnelSpr.update();
           tunnelSpr.display();
           }
-     }else{
+
+     }else if (stageScene == 'question') {
+      
       image(spring[seasonQuestion], seasonX, seasonY);
       image(springText[seasonQuestion], width/2, height/2);
       if (seasonQuestion == 1) {
@@ -356,18 +358,25 @@ function question() {
           
     case 1:
      if(!enterSummer){
-     illu=true;
+    //  illu=true;
      show=null;
      enterSummer=true;
+     stageScene = 'tunnel'
      }
-     if(illu){
+
+     if(stageScene == 'tunnel'){
+      tunnelSum.update();
+      tunnelSum.display();
+     }
+     else if(stageScene == 'illu'){
           if(show==null){
             show=millis();
           }
           image(illu2, width/2, height/2);
           if (millis() - show > 5000) {
-          illu = false;}
-     }else{
+          stageScene = 'question';}
+
+     }else if (stageScene == 'question'){
       image(summer[seasonQuestion], seasonX, seasonY);
       image(summerText[seasonQuestion], width/2, height/2);
       if (seasonQuestion == 1) {
@@ -428,19 +437,24 @@ function question() {
       break;
             
     case 2:
-     if(!enterAutumn){
-     illu=true;
+      if(!enterAutumn){
      show=null;
      enterAutumn=true;
+     stageScene = 'tunnel'
      }
-     if(illu){
+
+     if(stageScene == 'tunnel'){
+      tunnelAut.update();
+      tunnelAut.display();
+     }  else if(stageScene == 'illu'){
           if(show==null){
             show=millis();
           }
           image(illu3, width/2, height/2);
           if (millis() - show > 5000) {
-          illu = false;}
-     }else{
+          stageScene = 'question';}
+
+     }else if (stageScene = 'question') {
       image(autumn[seasonQuestion], seasonX, seasonY);
       image(autumnText[seasonQuestion], width/2, height/2);
       if (seasonQuestion == 1) {
@@ -498,19 +512,24 @@ function question() {
       break;
             
     case 3:
-     if(!enterWinter){
-     illu=true;
+       if(!enterWinter){
      show=null;
      enterWinter=true;
+     stageScene = 'tunnel'
      }
-     if(illu){
+
+     if(stageScene == 'tunnel'){
+      tunnelWin.update();
+      tunnelWin.display();
+     }  else if(stageScene == 'illu'){
           if(show==null){
             show=millis();
           }
           image(illu4, width/2, height/2);
           if (millis() - show > 5000) {
-          illu = false;}
-     }else{
+          stageScene = 'question';}
+
+     }else if (stageScene = 'question') {
       image(winter[seasonQuestion], seasonX, seasonY);
       image(winterText[seasonQuestion], width/2, height/2);
       if (seasonQuestion == 1) {
