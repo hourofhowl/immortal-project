@@ -57,7 +57,7 @@ let illu = true;
 let show = null;
 let enterSummer = false, enterAutumn = false, enterWinter = false;
 
-let stageScene = 'illu';
+let stageScene = 'tunnel';
 
 let countA_1 = 0, countA_2 = 0, countA_3 = 0, countA_4 = 0, countA_5 = 0;
 let countB_1 = 0, countB_2 = 0, countB_3 = 0, countB_4 = 0, countB_5 = 0;
@@ -305,17 +305,17 @@ function question() {
   switch (stage) {
     case 0: {
 
-      if (stageScene == 'illu') {
+      if(stageScene=='tunnel'){
+          tunnelSpr.update();
+          tunnelSpr.display();
+      }else if (stageScene == 'illu') {
         if (show == null) {
           show = millis();
         }
         image(illu1, width / 2, height / 2);
         if (millis() - show > 5000) {
-
-          tunnelSpr.update();
-          tunnelSpr.display();
         }
-
+        stageScene='question'
       } else if (stageScene == 'question') {
 
         image(spring[seasonQuestion], seasonX, seasonY);
