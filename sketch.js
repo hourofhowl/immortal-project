@@ -1282,7 +1282,7 @@ function ticket() {
   textFont(font3);
   text(name, 404, 387 - 35);
   textFont(font4);
-  textSize(18);
+  textSize(20);
   text(date, 556, 468 - 35);
   textAlign(CENTER);
   textFont(font2);
