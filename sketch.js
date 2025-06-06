@@ -1039,7 +1039,7 @@ function question2() {
 
       for (i = 0; i < currentRect; i++) {
         x = 535 + i * 25;
-        y = 285;
+        y = 295;
         stroke(255);
         strokeWeight(3);
         noFill();
@@ -1477,7 +1477,7 @@ function gemini() {
 
   //gemini
 
-  geminiInput = "당신의 세계에선 " + emotions + " 속 " + touch + " " + smell + " 이/가 느껴져요. 또한, " + ear + ", " + taste + "을/를 가졌군요. "
+  geminiInput = "당신의 세계에선 " + emotions + " 속 " + touch + " " + smell + " 이/가 느껴져요. \n또한, " + ear + ", " + taste + "을/를 가졌군요. "
   userChoices[8] = geminiInput
   generateContent(geminiInput, function (responseText) {
 
