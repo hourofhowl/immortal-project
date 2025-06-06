@@ -1,6 +1,12 @@
 const GEMINI_API_KEY = 'AIzaSyCrZCoVlHR1njeO15_k4qARL1rRyL9PRqc'
 let myInput;
 let geminiCalled = false;
+let save = false;
+
+const supabase = window.supabase.createClient(
+  "https://ceptldrtdwoextjwbgqe.supabase.co",  
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNlcHRsZHJ0ZHdvZXh0andiZ3FlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkxNzU5ODcsImV4cCI6MjA2NDc1MTk4N30.rpEootIz8HQWwZH0DahC-pTk9jUH0xbJwQJ261YB2LI"     // 🔁 당신의 API 키로 교체
+)
 let userSeed;
 
 let seasonX, seasonY;
@@ -1279,6 +1285,7 @@ function ticket() {
   textSize(18);
   text(date, 556, 468 - 35);
   textAlign(CENTER);
+  textFont(font2);
   text(geminiInput, width / 2, 600);
 
   userChoices[6] = name
@@ -1289,13 +1296,25 @@ function ticket() {
   textAlign(LEFT)
   text(geminiOutput, 272, 432 - 35);
   userChoices[3] = geminiOutput.replaceAll("\n","");
-  print(userChoices);
+
+  
+
+
+  if(geminiOutput!="") {
+
+  if(save==false){
+  
+    storeResponseInSupabase(userSeed, userChoices)
+    print(userChoices);
+    save = true
+  }
+}
 
 
   //마지막에 티켓 고정이미지, qr 안내
   image(tk, width / 2, height / 2);
   image(qrguide, width / 2, height / 2);
-  if(geminiOutput!="") { generateQR();}
+  generateQR();
 
 
   //해설
@@ -1477,9 +1496,6 @@ function generateQR() {
 
   let baseURL = "hourofhowl.github.io/iptk/";
   let fullURL = baseURL+userSeed;
-
-  console.log("QR URL:", fullURL);
-
  
   qrDiv.show();
   qrDiv.html("");
@@ -1495,4 +1511,16 @@ function generateQR() {
 
 function generateSeed() {
   return Math.random().toString(36).substring(2, 10); 
+}
+
+async function storeResponseInSupabase(seed, responseText) {
+  const { data, error } = await supabase
+    .from('userResponses')
+    .insert([{ id: seed, responses: responseText }]);
+
+  if (error) {
+    console.error("저장 실패:", error);
+  } else {
+    console.log("저장 성공:", data);
+  }
 }
