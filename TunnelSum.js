@@ -30,12 +30,12 @@ class TunnelSum {
   update() {
     if (this.runTime===null) this.runTime = millis();
     for (let ring of this.rings) {
-      let dz = (this.depth + 50 - ring.z) * 0.004;
+      let dz = (this.depth + 50 - ring.z) * 0.003;
       ring.z -= dz;
 
     }
 
-    let dz = (this.depth + 50 - this.door.z) * 0.004;
+    let dz = (this.depth + 50 - this.door.z) * 0.003;
     this.door.z -= dz;
 
 
@@ -111,6 +111,8 @@ class TunnelSum {
     rect(0, 10, doorW, doorH);  // y좌표 10으로 살짝 올려서 자연스럽게 보정
     pop();
 
+    stroke(255);
+    strokeWeight(2);
     fill(255);
     textSize(25);
     textFont(font2);
