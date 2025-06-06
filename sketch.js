@@ -1478,7 +1478,8 @@ function gemini() {
   //gemini
 
   geminiInput = "당신의 세계에선 " + emotions + " 속 " + touch + " " + smell + " 이/가 느껴져요. 또한, " + ear + ", " + taste + "을/를 가졌군요. "
-  generateContent(geminiInput, function (responseText) {
+  userChoices[8] = geminiInput
+  enerateContent(geminiInput, function (responseText) {
 
     console.log("Sketch.js에서 받은 Gemini 응답:", responseText);
     geminiOutput = responseText
