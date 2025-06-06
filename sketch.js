@@ -69,6 +69,10 @@ let ear = '';
 let taste = '';
 let geminiOutput = '';
 
+let userChoices = ['main','texture','dice','subtitle','wavespeed','color','name','date'];
+let qrDiv;
+let qrCanvas;
+
 
 function preload() {
   title = loadImage("title/Intro_Title.png");
@@ -139,6 +143,11 @@ function setup() {
   randomDice = int(random(0, 2));
   seasonX = width / 2
   seasonY = height / 2
+
+  qrDiv = createDiv('');
+  qrDiv.id('qrcode');
+  qrDiv.position(20, 80);
+  qrDiv.hide();
 
 
   noStroke();
@@ -1085,12 +1094,15 @@ function ticket() {
   if (countA_4 > countB_4) {
     waveSpeed = 0.01
     ear = '숲속의 고요';
+    userChoices[4] = 'l'
   } else if (countA_4 == countB_4) {
     waveSpeed = 0.04
+    userChoices[4] = 'm'
     if (randomDice == 0) { ear = '숲속의 고요' } else { ear = '신호의 파동' }
   } else if (countA_4 < countB_4) {
     waveSpeed = 0.07
     ear = '신호의 파동';
+    userChoices[4] = 'h'
   }
   wave.speed = waveSpeed;
   wave.update();
@@ -1107,16 +1119,20 @@ function ticket() {
   }
   if (answer6 == "spring") {
     fill(255, 188, 84, t);
-    if (t = 100) { emotions = "은은한 봄바람" } else { emotions = '봄날의 햇살' }
+    if (t = 100) { emotions = "은은한 봄바람"; userChoices[5]='sl' } else { emotions = '봄날의 햇살';userChoices[5]='sh' }
+    
   } else if (answer6 == "summer") {
     fill(48, 252, 255, t);
-    if (t = 100) { emotions = "고요한 밤바다" } else { emotions = '푸르른 파도' }
+    userChoices[5] = 48,252,255,t;
+    if (t = 100) { emotions = "고요한 밤바다" ;userChoices[5]='ul'} else { emotions = '푸르른 파도' ; userChoices[5]='uh'}
   } else if (answer6 == "autumn") {
     fill(253, 35, 1, t);
-    if (t = 100) { emotions = "잔잔한 가을바람" } else { emotions = '붉은 노을빛' }
+    userChoices[5] = 253,35,1,t;
+    if (t = 100) { emotions = "잔잔한 가을바람" ;userChoices[5]='al'} else { emotions = '붉은 노을빛' ;userChoices[5]='ah'}
   } else if (answer6 == "winter") {
     fill(238, 246, 255, t);
-    if (t = 100) { emotions = "깊은 겨울 밤결" } else { emotions = '눈부신 서리' }
+    userChoices[5] = 238,246,255,t;
+    if (t = 100) { emotions = "깊은 겨울 밤결";userChoices[5]='wl' } else { emotions = '눈부신 서리';userChoices[5]='wh' }
   }
 
 
@@ -1145,21 +1161,26 @@ function ticket() {
   if (countA_2 >= maxQ2) {
     image(texture[1], width / 2, height / 2 - 35);
     smell = '조약돌';
+    userChoices[1] = 1
 
   } else if (countB_2 >= maxQ2) {
     image(texture[2], width / 2, height / 2 - 35);
     smell = '모래';
+    userChoices[1] = 2
   } else if (countC_2 >= maxQ2) {
     image(texture[3], width / 2, height / 2 - 35);
     smell = '나무';
+    userChoices[1] = 3
 
   } else if (countD_2 >= maxQ2) {
     image(texture[4], width / 2, height / 2 - 35);
     smell = '물결';
+    userChoices[1] = 4
 
   } else if (countE_2 >= maxQ2) {
     image(texture[5], width / 2, height / 2 - 35);
     smell = '별';
+    userChoices[1] = 5
 
   }
 
@@ -1183,21 +1204,26 @@ function ticket() {
   if (countA_1 >= maxQ1) {
     image(main[1], width / 2, height / 2);
     touch = '몽글몽글 피어오른';
+    userChoices[0] = 1
 
   } else if (countB_1 >= maxQ1) {
     image(main[2], width / 2, height / 2);
     touch = '꿈결처럼 얽힌';
+    userChoices[0] = 2
 
   } else if (countC_1 >= maxQ1) {
     image(main[3], width / 2, height / 2);
     touch = '고요히 돋아난';
+    userChoices[0] = 3
 
   } else if (countD_1 >= maxQ1) {
     image(main[4], width / 2, height / 2);
     touch = '살랑이는';
+    userChoices[0] = 4
   } else if (countE_1 >= maxQ1) {
     image(main[5], width / 2, height / 2);
     touch = '나지막이 깔린';
+    userChoices[0] = 5
   }
   //5. 주사위(미각_answer3)
   for (let i = 0; i < answer3.length; i++) {
@@ -1211,24 +1237,30 @@ function ticket() {
   if (countA_3 > countB_3) {
     if (randomDice == 0) {
       image(dice[5], width / 2, height / 2);
+      userChoices[2] = 5
     } else { image(dice[6], width / 2, height / 2); }
     taste = '그것을 기꺼이 끌어안는 품';
+    userChoices[2] = 6
   }
 
   if (countA_3 < countB_3) {
     if (randomDice == 0) {
       image(dice[1], width / 2, height / 2);
+      userChoices[2] = 1
     } else { image(dice[2], width / 2, height / 2); }
     taste = '그로부터 담담하게 자리잡은 돌벽';
+    userChoices[2] = 2
   }
 
   if (countA_3 == countB_3) {
     if (randomDice == 0) {
       image(dice[3], width / 2, height / 2);
       taste = '그것을 기까이 끌어안는 품';
+      userChoices[2] = 3
     } else {
       image(dice[4], width / 2, height / 2);
       taste = '그로부터 담담하게 자리잡은 돌벽';
+      userChoices[2] = 4
     }
   }
 
@@ -1248,15 +1280,21 @@ function ticket() {
   textAlign(CENTER);
   text(geminiInput, width / 2, 600);
 
+  userChoices[6] = name
+  userChoices[7] = date
+
 
   textFont(font3);
   textAlign(LEFT)
   text(geminiOutput, 272, 432 - 35);
+  userChoices[3] = geminiOutput.replaceAll("\n","");
+  print(userChoices);
 
 
   //마지막에 티켓 고정이미지, qr 안내
   image(tk, width / 2, height / 2);
   image(qrguide, width / 2, height / 2);
+  if(geminiOutput!="") { generateQR();}
 
 
   //해설
@@ -1430,6 +1468,28 @@ function gemini() {
 
   geminiCalled = true;
 
+
+
+}
+
+function generateQR() {
+
+  let baseURL = "bit.ly/qazw0";
+  let resultString = userChoices.join(',');
+  let fullURL = baseURL+resultString;
+
+  console.log("QR URL:", fullURL);
+
+ 
+  qrDiv.show();
+  qrDiv.html("");
+
+  new QRCode(qrDiv.elt, {
+    text: fullURL,
+    width: 128,
+    height: 128,
+    correctLevel: QRCode.CorrectLevel.L
+  });
 
 
 }
