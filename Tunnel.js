@@ -116,13 +116,13 @@ class Tunnel {
     textFont(font2);
     
 
-    if (millis() - this.runTime > 0 && millis() - this.runTime < 2000) {
+    if (millis() - this.runTime > 1000 && millis() - this.runTime < 3000) {
       text("길가에 핀 꽃에 다가가 냄새를 맡아본 적 있나요?", width / 2, height - 150);
-    } else if (millis() - this.runTime > 2000 && millis() - this.runTime < 4000) {
+    } else if (millis() - this.runTime > 3000 && millis() - this.runTime < 6000) {
       text("피부 위로 흐르는 땀의 느낌은 어떤가요?", width / 2, height - 150);
-    } else if (millis() - this.runTime > 4000 && millis() - this.runTime < 6000) {
+    } else if (millis() - this.runTime > 6000 && millis() - this.runTime < 9000) {
       text("당신의 '삶'은 어떤 감각들로 채워져 있나요?", width / 2, height - 150);
-    } else if (millis() - this.runTime > 6000 && millis() - this.runTime < 8000) {
+    } else if (millis() - this.runTime > 9000 && millis() - this.runTime < 12000) {
       text("잠들어있던 감각을 깨워 삶을 들여다보세요.", width / 2, height - 150)
     }
 
