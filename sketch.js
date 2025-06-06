@@ -314,8 +314,8 @@ function question() {
         }
         image(illu1, width / 2, height / 2);
         if (millis() - show > 5000) {
+          stageScene='question'
         }
-        stageScene='question'
       } else if (stageScene == 'question') {
 
         image(spring[seasonQuestion], seasonX, seasonY);
