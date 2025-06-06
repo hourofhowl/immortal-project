@@ -117,13 +117,13 @@ class TunnelWin {
     
 
     if (millis() - this.runTime > 0 && millis() - this.runTime < 2000) {
-      text("길가에 핀 꽃에 다가가 냄새를 맡아본 적 있나요?", width / 2, height - 150);
+      text("모든 색이 옅어지고, 풍경은 조용히 멈춰 섭니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 2000 && millis() - this.runTime < 4000) {
-      text("피부 위로 흐르는 땀의 느낌은 어떤가요?", width / 2, height - 150);
+      text("겨울은 차갑고 고요하지만, 그 안에도 미세한 움직임과 온기가 숨어 있습니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 4000 && millis() - this.runTime < 6000) {
-      text("당신의 '삶'은 어떤 감각들로 채워져 있나요?", width / 2, height - 150);
+      text("쌓인 눈 위에 발자국을 남기며, 언제나 곁을 지켜준 웃음소리가 들려옵니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 6000 && millis() - this.runTime < 8000) {
-      text("잠들어있던 감각을 깨워 삶을 들여다보세요.", width / 2, height - 150)
+      text("이번 터널에서는, 말없이 당신을 따뜻하게 했던 순간들을 떠올려봅니다.", width / 2, height - 150)
     }
 
     let alpha = 0;
