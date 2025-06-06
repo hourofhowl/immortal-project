@@ -30,12 +30,12 @@ class TunnelWin {
   update() {
     if (this.runTime===null) this.runTime = millis();
     for (let ring of this.rings) {
-      let dz = (this.depth + 50 - ring.z) * 0.004; //터널속도(0.01)
+      let dz = (this.depth + 50 - ring.z) * 0.003; //터널속도(0.01)
       ring.z -= dz;
 
     }
 
-    let dz = (this.depth + 50 - this.door.z) * 0.004; //터널속도(0.01)
+    let dz = (this.depth + 50 - this.door.z) * 0.003; //터널속도(0.01)
     this.door.z -= dz;
 
 
@@ -103,8 +103,7 @@ class TunnelWin {
     // 문 그리기
     let doorBrightness = 255;
     fill(doorBrightness);
-    stroke(0);
-    strokeWeight(1);
+    noStroke();
 
     push();
     translate(width / 2, height / 2);
@@ -112,6 +111,8 @@ class TunnelWin {
     rect(0, 10, doorW, doorH);  // y좌표 10으로 살짝 올려서 자연스럽게 보정
     pop();
 
+    stroke(0);
+    strokeWeight(2);
     fill(255);
     textSize(25);
     textFont(font2);
