@@ -46,7 +46,7 @@ class TunnelAut {
   display() {
     // 화면 초기화
     noStroke();
-    fill(253,34,1);
+    fill(253,34,1); // 터널 배경색
     rect(width/2, height/2, 1280, 720);
     noFill();
     strokeWeight(3);

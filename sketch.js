@@ -1276,7 +1276,7 @@ function ticket() {
   //주관식 답변 결과
   textAlign(CENTER);
   stroke(0);
-  strokeWeight(1);
+  strokeWeight(0);
   fill(50);
   textSize(16);
   textFont(font3);

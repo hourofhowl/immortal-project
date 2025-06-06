@@ -30,12 +30,12 @@ class TunnelWin {
   update() {
     if (this.runTime===null) this.runTime = millis();
     for (let ring of this.rings) {
-      let dz = (this.depth + 50 - ring.z) * 0.01;
+      let dz = (this.depth + 50 - ring.z) * 0.01; //터널속도(0.01)
       ring.z -= dz;
 
     }
 
-    let dz = (this.depth + 50 - this.door.z) * 0.01;
+    let dz = (this.depth + 50 - this.door.z) * 0.01; //터널속도(0.01)
     this.door.z -= dz;
 
 
@@ -46,7 +46,7 @@ class TunnelWin {
   display() {
     // 화면 초기화
     noStroke();
-    fill(238,246,255);
+    fill(238,246,255); // 터널 배경색
     rect(width/2, height/2, 1280, 720);
     noFill();
     strokeWeight(3);
