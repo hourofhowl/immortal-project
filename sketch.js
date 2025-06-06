@@ -1494,7 +1494,7 @@ function gemini() {
 
 function generateQR() {
 
-  let baseURL = "hourofhowl.github.io/iptk/";
+  let baseURL = "hourofhowl.github.io/iptk/#/";
   let fullURL = baseURL+userSeed;
  
   qrDiv.show();
