@@ -56,6 +56,8 @@ let illu1, illu2, illu3, illu4;
 let illu = true;
 let show = null;
 let enterSummer = false, enterAutumn = false, enterWinter = false;
+let finalTimer=0;
+let showFinal=false;
 
 let stageScene = 'tunnel';
 
@@ -232,9 +234,6 @@ function draw() {
     question();
   } else if (state == 'question2') {
     question2();
-    if (currentRect > 9) {
-      state = 'ticket';
-    }
   } else if (state == 'ticket') {
     ticket();
   }
@@ -1044,6 +1043,16 @@ function question2() {
         strokeWeight(3);
         noFill();
         rect(x, y, 20);
+      }
+
+      if(currentRect>10){
+        if(!showFinal){
+          showFinal=true;
+          finalTimer=frameCount;
+        }
+        if(frameCount-finalTimer>120){
+          state=ticket;
+        }
       }
 
       break;
