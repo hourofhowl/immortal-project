@@ -116,15 +116,16 @@ class TunnelSpr {
     textFont(font2);
     
 
-    if (millis() - this.runTime > 0 && millis() - this.runTime < 2000) {
-      text("길가에 핀 꽃에 다가가 냄새를 맡아본 적 있나요?", width / 2, height - 150);
-    } else if (millis() - this.runTime > 2000 && millis() - this.runTime < 4000) {
-      text("피부 위로 흐르는 땀의 느낌은 어떤가요?", width / 2, height - 150);
-    } else if (millis() - this.runTime > 4000 && millis() - this.runTime < 6000) {
-      text("당신의 '삶'은 어떤 감각들로 채워져 있나요?", width / 2, height - 150);
-    } else if (millis() - this.runTime > 6000 && millis() - this.runTime < 8000) {
-      text("잠들어있던 감각을 깨워 삶을 들여다보세요.", width / 2, height - 150)
-    }
+    if (millis() - this.runTime > 0 && millis() - this.runTime < 3000) {
+      text("겨울이 지나고, 다시 바람이 부드러워졌습니다.", width / 2, height - 150);
+    } else if (millis() - this.runTime > 3000 && millis() - this.runTime < 6000) {
+      text("아직은 차가운 공기 속에서도, 작은 새싹이 고개를 들고, 어느새 꽃잎이 흩날리기 시작합니다.", width / 2, height - 150);
+    } else if (millis() - this.runTime > 6000 && millis() - this.runTime < 9000) {
+      text("누군가의 손이 스치듯, 설레는 온기가 당신 곁에 머무릅니다.", width / 2, height - 150);
+    } else if (millis() - this.runTime > 9000 && millis() - this.runTime < 12000) {
+      text("이제 우리는, 당신 안으로 천천히 들어가 보려 합니다.", width / 2, height - 150)
+    } else if(millis() - this.runTime > 12000 && millis() - this. runTime < 15000) {
+      text("봄이라는 터널의 입구에서, 당신의 감각을 하나씩 열어볼까요?", width/2, height -150)}
 
     let alpha = 0;
     if (doorScale >= 1.0) {
@@ -146,7 +147,7 @@ class TunnelSpr {
 
     if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
 
-      stageScene = 'question';
+      stageScene = 'illu';
       
     }
 
