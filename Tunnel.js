@@ -116,7 +116,7 @@ class Tunnel {
     textFont(font2);
     
 
-    if (millis() - this.runTime > 1000 && millis() - this.runTime < 3000) {
+    if (millis() - this.runTime > 500 && millis() - this.runTime < 3000) {
       text("길가에 핀 꽃에 다가가 냄새를 맡아본 적 있나요?", width / 2, height - 150);
     } else if (millis() - this.runTime > 3000 && millis() - this.runTime < 6000) {
       text("피부 위로 흐르는 땀의 느낌은 어떤가요?", width / 2, height - 150);
