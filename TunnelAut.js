@@ -124,7 +124,7 @@ class TunnelAut {
       text("오랜 시간 곁을 지켜온 존재들이, 그 기억 속에서 조용히 고개를 듭니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 12000 && millis() - this.runTime < 16000) {
       text("이번 터널은, 지나온 시간들을 되짚으며 내면 깊숙한 곳을 들여다보는 길입니다.", width / 2, height - 150)
-    } else if (millis() - this.runTime > 16000 && millis() - this.runTime < 19000) {
+    } else if (millis() - this.runTime > 16000 && millis() - this.runTime < 20000) {
       text("당신의 가을은 어떤 색이었나요?", width / 2, height - 150)
     }
 
