@@ -1045,7 +1045,7 @@ function question2() {
         rect(x, y, 20);
       }
 
-      if(currentRect>10){
+      if(currentRect>=10){
         if(!showFinal){
           showFinal=true;
           finalTimer=frameCount;
