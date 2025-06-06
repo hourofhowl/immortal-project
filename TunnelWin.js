@@ -30,12 +30,12 @@ class TunnelWin {
   update() {
     if (this.runTime===null) this.runTime = millis();
     for (let ring of this.rings) {
-      let dz = (this.depth + 50 - ring.z) * 0.01; //터널속도(0.01)
+      let dz = (this.depth + 50 - ring.z) * 0.004; //터널속도(0.01)
       ring.z -= dz;
 
     }
 
-    let dz = (this.depth + 50 - this.door.z) * 0.01; //터널속도(0.01)
+    let dz = (this.depth + 50 - this.door.z) * 0.004; //터널속도(0.01)
     this.door.z -= dz;
 
 
@@ -116,13 +116,13 @@ class TunnelWin {
     textFont(font2);
     
 
-    if (millis() - this.runTime > 0 && millis() - this.runTime < 2000) {
+    if (millis() - this.runTime > 0 && millis() - this.runTime < 4000) {
       text("모든 색이 옅어지고, 풍경은 조용히 멈춰 섭니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 2000 && millis() - this.runTime < 4000) {
+    } else if (millis() - this.runTime > 4000 && millis() - this.runTime < 8000) {
       text("겨울은 차갑고 고요하지만, 그 안에도 미세한 움직임과 온기가 숨어 있습니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 4000 && millis() - this.runTime < 6000) {
+    } else if (millis() - this.runTime > 8000 && millis() - this.runTime < 12000) {
       text("쌓인 눈 위에 발자국을 남기며, 언제나 곁을 지켜준 웃음소리가 들려옵니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 6000 && millis() - this.runTime < 8000) {
+    } else if (millis() - this.runTime > 12000 && millis() - this.runTime < 16000) {
       text("이번 터널에서는, 말없이 당신을 따뜻하게 했던 순간들을 떠올려봅니다.", width / 2, height - 150)
     }
 
