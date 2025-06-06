@@ -1,6 +1,7 @@
 const GEMINI_API_KEY = 'AIzaSyCrZCoVlHR1njeO15_k4qARL1rRyL9PRqc'
 let myInput;
 let geminiCalled = false;
+let userSeed;
 
 let seasonX, seasonY;
 let xPlus = true;
@@ -143,10 +144,10 @@ function setup() {
   randomDice = int(random(0, 2));
   seasonX = width / 2
   seasonY = height / 2
-
+  userSeed = generateSeed();
   qrDiv = createDiv('');
   qrDiv.id('qrcode');
-  qrDiv.position(20, 80);
+  qrDiv.position(1159, 68);
   qrDiv.hide();
 
 
@@ -1474,9 +1475,8 @@ function gemini() {
 
 function generateQR() {
 
-  let baseURL = "bit.ly/qazw0";
-  let resultString = userChoices.join(',');
-  let fullURL = baseURL+resultString;
+  let baseURL = "hourofhowl.github.io/iptk/";
+  let fullURL = baseURL+userSeed;
 
   console.log("QR URL:", fullURL);
 
@@ -1486,11 +1486,13 @@ function generateQR() {
 
   new QRCode(qrDiv.elt, {
     text: fullURL,
-    width: 128,
-    height: 128,
-    correctLevel: QRCode.CorrectLevel.L
+    width: 60,
+    height: 60,
   });
 
 
 }
 
+function generateSeed() {
+  return Math.random().toString(36).substring(2, 10); 
+}
