@@ -1051,7 +1051,7 @@ function question2() {
           finalTimer=frameCount;
         }
         if(frameCount-finalTimer>120){
-          state=ticket;
+          state='ticket';
         }
       }
 
