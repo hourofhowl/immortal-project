@@ -103,7 +103,8 @@ class TunnelWin {
     // 문 그리기
     let doorBrightness = 255;
     fill(doorBrightness);
-    noStroke();
+    stroke(0);
+    strokeWeight(1);
 
     push();
     translate(width / 2, height / 2);
