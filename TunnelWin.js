@@ -35,7 +35,7 @@ class TunnelWin {
 
     }
 
-    let dz = (this.depth + 50 - this.door.z) * 0.025; //터널속도(0.01)
+    let dz = (this.depth + 50 - this.door.z) * 0.0025; //터널속도(0.01)
     this.door.z -= dz;
 
 
