@@ -1341,6 +1341,7 @@ function ticket() {
     textSize(12.5);
     textFont(font2);
     fill(255);
+    stroke(255);
     text("당신이 세상에 대해 느끼는 거리감에 따라\n주사위 안 숫자가 달라집니다.\n당신에게 세상이\n친밀하고 충만하게 다가오는지,\n아니면 약간은 낯설거나\n거리감이 느껴지는지에 따라 말이지요.\n주사위의 숫자가 작아질수록 당신은\n세상에 담담히 자리잡은\n돌벽과 같을 것이고,\n주사위의 숫자가 커질수록\n세상을 기꺼이\n끌어안으려는 품과 같은 사람일 것입니다.", 120, 420);
   } else if (mouseX > 690 && mouseX < 908 && mouseY < 432 && mouseY > 214) {
     fill(255, 70);
@@ -1356,6 +1357,7 @@ function ticket() {
     textSize(13);
     textFont(font2);
     fill(255);
+    stroke(255);
     if (countA_1 >= maxQ1) {
       text("당신의 손끝으로 느낀\n촉각 기억에 따라\n이 모양이 결정됩니다.\n몽글몽글하게 피어오르는\n구름의 모양처럼,\n당신은 세계를 부드럽고 말랑하게\n받아들이는 사람 같습니다.", 1155, 320);
     } else if (countB_1 >= maxQ1) {
@@ -1382,6 +1384,7 @@ function ticket() {
     textSize(13);
     textFont(font2);
     fill(255);
+    stroke(255);
     text("내면 깊숙한 곳을 감싸고 있는 당신의 감정 상태는 어떠한가요?\n그 미묘한 감정들이, 당신이 사랑하는 계절의 빛깔과 만나\n티켓의 배경색으로 표현되었을 겁니다.", 480, 515);
     if (countA_2 >= maxQ2) {
       text("당신이 세상에서 비롯되는 갖가지 향기를 어떻게 인지하는가에 따라\n티켓의 질감이 표현될 것입니다.\n반복된 물결로 잘 다듬어진 조약돌처럼,\n당신은 매끈하고 넉살좋게 외부의 향기를 받아들이는 것 같습니다.", 860, 515);
@@ -1409,6 +1412,7 @@ function ticket() {
     textSize(13);
     textFont(font2);
     fill(255);
+    stroke(255);
     text("티켓 뒤로 당신의 파동이 흐르고 있네요.\n그것의 진폭과 움직이는 속도는 당신의 것과 닮아 있을 것입니다.\n당신이 디지털 세상의 신속함에 발맞춰 함께 빨라졌는지,\n아니면 아직은 자연의 느릿함을 그리워하고 있는지,\n그에 따라 파동은 재빠르게 일렁이거나,\n혹은 잔잔히 퍼져나갈 것입니다.", 385, 100);
   } 
 }
@@ -1421,7 +1425,6 @@ function gemini() {
   userChoices[8] = geminiInput
   generateContent(geminiInput, function (responseText) {
 
-    fill(255);
     console.log("Sketch.js에서 받은 Gemini 응답:", responseText);
     geminiOutput = responseText
 
