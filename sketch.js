@@ -1377,7 +1377,7 @@ function ticket() {
     rect(480, 515, 340, 100);
     rect(860, 515, 380, 100);
     textAlign(CENTER);
-    textSize(12);
+    textSize(12.5);
     textFont(font2);
     text("내면 깊숙한 곳을 감싸고 있는 당신의 감정 상태는 어떠한가요?\n그 미묘한 감정들이, 당신이 사랑하는 계절의 빛깔과 만나\n티켓의 배경색으로 표현되었을 겁니다.", 480, 515);
     if (countA_2 >= maxQ2) {
@@ -1403,7 +1403,7 @@ function ticket() {
     rectMode(CENTER);
     rect(385, 100, 350, 140);
     textAlign(CENTER);
-    textSize(12);
+    textSize(12.5);
     textFont(font2);
     text("티켓 뒤로 당신의 파동이 흐르고 있네요.\n그것의 진폭과 움직이는 속도는 당신의 것과 닮아 있을 것입니다.\n당신이 디지털 세상의 신속함에 발맞춰 함께 빨라졌는지,\n아니면 아직은 자연의 느릿함을 그리워하고 있는지,\n그에 따라 파동은 재빠르게 일렁이거나, 혹은 잔잔히 퍼져나갈 것입니다.", 385, 100);
   } 
