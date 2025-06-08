@@ -277,6 +277,7 @@ function keyPressed() {
     } else if(document.activeElement === dateInput.elt && keyCode === ENTER){
       return;
     }
+  }
 }
 
 //안내사항
