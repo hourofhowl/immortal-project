@@ -222,6 +222,11 @@ function setup() {
       step = 3;
     }
   });
+   dateInput.elt.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+  }
+});
 }
 
 function draw() {
