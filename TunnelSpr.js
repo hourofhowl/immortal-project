@@ -46,7 +46,7 @@ class TunnelSpr {
   display() {
     // 화면 초기화
     noStroke();
-    fill(255,188,84); // 터널 배경색
+    fill(247, 176, 45); // 터널 배경색
     rect(width/2, height/2, 1280, 720);
     noFill();
     strokeWeight(3);
