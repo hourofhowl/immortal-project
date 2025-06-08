@@ -268,9 +268,15 @@ function keyPressed() {
     if (input && keyCode === BACKSPACE) {
       name = name.slice(0, -1);
     }
-  }
-  if(stageScene=='tunnel'){
+    if (document.activeElement === nameInput.elt && keyCode === ENTER) {
+    return;
+    } else if(document.activeElement === dateInput.elt && keyCode === ENTER){
+      return;
+    }
+  if(state=='question'){
+    if(stageScene=='tunnel'){
     stageScene='illu';
+    }
   }
 }
 
