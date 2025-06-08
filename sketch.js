@@ -1348,7 +1348,7 @@ function ticket() {
     strokeWeight(1);
     ellipse(285, 420, 10);
     line(280, 420, 230, 420);
-    fill(255, 70);
+    fill(255, 150);
     stroke(0);
     rectMode(CENTER);
     rect(120, 420, 220, 240);
