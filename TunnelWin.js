@@ -46,7 +46,7 @@ class TunnelWin {
   display() {
     // 화면 초기화
     noStroke();
-    fill(238,246,255); // 터널 배경색
+    fill(174, 197, 218); // 터널 배경색
     rect(width/2, height/2, 1280, 720);
     noFill();
     strokeWeight(3);
@@ -113,7 +113,7 @@ class TunnelWin {
 
     stroke(150);
     strokeWeight(2);
-    fill(255);
+    fill(0);
     textSize(25);
     textFont(font2);
     
