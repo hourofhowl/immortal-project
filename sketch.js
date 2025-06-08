@@ -264,7 +264,11 @@ function keyPressed() {
   }
   else if (state == 'notice') {
     state = 'question';
-  } else if (state == 'question2') {
+  } else if(state=='question'){
+    if(stageScene=='tunnel'){
+    stageScene='illu';
+    }
+  }else if (state == 'question2') {
     if (input && keyCode === BACKSPACE) {
       name = name.slice(0, -1);
     }
@@ -273,11 +277,6 @@ function keyPressed() {
     } else if(document.activeElement === dateInput.elt && keyCode === ENTER){
       return;
     }
-  if(state=='question'){
-    if(stageScene=='tunnel'){
-    stageScene='illu';
-    }
-  }
 }
 
 //안내사항
