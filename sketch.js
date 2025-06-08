@@ -191,6 +191,12 @@ function setup() {
     }
   });
 
+  nameInput.elt.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault(); // 엔터 동작 무력화
+  }
+});
+  
   //날짜 입력란
   dateInput = createInput();
   dateInput.position(width / 2 - 310, height / 2 + 45);
