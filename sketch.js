@@ -1110,7 +1110,7 @@ class showBlob {
 }
 
 function ticket() {
-  background(140);
+  background(30);
 
 
   //1. 배경 모션(청각_answer4)
