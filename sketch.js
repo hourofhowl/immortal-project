@@ -1301,8 +1301,8 @@ function ticket() {
   textAlign(CENTER);
   stroke(0);
   strokeWeight(0);
-  fill(50);
-  textSize(16);
+  fill(0);
+  textSize(18);
   textFont(font3);
   text(name, 404, 387 - 35);
   textFont(font4);
@@ -1310,6 +1310,7 @@ function ticket() {
   text(date, 556, 468 - 35);
   textAlign(CENTER);
   textFont(font2);
+  fill(255);
   text(geminiInput, width / 2, 600);
 
   userChoices[6] = name
