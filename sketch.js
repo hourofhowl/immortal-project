@@ -269,6 +269,9 @@ function keyPressed() {
       name = name.slice(0, -1);
     }
   }
+  if(stageScene=='tunnel'){
+    stageScene='illu';
+  }
 }
 
 //안내사항
