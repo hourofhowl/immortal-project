@@ -272,11 +272,6 @@ function keyPressed() {
     if (input && keyCode === BACKSPACE) {
       name = name.slice(0, -1);
     }
-    if (document.activeElement === nameInput.elt && keyCode === ENTER) {
-    return;
-    } else if(document.activeElement === dateInput.elt && keyCode === ENTER){
-      return;
-    }
   }
 }
 
