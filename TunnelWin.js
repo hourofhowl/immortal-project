@@ -136,7 +136,7 @@ class TunnelWin {
     }
 
     if (alpha > 0) {
-      background(0, alpha)
+      background(255, alpha)
     }
 
 

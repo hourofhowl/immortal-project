@@ -4,7 +4,7 @@ let geminiCalled = false;
 let save = false;
 
 const supabase = window.supabase.createClient(
-  "https://ceptldrtdwoextjwbgqe.supabase.co",  
+  "https://ceptldrtdwoextjwbgqe.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNlcHRsZHJ0ZHdvZXh0andiZ3FlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkxNzU5ODcsImV4cCI6MjA2NDc1MTk4N30.rpEootIz8HQWwZH0DahC-pTk9jUH0xbJwQJ261YB2LI"     // 🔁 당신의 API 키로 교체
 )
 let userSeed;
@@ -12,6 +12,7 @@ let userSeed;
 let seasonX, seasonY;
 let xPlus = true;
 let xSpeed = 0.1
+let illuAlpha = 0;
 
 let title;
 let font1, font2, font3, font4;
@@ -56,8 +57,8 @@ let illu1, illu2, illu3, illu4;
 let illu = true;
 let show = null;
 let enterSummer = false, enterAutumn = false, enterWinter = false;
-let finalTimer=0;
-let showFinal=false;
+let finalTimer = 0;
+let showFinal = false;
 
 let stageScene = 'tunnel';
 
@@ -78,7 +79,7 @@ let ear = '';
 let taste = '';
 let geminiOutput = '';
 
-let userChoices = ['main','texture','dice','subtitle','wavespeed','color','name','date'];
+let userChoices = ['main', 'texture', 'dice', 'subtitle', 'wavespeed', 'color', 'name', 'date'];
 let qrDiv;
 let qrCanvas;
 
@@ -191,12 +192,12 @@ function setup() {
     }
   });
 
-  nameInput.elt.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
-    e.preventDefault(); // 엔터 동작 무력화
-  }
-});
-  
+  nameInput.elt.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // 엔터 동작 무력화
+    }
+  });
+
   //날짜 입력란
   dateInput = createInput();
   dateInput.position(width / 2 - 310, height / 2 + 45);
@@ -222,11 +223,11 @@ function setup() {
       step = 3;
     }
   });
-   dateInput.elt.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-  }
-});
+  dateInput.elt.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+    }
+  });
 }
 
 function draw() {
@@ -275,11 +276,11 @@ function keyPressed() {
   }
   else if (state == 'notice') {
     state = 'question';
-  } else if(state=='question'){
-    if(stageScene=='tunnel'){
-    stageScene='illu';
+  } else if (state == 'question') {
+    if (stageScene == 'tunnel') {
+      stageScene = 'illu';
     }
-  }else if (state == 'question2') {
+  } else if (state == 'question2') {
     if (input && keyCode === BACKSPACE) {
       name = name.slice(0, -1);
     }
@@ -317,18 +318,24 @@ function question() {
 
 
   switch (stage) {
+
+
+
     case 0: {
 
-      if(stageScene=='tunnel'){
-          tunnelSpr.update();
-          tunnelSpr.display();
-      }else if (stageScene == 'illu') {
+      if (stageScene == 'tunnel') {
+        tunnelSpr.update();
+        tunnelSpr.display();
+      } else if (stageScene == 'illu') {
         if (show == null) {
           show = millis();
         }
+        background(255)
+        illuAlpha = map(millis() - show, 0, 1200, 0, 255)
+        tint(255, illuAlpha)
         image(illu1, width / 2, height / 2);
         if (millis() - show > 5000) {
-          stageScene='question'
+          stageScene = 'question'
         }
       } else if (stageScene == 'question') {
 
@@ -402,6 +409,9 @@ function question() {
         if (show == null) {
           show = millis();
         }
+        background(255)
+        illuAlpha = map(millis() - show, 0, 1200, 0, 255)
+        tint(255, illuAlpha)
         image(illu2, width / 2, height / 2);
         if (millis() - show > 5000) {
           stageScene = 'question';
@@ -481,6 +491,9 @@ function question() {
         if (show == null) {
           show = millis();
         }
+        illuAlpha = map(millis() - show, 0, 1200, 0, 255)
+        background(255)
+        tint(255, illuAlpha)
         image(illu3, width / 2, height / 2);
         if (millis() - show > 5000) {
           stageScene = 'question';
@@ -520,7 +533,7 @@ function question() {
           }
         }
         if (seasonQuestion == 3) {
-          if (mouseX < 245+194 && mouseX > 245  && mouseY > 517 && mouseY < 517 + 50) {
+          if (mouseX < 245 + 194 && mouseX > 245 && mouseY > 517 && mouseY < 517 + 50) {
             fill(255, 70);
             rectMode(CORNER);
             rect(245, 517, 194, 50);
@@ -569,6 +582,9 @@ function question() {
         if (show == null) {
           show = millis();
         }
+        illuAlpha = map(millis() - show, 0, 1200, 0, 255)
+        background(255)
+        tint(255, illuAlpha)
         image(illu4, width / 2, height / 2);
         if (millis() - show > 5000) {
           stageScene = 'question';
@@ -578,80 +594,80 @@ function question() {
         image(winter[seasonQuestion], seasonX, seasonY);
         image(winterText[seasonQuestion], width / 2, height / 2);
         if (seasonQuestion == 1) {
-          if (mouseX < 210+175  && mouseX >210 && mouseY > 447  && mouseY < 447+50) {
+          if (mouseX < 210 + 175 && mouseX > 210 && mouseY > 447 && mouseY < 447 + 50) {
             fill(255, 70);
-             rectMode(CORNER)
-            rect(210,447,175,50);
-          } else  if (mouseX <871+196  && mouseX >871 && mouseY >447  && mouseY <447+ 50) {
+            rectMode(CORNER)
+            rect(210, 447, 175, 50);
+          } else if (mouseX < 871 + 196 && mouseX > 871 && mouseY > 447 && mouseY < 447 + 50) {
             fill(255, 70);
-             rectMode(CORNER)
-            rect(871,447,196,50);
-          } 
+            rectMode(CORNER)
+            rect(871, 447, 196, 50);
+          }
         }
         if (seasonQuestion == 2) {
-           if (mouseX < 174+93 && mouseX > 174 && mouseY > 434 && mouseY < 434+50) {
+          if (mouseX < 174 + 93 && mouseX > 174 && mouseY > 434 && mouseY < 434 + 50) {
             fill(255, 70);
-             rectMode(CORNER)
-            rect(174,434,93,50);
-          } else  if (mouseX < 560+172 && mouseX >560 && mouseY >434  && mouseY < 434+50) {
+            rectMode(CORNER)
+            rect(174, 434, 93, 50);
+          } else if (mouseX < 560 + 172 && mouseX > 560 && mouseY > 434 && mouseY < 434 + 50) {
             fill(255, 70);
-             rectMode(CORNER)
-            rect(560,434,172,50);
-          } else if (mouseX < 980+172 && mouseX > 980&& mouseY > 434 && mouseY < 434+50) {
+            rectMode(CORNER)
+            rect(560, 434, 172, 50);
+          } else if (mouseX < 980 + 172 && mouseX > 980 && mouseY > 434 && mouseY < 434 + 50) {
             fill(255, 70);
-             rectMode(CORNER)
-            rect(980,434,172,50);
-          } 
+            rectMode(CORNER)
+            rect(980, 434, 172, 50);
+          }
         }
         if (seasonQuestion == 3) {
-            if (mouseX <  175+183&& mouseX >175 && mouseY >429  && mouseY <429+60 ) {
+          if (mouseX < 175 + 183 && mouseX > 175 && mouseY > 429 && mouseY < 429 + 60) {
             fill(255, 70);
-             rectMode(CORNER)
-            rect(175,429,183,60);
-          } else   if (mouseX < 570+157 && mouseX >570 && mouseY > 429 && mouseY < 429+60) {
+            rectMode(CORNER)
+            rect(175, 429, 183, 60);
+          } else if (mouseX < 570 + 157 && mouseX > 570 && mouseY > 429 && mouseY < 429 + 60) {
             rectMode(CORNER)
             fill(255, 70);
-            rect(570,429,157,60);
-          }else if (mouseX <  938+157&& mouseX >938 && mouseY >429  && mouseY <429+60 ) {
+            rect(570, 429, 157, 60);
+          } else if (mouseX < 938 + 157 && mouseX > 938 && mouseY > 429 && mouseY < 429 + 60) {
             rectMode(CORNER)
             fill(255, 70);
-            rect(938,429,157,60);
-          }
-          }
-        }
-        if (seasonQuestion == 4) {
-          if (mouseX < 111+197 && mouseX >111  && mouseY >436  && mouseY <436+60 ) {
-            rectMode(CORNER)
-            fill(255, 70);
-            rect(111,436,197,60);
-          } else if (mouseX <  550+180&& mouseX > 550 && mouseY > 436 && mouseY <436+60 ) {
-            rectMode(CORNER)
-            fill(255, 70);
-            rect(550,436,180,60);
-          } else if (mouseX <  997+150&& mouseX >997  && mouseY >436  && mouseY < 436+60) {
-            rectMode(CORNER)
-            fill(255, 70);
-            rect(997,436,150,60);
+            rect(938, 429, 157, 60);
           }
         }
-        if (seasonQuestion == 5) {
-         if (mouseX < 170+168  && mouseX > 170 && mouseY > 430 && mouseY < 430+60) {
-            rectMode(CORNER)
-            fill(255, 70);
-            rect(170,430,168,60);
-          } else if (mouseX < 548+170 && mouseX >548  && mouseY > 430 && mouseY <430+60 ) {
-            rectMode(CORNER)
-            fill(255, 70);
-            rect(548,430,171,60);
-          } else if (mouseX < 976+202 && mouseX >976  && mouseY >430  && mouseY <430+60 ) {
-            rectMode(CORNER)
-            fill(255, 70);
-            rect(976,430,202,60);
-          }
-        } break;
-      } 
-      
-    
+      }
+      if (seasonQuestion == 4) {
+        if (mouseX < 111 + 197 && mouseX > 111 && mouseY > 436 && mouseY < 436 + 60) {
+          rectMode(CORNER)
+          fill(255, 70);
+          rect(111, 436, 197, 60);
+        } else if (mouseX < 550 + 180 && mouseX > 550 && mouseY > 436 && mouseY < 436 + 60) {
+          rectMode(CORNER)
+          fill(255, 70);
+          rect(550, 436, 180, 60);
+        } else if (mouseX < 997 + 150 && mouseX > 997 && mouseY > 436 && mouseY < 436 + 60) {
+          rectMode(CORNER)
+          fill(255, 70);
+          rect(997, 436, 150, 60);
+        }
+      }
+      if (seasonQuestion == 5) {
+        if (mouseX < 170 + 168 && mouseX > 170 && mouseY > 430 && mouseY < 430 + 60) {
+          rectMode(CORNER)
+          fill(255, 70);
+          rect(170, 430, 168, 60);
+        } else if (mouseX < 548 + 170 && mouseX > 548 && mouseY > 430 && mouseY < 430 + 60) {
+          rectMode(CORNER)
+          fill(255, 70);
+          rect(548, 430, 171, 60);
+        } else if (mouseX < 976 + 202 && mouseX > 976 && mouseY > 430 && mouseY < 430 + 60) {
+          rectMode(CORNER)
+          fill(255, 70);
+          rect(976, 430, 202, 60);
+        }
+      } break;
+  }
+
+
 }
 
 function mouseClicked() {
@@ -809,7 +825,7 @@ function mouseClicked() {
         }
       }
       if (seasonQuestion == 3) {
-        if (mouseX < 245+194 && mouseX > 245 && mouseY > 517 && mouseY < 517 + 50) {
+        if (mouseX < 245 + 194 && mouseX > 245 && mouseY > 517 && mouseY < 517 + 50) {
           select = 'a';
           answer3.push(select);
         } else if (mouseX < 837 + 194 && mouseX > 837 && mouseY > 517 && mouseY < 517 + 50) {
@@ -848,28 +864,28 @@ function mouseClicked() {
     } else if (stage == 3) { //겨울 응답
       let select = null;
       if (seasonQuestion == 1) {
-        if (mouseX < 210+175  && mouseX >210 && mouseY > 447  && mouseY < 447+50) {
+        if (mouseX < 210 + 175 && mouseX > 210 && mouseY > 447 && mouseY < 447 + 50) {
           select = ['a', 'c'];
           answer1.push(select);
-        } else if (mouseX <871+196  && mouseX >871 && mouseY >447  && mouseY <447+ 50) {
+        } else if (mouseX < 871 + 196 && mouseX > 871 && mouseY > 447 && mouseY < 447 + 50) {
           select = ['b', 'd'];
           answer1.push(select);
         }
       }
       if (seasonQuestion == 2) {
-        if  (mouseX < 560+172 && mouseX >560 && mouseY >434  && mouseY < 434+50) {
+        if (mouseX < 560 + 172 && mouseX > 560 && mouseY > 434 && mouseY < 434 + 50) {
           select = 'b';
           answer2.push(select);
-        } else if(mouseX < 980+172 && mouseX > 980&& mouseY > 434 && mouseY < 434+50) {
+        } else if (mouseX < 980 + 172 && mouseX > 980 && mouseY > 434 && mouseY < 434 + 50) {
           select = ['d', 'e'];
           answer2.push(select);
-        } else if  (mouseX < 174+93 && mouseX > 174 && mouseY > 434 && mouseY < 434+50) {
+        } else if (mouseX < 174 + 93 && mouseX > 174 && mouseY > 434 && mouseY < 434 + 50) {
           select = ['a', 'c'];
           answer2.push(select);
         }
       }
       if (seasonQuestion == 3) {
-        if (mouseX <  175+183&& mouseX >175 && mouseY >429  && mouseY <429+60 ) {
+        if (mouseX < 175 + 183 && mouseX > 175 && mouseY > 429 && mouseY < 429 + 60) {
           select = 'b';
           answer3.push(select);
         } else if (mouseX < 570 + 157 && mouseX > 570 && mouseY > 429 && mouseY < 429 + 60) {
@@ -879,31 +895,31 @@ function mouseClicked() {
           select = 'a';
           answer3.push(select);
         }
-        
+
       }
-           if (seasonQuestion == 4) {
-          if (mouseX < 111+197 && mouseX >111  && mouseY >436  && mouseY <436+60 ) {
+      if (seasonQuestion == 4) {
+        if (mouseX < 111 + 197 && mouseX > 111 && mouseY > 436 && mouseY < 436 + 60) {
           select = 'b';
           answer4.push(select);
-          } else if (mouseX <  550+180&& mouseX > 550 && mouseY > 436 && mouseY <436+60 ) {
-             select = 'a';
+        } else if (mouseX < 550 + 180 && mouseX > 550 && mouseY > 436 && mouseY < 436 + 60) {
+          select = 'a';
           answer4.push(select);
-          } else if (mouseX <  997+150&& mouseX >997  && mouseY >436  && mouseY < 436+60) {
-                select = 'a';
+        } else if (mouseX < 997 + 150 && mouseX > 997 && mouseY > 436 && mouseY < 436 + 60) {
+          select = 'a';
           answer4.push(select);
-          }
         }
-        if (seasonQuestion == 5) {
-         if (mouseX < 170+168  && mouseX > 170 && mouseY > 430 && mouseY < 430+60) {
-                select = 100;
+      }
+      if (seasonQuestion == 5) {
+        if (mouseX < 170 + 168 && mouseX > 170 && mouseY > 430 && mouseY < 430 + 60) {
+          select = 100;
           answer5.push(select);
-          } else if (mouseX < 548+170 && mouseX >548  && mouseY > 430 && mouseY <430+60 ) {
-               select = 50;
+        } else if (mouseX < 548 + 170 && mouseX > 548 && mouseY > 430 && mouseY < 430 + 60) {
+          select = 50;
           answer5.push(select);
-          } else if (mouseX < 976+202 && mouseX >976  && mouseY >430  && mouseY <430+60 ) {
-                select = 0;
+        } else if (mouseX < 976 + 202 && mouseX > 976 && mouseY > 430 && mouseY < 430 + 60) {
+          select = 0;
           answer5.push(select);
-          }
+        }
       }
 
       if (select !== null) {
@@ -1060,13 +1076,13 @@ function question2() {
         rect(x, y, 20);
       }
 
-      if(currentRect>=10){
-        if(!showFinal){
-          showFinal=true;
-          finalTimer=frameCount;
+      if (currentRect >= 10) {
+        if (!showFinal) {
+          showFinal = true;
+          finalTimer = frameCount;
         }
-        if(frameCount-finalTimer>120){
-          state='ticket';
+        if (frameCount - finalTimer > 120) {
+          state = 'ticket';
         }
       }
 
@@ -1129,7 +1145,7 @@ function ticket() {
   } else if (countA_4 == countB_4) {
     waveSpeed = 0.04
     userChoices[4] = 'm'
-    if (randomDice == 0) { ear = '숲속의 고요' } else if (randomDice==1) { ear = '신호의 파동' }
+    if (randomDice == 0) { ear = '숲속의 고요' } else if (randomDice == 1) { ear = '신호의 파동' }
   } else if (countA_4 < countB_4) {
     waveSpeed = 0.07
     ear = '신호의 파동';
@@ -1150,20 +1166,20 @@ function ticket() {
   }
   if (answer6 == "spring") {
     fill(255, 188, 84, t);
-    if (t = 100) { emotions = "은은한 봄바람"; userChoices[5]='sl' } else { emotions = '봄날의 햇살';userChoices[5]='sh' }
-    
+    if (t = 100) { emotions = "은은한 봄바람"; userChoices[5] = 'sl' } else { emotions = '봄날의 햇살'; userChoices[5] = 'sh' }
+
   } else if (answer6 == "summer") {
     fill(48, 252, 255, t);
-    userChoices[5] = 48,252,255,t;
-    if (t = 100) { emotions = "고요한 밤바다" ;userChoices[5]='ul'} else { emotions = '푸르른 파도' ; userChoices[5]='uh'}
+    userChoices[5] = 48, 252, 255, t;
+    if (t = 100) { emotions = "고요한 밤바다"; userChoices[5] = 'ul' } else { emotions = '푸르른 파도'; userChoices[5] = 'uh' }
   } else if (answer6 == "autumn") {
     fill(253, 35, 1, t);
-    userChoices[5] = 253,35,1,t;
-    if (t = 100) { emotions = "잔잔한 가을바람" ;userChoices[5]='al'} else { emotions = '붉은 노을빛' ;userChoices[5]='ah'}
+    userChoices[5] = 253, 35, 1, t;
+    if (t = 100) { emotions = "잔잔한 가을바람"; userChoices[5] = 'al' } else { emotions = '붉은 노을빛'; userChoices[5] = 'ah' }
   } else if (answer6 == "winter") {
     fill(238, 246, 255, t);
-    userChoices[5] = 238,246,255,t;
-    if (t = 100) { emotions = "깊은 겨울 밤결";userChoices[5]='wl' } else { emotions = '눈부신 서리';userChoices[5]='wh' }
+    userChoices[5] = 238, 246, 255, t;
+    if (t = 100) { emotions = "깊은 겨울 밤결"; userChoices[5] = 'wl' } else { emotions = '눈부신 서리'; userChoices[5] = 'wh' }
   }
 
 
@@ -1269,7 +1285,7 @@ function ticket() {
     if (randomDice == 0) {
       image(dice[5], width / 2, height / 2);
       userChoices[2] = 5
-    } else if (randomDice==1){ image(dice[6], width / 2, height / 2); }
+    } else if (randomDice == 1) { image(dice[6], width / 2, height / 2); }
     taste = '그것을 기꺼이 끌어안는 품';
     userChoices[2] = 6
   }
@@ -1278,7 +1294,7 @@ function ticket() {
     if (randomDice == 0) {
       image(dice[1], width / 2, height / 2);
       userChoices[2] = 1
-    } else if (randomDice==1){ image(dice[2], width / 2, height / 2); }
+    } else if (randomDice == 1) { image(dice[2], width / 2, height / 2); }
     taste = '그로부터 담담하게 자리잡은 돌벽';
     userChoices[2] = 2
   }
@@ -1288,7 +1304,7 @@ function ticket() {
       image(dice[3], width / 2, height / 2);
       taste = '그것을 기까이 끌어안는 품';
       userChoices[2] = 3
-    } else if (randomDice==1){
+    } else if (randomDice == 1) {
       image(dice[4], width / 2, height / 2);
       taste = '그로부터 담담하게 자리잡은 돌벽';
       userChoices[2] = 4
@@ -1321,20 +1337,20 @@ function ticket() {
   textAlign(LEFT)
   fill(0);
   text(geminiOutput, 272, 432 - 35);
-  userChoices[3] = geminiOutput.replaceAll("\n","");
-
-  
+  userChoices[3] = geminiOutput.replaceAll("\n", "");
 
 
-  if(geminiOutput!="") {
 
-  if(save==false){
-  
-    storeResponseInSupabase(userSeed, userChoices)
-    print(userChoices);
-    save = true
+
+  if (geminiOutput != "") {
+
+    if (save == false) {
+
+      storeResponseInSupabase(userSeed, userChoices)
+      print(userChoices);
+      save = true
+    }
   }
-}
 
 
   //마지막에 티켓 고정이미지, qr 안내
@@ -1414,7 +1430,7 @@ function ticket() {
     } else if (countE_2 >= maxQ2) {
       text("당신이 세상에서 비롯되는 갖가지 향기를 어떻게 인지하는가에 따라\n티켓의 질감이 표현될 것입니다.\n당신은 제각기 반짝이는 별들처럼,\n개성넘치고 톡톡 튀는 방식으로\n외부의 향기를 받아들이는 것 같습니다.", 860, 515);
     }
- } else if (mouseX >= 0 && mouseX <= width && mouseY >= 180 && mouseY <= 530) {
+  } else if (mouseX >= 0 && mouseX <= width && mouseY >= 180 && mouseY <= 530) {
     fill(255, 70);
     stroke(255);
     strokeWeight(1);
@@ -1431,7 +1447,7 @@ function ticket() {
     fill(255);
     stroke(255);
     text("티켓 뒤로 당신의 파동이 흐르고 있네요.\n그것의 진폭과 움직이는 속도는 당신의 것과 닮아 있을 것입니다.\n당신이 디지털 세상의 신속함에 발맞춰 함께 빨라졌는지,\n아니면 아직은 자연의 느릿함을 그리워하고 있는지,\n그에 따라 파동은 재빠르게 일렁이거나,\n혹은 잔잔히 퍼져나갈 것입니다.", 385, 100);
-  } 
+  }
 }
 
 function gemini() {
@@ -1457,8 +1473,8 @@ function gemini() {
 function generateQR() {
 
   let baseURL = "hourofhowl.github.io/iptk/#/";
-  let fullURL = baseURL+userSeed;
- 
+  let fullURL = baseURL + userSeed;
+
   qrDiv.show();
   qrDiv.html("");
 
@@ -1472,7 +1488,7 @@ function generateQR() {
 }
 
 function generateSeed() {
-  return Math.random().toString(36).substring(2, 10); 
+  return Math.random().toString(36).substring(2, 10);
 }
 
 async function storeResponseInSupabase(seed, responseText) {
