@@ -1129,7 +1129,7 @@ function ticket() {
   } else if (countA_4 == countB_4) {
     waveSpeed = 0.04
     userChoices[4] = 'm'
-    if (randomDice == 0) { ear = '숲속의 고요' } else { ear = '신호의 파동' }
+    if (randomDice == 0) { ear = '숲속의 고요' } else if (randomDice==1) { ear = '신호의 파동' }
   } else if (countA_4 < countB_4) {
     waveSpeed = 0.07
     ear = '신호의 파동';
@@ -1269,7 +1269,7 @@ function ticket() {
     if (randomDice == 0) {
       image(dice[5], width / 2, height / 2);
       userChoices[2] = 5
-    } else { image(dice[6], width / 2, height / 2); }
+    } else if (randomDice==1){ image(dice[6], width / 2, height / 2); }
     taste = '그것을 기꺼이 끌어안는 품';
     userChoices[2] = 6
   }
@@ -1278,7 +1278,7 @@ function ticket() {
     if (randomDice == 0) {
       image(dice[1], width / 2, height / 2);
       userChoices[2] = 1
-    } else { image(dice[2], width / 2, height / 2); }
+    } else if (randomDice==1){ image(dice[2], width / 2, height / 2); }
     taste = '그로부터 담담하게 자리잡은 돌벽';
     userChoices[2] = 2
   }
@@ -1288,7 +1288,7 @@ function ticket() {
       image(dice[3], width / 2, height / 2);
       taste = '그것을 기까이 끌어안는 품';
       userChoices[2] = 3
-    } else {
+    } else if (randomDice==1){
       image(dice[4], width / 2, height / 2);
       taste = '그로부터 담담하게 자리잡은 돌벽';
       userChoices[2] = 4
