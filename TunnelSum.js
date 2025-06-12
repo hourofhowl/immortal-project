@@ -124,7 +124,7 @@ class TunnelSum {
       text("햇빛은 더 강해지고, 공기는 눅눅하게 몸을 감싸옵니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 9000 && millis() - this.runTime < 14000) {
       text("거울 앞에 선 당신, 또렷한 그림자 속에서 가장 선명한 '나'를 마주하게 됩니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 14000 && millis() - this.runTime < 19000) {
+    } else if (millis() - this.runTime > 14000 && millis() - this.runTime < 18500) {
       text("당신의 가장 뜨겁고 진한 감각이 몰아치는 여름 속으로, 지금 들어갑니다.", width / 2, height - 150)
     }
 
