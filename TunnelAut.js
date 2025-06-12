@@ -30,12 +30,12 @@ class TunnelAut {
   update() {
     if (this.runTime===null) this.runTime = millis();
     for (let ring of this.rings) {
-      let dz = (this.depth + 50 - ring.z) * 0.002;
+      let dz = (this.depth + 50 - ring.z) * 0.0019;
       ring.z -= dz;
 
     }
 
-    let dz = (this.depth + 50 - this.door.z) * 0.002;
+    let dz = (this.depth + 50 - this.door.z) * 0.0019;
     this.door.z -= dz;
 
 
@@ -118,15 +118,15 @@ class TunnelAut {
     textFont(font2);
     
 
-    if (millis() - this.runTime > 0 && millis() - this.runTime < 4000) {
+    if (millis() - this.runTime > 0 && millis() - this.runTime < 5000) {
       text("한껏 달아올랐던 감정은 서서히 가라앉고, 바람은 조금씩 선선해집니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 4000 && millis() - this.runTime < 8000) {
+    } else if (millis() - this.runTime > 5000 && millis() - this.runTime < 10000) {
       text("떨어지는 낙엽처럼, 마음속 어딘가에 쌓여 있던 기억들이 하나둘 떠오릅니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 8000 && millis() - this.runTime < 12000) {
+    } else if (millis() - this.runTime > 10000 && millis() - this.runTime < 15000) {
       text("오랜 시간 곁을 지켜온 존재들이, 그 기억 속에서 조용히 고개를 듭니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 12000 && millis() - this.runTime < 16000) {
+    } else if (millis() - this.runTime > 15000 && millis() - this.runTime < 20000) {
       text("이번 터널은, 지나온 시간들을 되짚으며 내면 깊숙한 곳을 들여다보는 길입니다.", width / 2, height - 150)
-    } else if (millis() - this.runTime > 16000 && millis() - this.runTime < 20000) {
+    } else if (millis() - this.runTime > 20000 && millis() - this.runTime < 24000) {
       text("당신의 가을은 어떤 색이었나요?", width / 2, height - 150)
     }
 
