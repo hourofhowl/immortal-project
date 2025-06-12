@@ -30,12 +30,12 @@ class TunnelSpr {
   update() {
     if (this.runTime===null) this.runTime = millis();
     for (let ring of this.rings) {
-      let dz = (this.depth + 50 - ring.z) * 0.002;
+      let dz = (this.depth + 50 - ring.z) * 0.0017;
       ring.z -= dz;
 
     }
 
-    let dz = (this.depth + 50 - this.door.z) * 0.002;
+    let dz = (this.depth + 50 - this.door.z) * 0.0017;
     this.door.z -= dz;
 
 
@@ -118,15 +118,15 @@ class TunnelSpr {
     textFont(font2);
     
 
-    if (millis() - this.runTime > 0 && millis() - this.runTime < 3000) {
+    if (millis() - this.runTime > 0 && millis() - this.runTime < 3500) {
       text("겨울이 지나고, 다시 바람이 부드러워졌습니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 3000 && millis() - this.runTime < 8000) {
+    } else if (millis() - this.runTime > 3500 && millis() - this.runTime < 9000) {
       text("아직은 차가운 공기 속에서도, 작은 새싹이 고개를 들고, 어느새 꽃잎이 흩날리기 시작합니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 8000 && millis() - this.runTime < 12000) {
+    } else if (millis() - this.runTime > 9000 && millis() - this.runTime < 14000) {
       text("누군가의 손이 스치듯, 설레는 온기가 당신 곁에 머무릅니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 12000 && millis() - this.runTime < 16000) {
+    } else if (millis() - this.runTime > 14000 && millis() - this.runTime < 19000) {
       text("이제 우리는, 당신 안으로 천천히 들어가 보려 합니다.", width / 2, height - 150)
-    } else if(millis() - this.runTime > 16000 && millis() - this. runTime < 20000) {
+    } else if(millis() - this.runTime > 19000 && millis() - this. runTime < 24000) {
       text("봄이라는 터널의 입구에서, 당신의 감각을 하나씩 열어볼까요?", width/2, height -150)}
 
     let alpha = 0;
