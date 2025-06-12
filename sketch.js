@@ -26,7 +26,7 @@ let tunnelWin;
 
 let endTime = null;
 let current = 0;
-let state = 'start';
+let state = 'black';
 let spring = [], summer = [], autumn = [], winter = [];
 let springText = [], summerText = [], autumnText = [], winterText = [];
 let stage = 0;
@@ -83,6 +83,8 @@ let userChoices = ['main', 'texture', 'dice', 'subtitle', 'wavespeed', 'color', 
 let qrDiv;
 let qrCanvas;
 
+let mainTheme, sprTheme, sumTheme, autTheme, winTheme;
+let soundfade = false;
 
 function preload() {
   title = loadImage("title/Intro_Title.png");
@@ -139,6 +141,13 @@ function preload() {
   qrguide = loadImage("ticket/tk_qrguide.png");
   font3 = loadFont("ticket/name_Pretendard-Medium.otf");
   font4 = loadFont("ticket/date_SometypeMono-Medium.ttf")
+  
+  mainTheme = loadSound('sound/maintheme.mp3');
+  sprTheme = loadSound('sound/springtheme.mp3');
+  sumTheme = loadSound('sound/summertheme.mp3');
+  autTheme = loadSound('sound/autumntheme.mp3');
+  winTheme = loadSound('sound/wintertheme.mp3');
+  
 }
 
 function setup() {
@@ -231,20 +240,39 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(0);
+  textSize(20);
+  fill(255);
+  textAlign(CENTER);
+  text("Press Any Key",width/2, height/2);
+  noStroke()
+
   if (state == 'start') {
     start();
+     if(!mainTheme.isPlaying()){mainTheme.loop()}
+
   } else if (state == 'anim') {
     tunnel.update(); // 이동 속도
     tunnel.display();
+   
   } else if (state == 'notice') {
     notice();
     if (noticeTime !== null && millis() - noticeTime > 8000) {
       state = 'question';
     }
   } else if (state == 'question') {
+    mainTheme.pause();
     question();
   } else if (state == 'question2') {
+    if(!soundfade){
+      winTheme.setVolume(0,1.0);
+      mainTheme.jump(0);
+      mainTheme.setVolume(0);
+      mainTheme.loop();
+      mainTheme.setVolume(1.0,1.0);
+
+      soundfade = true;
+    }
     question2();
   } else if (state == 'ticket') {
     ticket();
@@ -269,7 +297,9 @@ function start() {
 // 스테이지 전환
 
 function keyPressed() {
-  if (state == 'start') {
+  if(state == 'black'){
+    state = 'start'
+  } else if (state == 'start') {
     state = 'anim';
   } else if (state == 'anim') {
     state = 'notice';
@@ -322,6 +352,7 @@ function question() {
 
 
     case 0: {
+      if(!sprTheme.isPlaying()) {sprTheme.loop();}
 
       if (stageScene == 'tunnel') {
         tunnelSpr.update();
@@ -394,6 +425,8 @@ function question() {
       break;
 
     case 1:
+      sprTheme.pause()
+      if(!sumTheme.isPlaying()) {sumTheme.loop();}
       if (!enterSummer) {
         //  illu=true;
         show = null;
@@ -478,6 +511,8 @@ function question() {
       break;
 
     case 2:
+      sumTheme.pause()
+      if(!autTheme.isPlaying()) {autTheme.loop();}
       if (!enterAutumn) {
         show = null;
         enterAutumn = true;
@@ -569,6 +604,8 @@ function question() {
       break;
 
     case 3:
+      autTheme.pause()
+      if(!winTheme.isPlaying()) {winTheme.loop();}
       if (!enterWinter) {
         show = null;
         enterWinter = true;
