@@ -118,13 +118,13 @@ class TunnelSum {
     textFont(font2);
     
 
-    if (millis() - this.runTime > 0 && millis() - this.runTime < 4000) {
+    if (millis() - this.runTime > 0 && millis() - this.runTime < 4500) {
       text("따뜻했던 봄의 잔상이 가시기도 전에, 계절은 빠르게 짙어집니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 4000 && millis() - this.runTime < 8500) {
+    } else if (millis() - this.runTime > 4500 && millis() - this.runTime < 9000) {
       text("햇빛은 더 강해지고, 공기는 눅눅하게 몸을 감싸옵니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 8500 && millis() - this.runTime < 13500) {
+    } else if (millis() - this.runTime > 9000 && millis() - this.runTime < 14000) {
       text("거울 앞에 선 당신, 또렷한 그림자 속에서 가장 선명한 '나'를 마주하게 됩니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 13500 && millis() - this.runTime < 18000) {
+    } else if (millis() - this.runTime > 14000 && millis() - this.runTime < 19000) {
       text("당신의 가장 뜨겁고 진한 감각이 몰아치는 여름 속으로, 지금 들어갑니다.", width / 2, height - 150)
     }
 
