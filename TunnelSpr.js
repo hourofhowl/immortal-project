@@ -30,12 +30,12 @@ class TunnelSpr {
   update() {
     if (this.runTime===null) this.runTime = millis();
     for (let ring of this.rings) {
-      let dz = (this.depth + 50 - ring.z) * 0.0017;
+      let dz = (this.depth + 50 - ring.z) * 0.0018;
       ring.z -= dz;
 
     }
 
-    let dz = (this.depth + 50 - this.door.z) * 0.0017;
+    let dz = (this.depth + 50 - this.door.z) * 0.0018;
     this.door.z -= dz;
 
 
