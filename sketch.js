@@ -1352,8 +1352,6 @@ function ticket() {
 
   //주관식 답변 결과
   textAlign(CENTER);
-  stroke(0);
-  strokeWeight(0);
   fill(0);
   textSize(18);
   textFont(font3);
@@ -1363,13 +1361,15 @@ function ticket() {
   text(date, 556, 468 - 35);
   textAlign(CENTER);
   textFont(font2);
+  stroke(255);
+  strokeWeight(2);
   fill(255);
   text(geminiInput, width / 2, 600);
 
   userChoices[6] = name
   userChoices[7] = date
 
-
+  noStroke();
   textFont(font3);
   textAlign(LEFT)
   fill(0);
@@ -1491,7 +1491,7 @@ function gemini() {
 
   //gemini
 
-  geminiInput = "당신의 세계에선 " + emotions + " 속 " + touch + " " + smell + " 이/가 느껴져요. \n또한, " + ear + ", " + taste + "을/를 가졌군요. "
+  geminiInput = "당신의 세계에선 " + emotions + " 속 " + touch + " " + smell + " 이/가 느껴져요. \n또한, " + ear + ", " + taste + "을 가졌군요. "
   userChoices[8] = geminiInput
   generateContent(geminiInput, function (responseText) {
 
