@@ -121,7 +121,7 @@ class TunnelSpr {
     if (millis() - this.runTime > 0 && millis() - this.runTime < 3500) {
       text("겨울이 지나고, 다시 바람이 부드러워졌습니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 3500 && millis() - this.runTime < 9000) {
-      text("아직은 차가운 공기 속에서도, 작은 새싹이 고개를 들고, 어느새 꽃잎이 흩날리기 시작합니다.", width / 2, height - 150);
+      text("아직은 차가운 공기 속에서도, 작은 새싹이 고개를 들고, 어느새 개나리가 자라나기 시작합니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 9000 && millis() - this.runTime < 14000) {
       text("누군가의 손이 스치듯, 설레는 온기가 당신 곁에 머무릅니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 14000 && millis() - this.runTime < 19000) {
