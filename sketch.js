@@ -1403,7 +1403,7 @@ function ticket() {
     strokeWeight(1);
     ellipse(285, 420, 10);
     line(280, 420, 230, 420);
-    fill(255, 70);
+    fill(0, 70);
     stroke(0);
     rectMode(CENTER);
     rect(120, 420, 220, 240);
@@ -1419,7 +1419,7 @@ function ticket() {
     strokeWeight(1);
     ellipse(800, 320, 50);
     line(825, 320, 1045, 320);
-    fill(255, 70);
+    fill(0, 70);
     stroke(0);
     rectMode(CENTER);
     rect(1155, 320, 220, 180);
@@ -1445,7 +1445,7 @@ function ticket() {
     strokeWeight(1);
     ellipse(480, 400, 50);
     line(480, 425, 480, 465);
-    fill(255, 70);
+    fill(0, 70);
     stroke(0);
     rectMode(CENTER);
     rect(480, 515, 340, 100);
@@ -1474,7 +1474,7 @@ function ticket() {
     ellipse(185, 320, 50);
     line(185, 295, 185, 120);
     line(185, 120, 210, 120);
-    fill(255, 70);
+    fill(0, 70);
     stroke(0);
     rectMode(CENTER);
     rect(385, 100, 350, 140);
