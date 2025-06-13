@@ -1249,21 +1249,21 @@ function ticket() {
 
   } else if (countB_2 >= maxQ2) {
     image(texture[2], width / 2, height / 2 - 35);
-    smell = '모래';
+    smell = '모래들';
     userChoices[1] = 2
   } else if (countC_2 >= maxQ2) {
     image(texture[3], width / 2, height / 2 - 35);
-    smell = '나무';
+    smell = '나무들';
     userChoices[1] = 3
 
   } else if (countD_2 >= maxQ2) {
     image(texture[4], width / 2, height / 2 - 35);
-    smell = '물결';
+    smell = '물결들';
     userChoices[1] = 4
 
   } else if (countE_2 >= maxQ2) {
     image(texture[5], width / 2, height / 2 - 35);
-    smell = '별';
+    smell = '별들';
     userChoices[1] = 5
 
   }
