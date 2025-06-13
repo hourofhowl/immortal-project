@@ -1492,7 +1492,7 @@ function gemini() {
 
   //gemini
 
-  geminiInput = "당신의 세계에선 " + emotions + " 속 " + touch + " " + smell + " 이/가 느껴져요. \n또한, " + ear + ", " + taste + "을 가졌군요. "
+  geminiInput = "당신의 세계에선 " + emotions + " 속 " + touch + " " + smell + " 이 느껴져요. \n또한, " + ear + ", " + taste + "을 가졌군요. "
   userChoices[8] = geminiInput
   generateContent(geminiInput, function (responseText) {
 
