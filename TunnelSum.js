@@ -46,7 +46,7 @@ class TunnelSum {
   display() {
     // 화면 초기화
     noStroke();
-    fill(91,221,219); // 터널 배경색
+    fill(99,215,214); // 터널 배경색
     rect(width/2, height/2, 1280, 720);
     noFill();
     strokeWeight(3);
