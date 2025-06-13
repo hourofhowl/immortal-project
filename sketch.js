@@ -1168,7 +1168,7 @@ function ticket() {
   fill(255);
   textAlign(CENTER);
   textFont(font2);
-  text("티켓의 요소 위에 마우스를 올려 해설을 확인하세요", 1000, 160);
+  text("티켓의 요소 위에 마우스를 올려 해설을 확인하세요", 1020, 160);
 
   //1. 배경 모션(청각_answer4)
   for (let i = 0; i < answer4.length; i++) {
@@ -1429,7 +1429,7 @@ function ticket() {
     rectMode(CENTER);
     rect(1155, 320, 220, 180);
     textAlign(CENTER);
-    textSize(14);
+    textSize(13.5);
     textFont(font2);
     fill(255);
     stroke(255);
