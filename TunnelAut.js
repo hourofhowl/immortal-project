@@ -46,7 +46,15 @@ class TunnelAut {
   display() {
     // 화면 초기화
     noStroke();
-    fill(255,77,39); // 터널 배경색
+    //fill(255,77,39); // 터널 배경색
+    // 수직 그라데이션 배경
+for (let y = 0; y < height; y++) {
+  let inter = map(y, 0, height, 0, 1);
+  let c = lerpColor(color(255, 120, 50), color(100, 30, 20), inter); // 주황 → 어두운 갈색
+  stroke(c);
+  line(0, y, width, y);
+}
+
     rect(width/2, height/2, 1280, 720);
     noFill();
     strokeWeight(3);
