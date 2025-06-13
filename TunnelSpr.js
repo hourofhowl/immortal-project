@@ -121,7 +121,7 @@ class TunnelSpr {
     if (millis() - this.runTime > 0 && millis() - this.runTime < 3500) {
       rectMode(CENTER);
       noStroke();
-      fill(0, 150);
+      fill(0, 70);
       rect(width/2, height-150, 500, 50);
       stroke(255);
       strokeWeight(2);
@@ -130,7 +130,7 @@ class TunnelSpr {
     } else if (millis() - this.runTime > 3500 && millis() - this.runTime < 9000) {
       rectMode(CENTER);
       noStroke();
-      fill(0, 150);
+      fill(0, 70);
       rect(width/2, height-150, 750, 50);
       stroke(255);
       strokeWeight(2);
@@ -139,7 +139,7 @@ class TunnelSpr {
     } else if (millis() - this.runTime > 9000 && millis() - this.runTime < 14000) {
       rectMode(CENTER);
       noStroke();
-      fill(0, 150);
+      fill(0, 70);
       rect(width/2, height-150, 750, 50);
       stroke(255);
       strokeWeight(2);
@@ -148,7 +148,7 @@ class TunnelSpr {
     } else if (millis() - this.runTime > 14000 && millis() - this.runTime < 19000) {
       rectMode(CENTER);
       noStroke();
-      fill(0, 150);
+      fill(0, 70);
       rect(width/2, height-150, 650, 50);
       stroke(255);
       strokeWeight(2);
@@ -157,7 +157,7 @@ class TunnelSpr {
     } else if(millis() - this.runTime > 19000 && millis() - this. runTime < 24000) {
       rectMode(CENTER);
       noStroke();
-      fill(0, 150);
+      fill(0, 70);
       rect(width/2, height-150, 650, 50);
       stroke(255);
       strokeWeight(2);
