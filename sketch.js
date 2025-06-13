@@ -1363,7 +1363,7 @@ function ticket() {
   text(name, 404, 387 - 35);
   textFont(font4);
   textSize(20);
-  text(date, 556, 468 - 35);
+  text(date, 556, 468 - 34);
   textAlign(CENTER);
   textFont(font2);
   stroke(255);
