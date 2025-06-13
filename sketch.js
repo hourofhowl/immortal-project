@@ -1164,7 +1164,11 @@ class showBlob {
 
 function ticket() {
   background(30);
-
+  textSize(20);
+  fill(255);
+  textAlign(CENTER);
+  textFont(font2);
+  text("티켓의 요소 위에 마우스를 올려 해설을 확인하세요", 975, 160);
 
   //1. 배경 모션(청각_answer4)
   for (let i = 0; i < answer4.length; i++) {
