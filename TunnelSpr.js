@@ -120,14 +120,35 @@ class TunnelSpr {
 
     if (millis() - this.runTime > 0 && millis() - this.runTime < 3500) {
       text("겨울이 지나고, 다시 바람이 부드러워졌습니다.", width / 2, height - 150);
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 150);
+      rect(width/2, height-150, 250, 50);
     } else if (millis() - this.runTime > 3500 && millis() - this.runTime < 9000) {
       text("아직은 차가운 공기 속에서도, 작은 새싹이 고개를 들고, 어느새 개나리가 자라나기 시작합니다.", width / 2, height - 150);
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 150);
+      rect(width/2, height-150, 600, 50);
     } else if (millis() - this.runTime > 9000 && millis() - this.runTime < 14000) {
       text("누군가의 손이 스치듯, 설레는 온기가 당신 곁에 머무릅니다.", width / 2, height - 150);
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 150);
+      rect(width/2, height-150, 400, 50);
     } else if (millis() - this.runTime > 14000 && millis() - this.runTime < 19000) {
-      text("이제 우리는, 당신 안으로 천천히 들어가 보려 합니다.", width / 2, height - 150)
+      text("이제 우리는, 당신 안으로 천천히 들어가 보려 합니다.", width / 2, height - 150);
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 150);
+      rect(width/2, height-150, 350, 50);
     } else if(millis() - this.runTime > 19000 && millis() - this. runTime < 24000) {
-      text("봄이라는 터널의 입구에서, 당신의 감각을 하나씩 열어볼까요?", width/2, height -150)}
+      text("봄이라는 터널의 입구에서, 당신의 감각을 하나씩 열어볼까요?", width/2, height -150);
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 150);
+      rect(width/2, height-150, 450, 50);
+    }
 
     let alpha = 0;
     if (doorScale >= 1.0) {
