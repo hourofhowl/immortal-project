@@ -1365,7 +1365,7 @@ function ticket() {
   stroke(255);
   strokeWeight(2);
   fill(255);
-  text(geminiInput, width / 2, 600);
+  text(geminiInput, width / 2, 680);
 
   userChoices[6] = name
   userChoices[7] = date
