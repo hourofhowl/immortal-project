@@ -42,12 +42,20 @@ class TunnelWin {
 
 
   }
-
+  drawGradientBackground() {
+  let c1 = color(218, 231, 242);
+  let c2 = color(174, 197, 218);
+  for (let y = 0; y <= height; y++) {
+    let inter = map(y, 0, height, 0, 1);
+    let c = lerpColor(c1, c2, inter);
+    stroke(c);
+    line(0, y, width, y);
+  }
+}
   display() {
+    this.drawGradientBackground();
     // 화면 초기화
     noStroke();
-    fill(174, 197, 218); // 터널 배경색
-    rect(width/2, height/2, 1280, 720);
     noFill();
     strokeWeight(3);
 
