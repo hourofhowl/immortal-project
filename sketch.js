@@ -1157,7 +1157,7 @@ function ticket() {
   background(30);
   textSize(20);
   fill(255);
-  stroke(200);
+  stroke(255);
   strokeWeight(2);
   textAlign(CENTER);
   textFont(font2);
