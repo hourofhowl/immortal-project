@@ -43,7 +43,7 @@ class TunnelWin {
 
   }
   drawGradientBackground() {
-  let c1 = color(218, 231, 242);
+  let c1 = color(223, 228, 232);
   let c2 = color(174, 197, 218);
   for (let y = 0; y <= height; y++) {
     let inter = map(y, 0, height, 0, 1);
