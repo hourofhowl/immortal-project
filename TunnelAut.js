@@ -44,7 +44,7 @@ class TunnelAut {
   }
 drawGradientBackground() {
   let c1 = color(255, 120, 50);
-  let c2 = color(163, 74, 33);
+  let c2 = color(135, 54, 16);
   for (let y = 0; y <= height; y++) {
     let inter = map(y, 0, height, 0, 1);
     let c = lerpColor(c1, c2, inter);
