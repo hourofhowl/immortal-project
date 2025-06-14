@@ -130,7 +130,7 @@ for (let y = 0; y < height; y++) {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 700, 50);
+      rect(width/2, height-160, 730, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
@@ -139,7 +139,7 @@ for (let y = 0; y < height; y++) {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 750, 50);
+      rect(width/2, height-160, 780, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
@@ -148,7 +148,7 @@ for (let y = 0; y < height; y++) {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 700, 50);
+      rect(width/2, height-160, 730, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
@@ -157,7 +157,7 @@ for (let y = 0; y < height; y++) {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 770, 50);
+      rect(width/2, height-160, 800, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
@@ -166,7 +166,7 @@ for (let y = 0; y < height; y++) {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 450, 50);
+      rect(width/2, height-160, 420, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
