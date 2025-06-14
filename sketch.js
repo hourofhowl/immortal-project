@@ -165,7 +165,7 @@ function setup() {
   userSeed = generateSeed();
   qrDiv = createDiv('');
   qrDiv.id('qrcode');
-  qrDiv.position(1159, 68);
+  qrDiv.position(1170, 68);
   qrDiv.hide();
 
 
@@ -249,9 +249,10 @@ function draw() {
 
   if (state == 'start') {
     start();
-     if(!mainTheme.isPlaying()){mainTheme.loop()}
+     // if(!mainTheme.isPlaying()){mainTheme.loop()}
 
   } else if (state == 'anim') {
+    if(!mainTheme.isPlaying()){mainTheme.loop()}
     tunnel.update(); // 이동 속도
     tunnel.display();
    
