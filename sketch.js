@@ -1161,7 +1161,7 @@ function ticket() {
   strokeWeight(1);
   textAlign(CENTER);
   textFont(font2);
-  text("티켓의 요소들에 마우스 커서를 올려보세요", 990, 160);
+  text("티켓의 요소들에 마우스 커서를 올려보세요", 980, 160);
 
   //1. 배경 모션(청각_answer4)
   for (let i = 0; i < answer4.length; i++) {
