@@ -131,7 +131,7 @@ class TunnelSpr {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 950, 50);
+      rect(width/2, height-160, 980, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
@@ -140,7 +140,7 @@ class TunnelSpr {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 700, 50);
+      rect(width/2, height-160, 680, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
@@ -149,7 +149,7 @@ class TunnelSpr {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 600, 50);
+      rect(width/2, height-160, 580, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
