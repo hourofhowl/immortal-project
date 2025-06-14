@@ -127,14 +127,49 @@ for (let y = 0; y < height; y++) {
     
 
     if (millis() - this.runTime > 0 && millis() - this.runTime < 5000) {
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 70);
+      rect(width/2, height-160, 650, 50);
+      stroke(255);
+      strokeWeight(2);
+      fill(255);
       text("한껏 달아올랐던 감정은 서서히 가라앉고, 바람은 조금씩 선선해집니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 5000 && millis() - this.runTime < 10000) {
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 70);
+      rect(width/2, height-160, 650, 50);
+      stroke(255);
+      strokeWeight(2);
+      fill(255);
       text("떨어지는 낙엽처럼, 마음속 어딘가에 쌓여 있던 기억들이 하나둘 떠오릅니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 10000 && millis() - this.runTime < 15000) {
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 70);
+      rect(width/2, height-160, 650, 50);
+      stroke(255);
+      strokeWeight(2);
+      fill(255);
       text("오랜 시간 곁을 지켜온 존재들이, 그 기억 속에서 조용히 고개를 듭니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 15000 && millis() - this.runTime < 20000) {
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 70);
+      rect(width/2, height-160, 700, 50);
+      stroke(255);
+      strokeWeight(2);
+      fill(255);
       text("이번 터널은, 지나온 시간들을 되짚으며 내면 깊숙한 곳을 들여다보는 길입니다.", width / 2, height - 150)
     } else if (millis() - this.runTime > 20000 && millis() - this.runTime < 24000) {
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 70);
+      rect(width/2, height-160, 500, 50);
+      stroke(255);
+      strokeWeight(2);
+      fill(255);
       text("당신의 가을은 어떤 색이었나요?", width / 2, height - 150)
     }
 
