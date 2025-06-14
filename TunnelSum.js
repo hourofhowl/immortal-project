@@ -42,12 +42,20 @@ class TunnelSum {
 
 
   }
-
+  drawGradientBackground() {
+  let c1 = color(168, 240, 239);
+  let c2 = color(99,215,214);
+  for (let y = 0; y <= height; y++) {
+    let inter = map(y, 0, height, 0, 1);
+    let c = lerpColor(c1, c2, inter);
+    stroke(c);
+    line(0, y, width, y);
+  }
+}
   display() {
+    this.drawGradientBackground();
     // 화면 초기화
     noStroke();
-    fill(99,215,214); // 터널 배경색
-    rect(width/2, height/2, 1280, 720);
     noFill();
     strokeWeight(3);
 
