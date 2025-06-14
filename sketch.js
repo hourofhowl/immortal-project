@@ -26,7 +26,7 @@ let tunnelWin;
 
 let endTime = null;
 let current = 0;
-let state = 'black';
+let state = 'start';
 let spring = [], summer = [], autumn = [], winter = [];
 let springText = [], summerText = [], autumnText = [], winterText = [];
 let stage = 0;
@@ -240,17 +240,9 @@ function setup() {
 }
 
 function draw() {
-  background(0);
-  textSize(20);
-  fill(255);
-  textAlign(CENTER);
-  text("Press Any Key",width/2, height/2);
-  noStroke()
 
   if (state == 'start') {
     start();
-     // if(!mainTheme.isPlaying()){mainTheme.loop()}
-
   } else if (state == 'anim') {
     if(!mainTheme.isPlaying()){mainTheme.loop()}
     tunnel.update(); // 이동 속도
@@ -298,9 +290,7 @@ function start() {
 // 스테이지 전환
 
 function keyPressed() {
-  if(state == 'black'){
-    state = 'start'
-  } else if (state == 'start') {
+  if (state == 'start') {
     state = 'anim';
   } else if (state == 'anim') {
     state = 'notice';
