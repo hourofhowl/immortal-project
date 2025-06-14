@@ -165,7 +165,7 @@ function setup() {
   userSeed = generateSeed();
   qrDiv = createDiv('');
   qrDiv.id('qrcode');
-  qrDiv.position(1170, 53);
+  qrDiv.position(1170, 50);
   qrDiv.hide();
 
 
@@ -292,10 +292,10 @@ function start() {
 function keyPressed() {
   if (state == 'start') {
     state = 'anim';
-  } else if (state == 'anim') {
+  } else if (state == 'anim'&&key==='g') {
     state = 'notice';
   }
-  else if (state == 'notice') {
+  else if (state == 'notice'&&key==='g') {
     state = 'question';
   } else if (state == 'question') {
     if (stageScene == 'tunnel'&& key === 'g') {
@@ -1161,7 +1161,7 @@ function ticket() {
   strokeWeight(1);
   textAlign(CENTER);
   textFont(font2);
-  text("티켓의 요소들에 마우스 커서를 올려보세요", 1020, 160);
+  text("티켓의 요소들에 마우스 커서를 올려보세요", 990, 160);
 
   //1. 배경 모션(청각_answer4)
   for (let i = 0; i < answer4.length; i++) {
