@@ -43,10 +43,22 @@ class TunnelSpr {
 
   }
 
+  drawGradientBackground() {
+    let c1 = color(255, 240, 150); // 위쪽 연노랑
+    let c2 = color(247, 176, 45);  // 아래쪽 진노랑
+    for (let i = this.y; i <= this.y + this.h; i++) {
+      let inter = map(i, this.y, this.y + this.h, 0, 1);
+      let c = lerpColor(c1, c2, inter);
+      stroke(c);
+      line(this.x, i, this.x + this.w, i);
+    }
+  }
+
   display() {
+    this.drawGradientBackground();
     // 화면 초기화
     noStroke();
-    fill(247, 176, 45); // 터널 배경색
+    // fill(247, 176, 45); // 터널 배경색
     rect(width/2, height/2, 1280, 720);
     noFill();
     strokeWeight(3);
