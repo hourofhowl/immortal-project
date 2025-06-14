@@ -1336,11 +1336,11 @@ function ticket() {
   if (countA_3 == countB_3) {
     if (randomDice == 0) {
       image(dice[3], width / 2, height / 2);
-      taste = '그것을 기까이 끌어안는 품';
+      taste = '그로부터 담담하게 자리잡은 돌벽';
       userChoices[2] = 3
     } else if (randomDice == 1) {
       image(dice[4], width / 2, height / 2);
-      taste = '그로부터 담담하게 자리잡은 돌벽';
+      taste = '그것을 기까이 끌어안는 품';
       userChoices[2] = 4
     }
   }
