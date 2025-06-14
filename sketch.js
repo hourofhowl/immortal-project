@@ -165,7 +165,7 @@ function setup() {
   userSeed = generateSeed();
   qrDiv = createDiv('');
   qrDiv.id('qrcode');
-  qrDiv.position(1170, 68);
+  qrDiv.position(1170, 78);
   qrDiv.hide();
 
 
