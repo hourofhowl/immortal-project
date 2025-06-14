@@ -43,7 +43,7 @@ class TunnelSum {
 
   }
   drawGradientBackground() {
-  let c1 = color(168, 240, 239);
+  let c1 = color(202, 235, 234);
   let c2 = color(99,215,214);
   for (let y = 0; y <= height; y++) {
     let inter = map(y, 0, height, 0, 1);
