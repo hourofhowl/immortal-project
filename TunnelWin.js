@@ -119,12 +119,40 @@ class TunnelWin {
     
 
     if (millis() - this.runTime > 0 && millis() - this.runTime < 4000) {
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 70);
+      rect(width/2, height-160, 650, 50);
+      stroke(255);
+      strokeWeight(2);
+      fill(255);
       text("모든 색이 옅어지고, 풍경은 조용히 멈춰 섭니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 4000 && millis() - this.runTime < 9000) {
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 70);
+      rect(width/2, height-160, 750, 50);
+      stroke(255);
+      strokeWeight(2);
+      fill(255);
       text("겨울은 차갑고 고요하지만, 그 안에도 미세한 움직임과 온기가 숨어 있습니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 9000 && millis() - this.runTime < 14000) {
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 70);
+      rect(width/2, height-160, 750, 50);
+      stroke(255);
+      strokeWeight(2);
+      fill(255);
       text("쌓인 눈 위에 발자국을 남기며, 언제나 곁을 지켜준 웃음소리가 들려옵니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 14000 && millis() - this.runTime < 19000) {
+      rectMode(CENTER);
+      noStroke();
+      fill(0, 70);
+      rect(width/2, height-160, 700, 50);
+      stroke(255);
+      strokeWeight(2);
+      fill(255);
       text("이번 터널에서는, 말없이 당신을 따뜻하게 했던 순간들을 떠올려봅니다.", width / 2, height - 150)
     }
 
