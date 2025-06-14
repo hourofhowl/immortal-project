@@ -165,7 +165,7 @@ function setup() {
   userSeed = generateSeed();
   qrDiv = createDiv('');
   qrDiv.id('qrcode');
-  qrDiv.position(1170, 78);
+  qrDiv.position(1170, 58);
   qrDiv.hide();
 
 
@@ -1157,6 +1157,7 @@ function ticket() {
   background(30);
   textSize(20);
   fill(255);
+  noStroke();
   textAlign(CENTER);
   textFont(font2);
   text("티켓의 요소 위에 마우스를 올려 해설을 확인하세요", 1010, 160);
@@ -1513,8 +1514,8 @@ function generateQR() {
 
   new QRCode(qrDiv.elt, {
     text: fullURL,
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
   });
 
 
