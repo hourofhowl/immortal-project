@@ -1157,7 +1157,8 @@ function ticket() {
   background(30);
   textSize(20);
   fill(255);
-  noStroke();
+  stroke(255);
+  strokeWeight(1);
   textAlign(CENTER);
   textFont(font2);
   text("티켓의 요소 위에 마우스를 올려 해설을 확인하세요", 1010, 160);
