@@ -307,7 +307,7 @@ function keyPressed() {
   else if (state == 'notice') {
     state = 'question';
   } else if (state == 'question') {
-    if (stageScene == 'tunnel') {
+    if (stageScene == 'tunnel'&& key === 'g') {
       stageScene = 'illu';
     }
   } else if (state == 'question2') {
