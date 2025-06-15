@@ -293,6 +293,9 @@ function keyPressed() {
   }
   else if(state=='notice'&&keyCode==ENTER){
     if(enterKey<4){enterKey++;}
+    else if(enterKey==4){
+      state='question'
+    }
   }
   else if (state == 'notice'&&key==='g') {
     state = 'question';
