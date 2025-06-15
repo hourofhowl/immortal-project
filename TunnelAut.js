@@ -166,7 +166,7 @@ drawGradientBackground() {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 370, 50);
+      rect(width/2, height-160, 360, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
