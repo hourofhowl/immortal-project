@@ -145,7 +145,7 @@ class TunnelSpr {
       stroke(255);
       strokeWeight(2);
       fill(255);
-      text("아직은 차가운 공기 속에서도, 작은 새싹이 고개를 들고, 어느새 개나리가 자라나기 시작합니다.", width / 2, height - 150);
+      text("아직은 차가운 공기 속에서도, 작은 새싹이 고개를 들고, 어느새 개나리가 피어나기 시작합니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 9000 && millis() - this.runTime < 14000) {
       rectMode(CENTER);
       noStroke();
