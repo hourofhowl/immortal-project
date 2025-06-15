@@ -135,16 +135,18 @@ class Tunnel {
 
     }
 
-    if (alpha > 0) {
-      background(0, alpha)
-    }
+    // if (alpha > 0) {
+    //   background(0, alpha)
+    // }
+  if (doorScale >= 1.0 && this.aniTime === null) {
+    this.aniTime = millis();
+  }
 
 
+    // if (alpha >= 255 && this.aniTime === null) {
+    //   this.aniTime = millis();
 
-    if (alpha >= 255 && this.aniTime === null) {
-      this.aniTime = millis();
-
-    }
+    // }
 
     if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
       state = "notice"
