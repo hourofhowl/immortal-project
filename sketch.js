@@ -318,7 +318,7 @@ function notice() {
   textFont(font2);
   textSize(20);
   fill(255);
-  if (floor(millis() / 500) % 2 == 0) {
+  if (floor(millis() / 700) % 2 == 0) {
     fill(255);
     text("Press the Enter key", 1100, 100);
   }
