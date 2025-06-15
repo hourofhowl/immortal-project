@@ -31,7 +31,6 @@ let spring = [], summer = [], autumn = [], winter = [];
 let springText = [], summerText = [], autumnText = [], winterText = [];
 let stage = 0;
 let answer1 = [], answer2 = [], answer3 = [], answer4 = [], answer5 = [], answer6 = [];
-let noticeTime = null;
 let seasonQuestion = 1;
 let personal = [];
 let load = [];
@@ -59,6 +58,7 @@ let show = null;
 let enterSummer = false, enterAutumn = false, enterWinter = false;
 let finalTimer = 0;
 let showFinal = false;
+let enterKey=0;
 
 let stageScene = 'tunnel';
 
@@ -250,8 +250,6 @@ function draw() {
    
   } else if (state == 'notice') {
     notice();
-    if (noticeTime !== null && millis() - noticeTime > 8000) {
-      state = 'question';
     }
   } else if (state == 'question') {
     mainTheme.pause();
@@ -295,6 +293,9 @@ function keyPressed() {
   } else if (state == 'anim'&&key==='g') {
     state = 'notice';
   }
+  else if(state=='notice'&&keyCode==ENTER){
+    enterKey++
+  }
   else if (state == 'notice'&&key==='g') {
     state = 'question';
   } else if (state == 'question') {
@@ -312,11 +313,25 @@ function keyPressed() {
 function notice() {
   noStroke();
   background(0);
+  textAlign(CENTER);
   textFont(font2);
-  textSize(30);
+  textSize(20);
   fill(255);
-  text("결과물은 작품의 알고리즘을 거쳐 이미지화됩니다.", width / 2, height / 2 - 30);
-  text("점, 선, 면, 그리고 다채로운 색채로 표현되는 당신의 감각세계를 감상해보세요.", width / 2, height / 2 + 30);
+  text("Press the Enter key", 1100, 200);
+  stroke(255);
+  strokeWeight(1);
+  textSize(30);
+  if(enterKey==0){
+    text("당신은 이제 사계절의 터널 속을 지나며 여러 질문에 답하게 됩니다.\n당신이 어느 계절 속에 있는지 터널 상단에 안내하고 있으니 길 잃을 염려는 없을 것입니다.", width/2, height/2);
+  } else if(enterKey==1){
+    text("‘좋은 답’, ‘나쁜 답’ 같은 건 없습니다.\n그저 당신이 살아오며 느꼈던 감각에 조금 더 가까운 보기를 고르면 됩니다.", width/2, height/2);
+  } else if(enterKey==2){
+    text("모든 응답은 내부 알고리즘을 거쳐 세상에 단 하나밖에 없는 ‘전시 티켓’으로 구현되며,\n모某 시일에 열릴 ‘당신 삶의 전시’를 담고 있을 것입니다.", width/2, height/2);
+  } else if(enterKey==3){
+    text("가능한 구체적으로, 그리고 생생하게 상황을 상상해보시길 당부드립니다.\n점, 선, 면, 그리고 다채로운 색채로 표현되는 감각 세계가 펼쳐질 것입니다.", width/2, height/2);
+  } else if(enterKey==4){
+    stage=='question'
+  }
 }
 
 
