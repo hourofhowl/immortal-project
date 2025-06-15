@@ -130,7 +130,7 @@ class TunnelWin {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 580, 50);
+      rect(width/2, height-160, 560, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
