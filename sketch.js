@@ -292,7 +292,7 @@ function keyPressed() {
     state = 'notice';
   }
   else if(state=='notice'&&keyCode==ENTER){
-    enterKey++
+    if(enterKey<4){enterKey++;}
   }
   else if (state == 'notice'&&key==='g') {
     state = 'question';
@@ -331,7 +331,7 @@ function notice() {
   } else if(enterKey==3){
     text("가능한 구체적으로, 그리고 생생하게 상황을 상상해보시길 당부드립니다.\n점, 선, 면, 그리고 다채로운 색채로 표현되는 감각 세계가 펼쳐질 것입니다.", width/2, height/2);
   } else if(enterKey==4){
-    state=='question'
+    state='question'
   }
 }
 
