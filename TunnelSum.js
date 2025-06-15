@@ -130,7 +130,7 @@ class TunnelSum {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 670, 50);
+      rect(width/2, height-160, 665, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
@@ -139,7 +139,7 @@ class TunnelSum {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 580, 50);
+      rect(width/2, height-160, 575, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
@@ -148,7 +148,7 @@ class TunnelSum {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 815, 50);
+      rect(width/2, height-160, 805, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
@@ -157,7 +157,7 @@ class TunnelSum {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
-      rect(width/2, height-160, 765, 50);
+      rect(width/2, height-160, 760, 50);
       stroke(255);
       strokeWeight(2);
       fill(255);
