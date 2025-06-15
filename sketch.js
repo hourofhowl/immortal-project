@@ -247,10 +247,8 @@ function draw() {
     if(!mainTheme.isPlaying()){mainTheme.loop()}
     tunnel.update(); // 이동 속도
     tunnel.display();
-   
   } else if (state == 'notice') {
     notice();
-    }
   } else if (state == 'question') {
     mainTheme.pause();
     question();
