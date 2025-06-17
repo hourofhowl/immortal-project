@@ -1651,9 +1651,9 @@ function ticketLib(){
   let imgWidth = tk_upper.width;
 
   image(tk_upper, tk_upperX, height / 2);
-image(tk_upper, tk_upperX + imgWidth + gap, height / 2);
+image(tk_upper, tk_upperX + imgWidth - gap, height / 2);
 
-if (tk_upperX <= -imgWidth + gap) {
+if (tk_upperX <= -imgWidth - gap) {
   tk_upperX = 0;
 }
 
