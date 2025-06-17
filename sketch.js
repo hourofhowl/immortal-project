@@ -715,7 +715,7 @@ function question() {
           stageScene = 'question';
         }
 
-      } else if (stageScene = 'question') {
+      } else if (stageScene == 'question') {
         image(winter[seasonQuestion], seasonX, seasonY);
         image(winterText[seasonQuestion], width / 2, height / 2);
         if (seasonQuestion == 1) {
