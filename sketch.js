@@ -1074,11 +1074,11 @@ function mouseClicked() {
           stageScene='blackOut';
           console.log("✅ state:", state);
           currentRect = 0;
-          // state = 'question2';
-          // select = null;
-          // endTime = millis();
-          // seasonQuestion = 1;
-          // step = 0;
+          state = 'question2';
+          select = null;
+          endTime = millis();
+          seasonQuestion = 1;
+          step = 0;
         }
       }
     }
