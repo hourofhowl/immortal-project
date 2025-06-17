@@ -1037,7 +1037,11 @@ function mouseClicked() {
         input = false;
       }
     }
-  } else if(state=='ticketLib'&&mouseX>70&&mouseX<170&&mouseY<120&&mouseY>70){
+  }
+  if(state=='ticket'&&mouseX<160&&mouseX>40&&mouseY<675&&mouseY>625){
+    state=='ticketLib'
+  }
+  if(state=='ticketLib'&&mouseX>70&&mouseX<170&&mouseY<120&&mouseY>70){
     state='ticket';
   }
   console.log("A1=" + answer1);
