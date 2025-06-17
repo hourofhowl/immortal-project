@@ -1537,6 +1537,7 @@ function ticket() {
 
 function ticketLib(){
   background(30);
+  qrDiv.hide();
   fill(255);
   noStroke();
   triangle(100, 70, 100, 120, 70, 95)
