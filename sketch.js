@@ -1570,10 +1570,10 @@ function ticketLib(){
     tk_upperX = 0;
   }
 
-  image(tk_lower, tk_lowerX, height / 2);
-  image(tk_lower, tk_lowerX + imgWidth, height / 2);
+  image(tk_lower, tk_lowerX, height / 2+100);
+  image(tk_lower, tk_lowerX + imgWidth, height / 2+100);
 
-  if (tk_lowerX <= -imgWidth) {
+  if (tk_lowerX >= imgWidth) {
     tk_lowerX = 0;
   }
 }
