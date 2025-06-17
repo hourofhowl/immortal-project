@@ -329,9 +329,11 @@ function keyPressed() {
   } else if (state == 'question') {
     if (stageScene == 'tunnel'&& key === 'g') {
       stageScene = 'illu';
-      } else if (stageScene === 'blackOut' && keyCode === ENTER) {
-        stage++;
-        }
+    } else if (stageScene === 'blackOut' && keyCode === ENTER) {
+       stage++;
+       stageScene = 'question';
+       seasonQuestion = 1;
+      }
   } else if (state == 'question2') {
     if (input && keyCode === BACKSPACE) {
       name = name.slice(0, -1);
