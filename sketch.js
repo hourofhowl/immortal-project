@@ -1552,8 +1552,11 @@ function ticketLib(){
   textFont(font2);
   if(mouseX>70&&mouseX<230&&mouseY<120&&mouseY>70){
     strokeWeight(2);
-  } else{strokeWeight(1)};
-  text("돌아가기", 120, 95);
+    text("돌아가기", 120, 95);
+  } else{
+    strokeWeight(1);
+    text("돌아가기", 120, 95);
+  };
   
   tk_upperX -= scrollSpeed;
   tk_lowerX += scrollSpeed;
