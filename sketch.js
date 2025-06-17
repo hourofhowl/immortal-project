@@ -23,6 +23,7 @@ let tunnelSpr;
 let tunnelSum;
 let tunnelAut;
 let tunnelWin;
+let tunnel2;
 
 let mainbarImg;
 let springbarImg;
@@ -180,6 +181,7 @@ function setup() {
   tunnelSum = new TunnelSum(6, 800);
   tunnelAut = new TunnelAut(6, 800);
   tunnelWin = new TunnelWin(6, 800);
+  tunnel2= new Tunnel(6, 800);
 
   wave = new Wave(waveSpeed);
   randomDice = int(random(0, 2));
@@ -330,10 +332,18 @@ function keyPressed() {
     if (stageScene == 'tunnel'&& key === 'g') {
       stageScene = 'illu';
     } else if (stageScene === 'blackOut' && keyCode === ENTER) {
+      if(stage==3){
+        state = 'question2';
+        select = null;
+        endTime = millis();
+        seasonQuestion = 1;
+        step = 0;
+      } else{      
        stage++;
        stageScene = 'question';
        seasonQuestion = 1;
       }
+    }
   } else if (state == 'question2') {
     if (input && keyCode === BACKSPACE) {
       name = name.slice(0, -1);
@@ -779,7 +789,11 @@ function question() {
           fill(255, 70);
           rect(976, 430, 202, 60);
         }
-      } break;
+      } else if(stageScene=='blackOut'){
+        tunnel2.update();
+        tunnel2.display();
+      }
+      break;
   }
 
 
@@ -1044,13 +1058,14 @@ function mouseClicked() {
         seasonQuestion++;
 
         if (seasonQuestion > 5) {
+          stageScene='blackOut';
           console.log("✅ state:", state);
           currentRect = 0;
-          state = 'question2';
-          select = null;
-          endTime = millis();
-          seqsonQuestion = 1;
-          step = 0;
+          // state = 'question2';
+          // select = null;
+          // endTime = millis();
+          // seasonQuestion = 1;
+          // step = 0;
         }
       }
     }
