@@ -460,6 +460,8 @@ function question() {
           }
         }
       } else if(stageScene=='blackOut'){
+        sprTheme.pause()
+        if(!sumTheme.isPlaying()) {sumTheme.loop();}
         background(0);
         textAlign(CENTER);
         textFont(font2);
@@ -475,8 +477,8 @@ function question() {
       break;
 
     case 1:
-      sprTheme.pause()
-      if(!sumTheme.isPlaying()) {sumTheme.loop();}
+      // sprTheme.pause()
+      // if(!sumTheme.isPlaying()) {sumTheme.loop();}
       if (!enterSummer) {
         //  illu=true;
         show = null;
@@ -558,6 +560,8 @@ function question() {
           }
         }
       } else if(stageScene=='blackOut'){
+        sumTheme.pause()
+        if(!autTheme.isPlaying()) {autTheme.loop();}
         background(0);
         textAlign(CENTER);
         textFont(font2);
@@ -572,8 +576,8 @@ function question() {
       break;
 
     case 2:
-      sumTheme.pause()
-      if(!autTheme.isPlaying()) {autTheme.loop();}
+      // sumTheme.pause()
+      // if(!autTheme.isPlaying()) {autTheme.loop();}
       if (!enterAutumn) {
         show = null;
         enterAutumn = true;
@@ -662,6 +666,8 @@ function question() {
           }
         }
       } else if(stageScene=='blackOut'){
+        autTheme.pause()
+        if(!winTheme.isPlaying()) {winTheme.loop();}
         background(0);
         textAlign(CENTER);
         textFont(font2);
@@ -676,8 +682,8 @@ function question() {
       break;
 
     case 3:
-      autTheme.pause()
-      if(!winTheme.isPlaying()) {winTheme.loop();}
+      // autTheme.pause()
+      // if(!winTheme.isPlaying()) {winTheme.loop();}
       if (!enterWinter) {
         show = null;
         enterWinter = true;
