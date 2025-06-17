@@ -187,6 +187,8 @@ class TunnelWin {
       stageScene = 'illu';
       
     }
+    imageMode(CORNER);
+image(autumnbarImg, 0, 0);
 
   }
 }
