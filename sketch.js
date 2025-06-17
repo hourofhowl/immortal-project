@@ -64,7 +64,7 @@ let tk_upper;
 let tk_lower;
 
 let tk_upperX = 0;
-let tk_lowerX = 0;
+let tk_lowerX = -1 * tk_lower.width;
 let scrollSpeed = 1;
 
 let stageScene = 'tunnel';
@@ -1593,11 +1593,11 @@ function ticketLib(){
     tk_upperX = 0;
   }
 
-  image(tk_lower, tk_lowerX, height / 2+100);
-  image(tk_lower, tk_lowerX + imgWidth, height / 2+100);
+  image(tk_lower, tk_lowerX, height / 2+105);
+  image(tk_lower, tk_lowerX + imgWidth, height / 2+105);
 
   if (tk_lowerX >= imgWidth) {
-    tk_lowerX = 0;
+       tk_lowerX = -imgWidth;  
   }
 }
 
