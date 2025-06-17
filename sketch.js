@@ -1653,12 +1653,12 @@ function ticketLib(){
   image(tk_upper, tk_upperX, height / 2);
 image(tk_upper, tk_upperX + imgWidth + gap, height / 2);
 
-if (tk_upperX <= -imgWidth - gap) {
+if (tk_upperX <= -imgWidth + gap) {
   tk_upperX = 0;
 }
 
-  image(tk_lower, tk_lowerX, height / 2 + 205);
-image(tk_lower, tk_lowerX + imgWidth + gap, height / 2 + 205);
+  image(tk_lower, tk_lowerX, height / 2 + 185);
+image(tk_lower, tk_lowerX + imgWidth + gap, height / 2 + 185);
 
 if (tk_lowerX >= imgWidth + gap) {
   tk_lowerX = -imgWidth;
