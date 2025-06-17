@@ -338,7 +338,7 @@ function keyPressed() {
         endTime = millis();
         seasonQuestion = 1;
         step = 0;
-      } else{      
+      } else{
        stage++;
        stageScene = 'question';
        seasonQuestion = 1;
@@ -857,9 +857,9 @@ function mouseClicked() {
 
         if (seasonQuestion > 5) {
           // stage = 1;
-          state = 'question';
-          seasonQuestion = 1;
           stageScene='blackOut'
+          state = 'question';
+          // seasonQuestion = 1;
         }
       }
     } else if (stage == 1) { //여름 응답
@@ -924,9 +924,9 @@ function mouseClicked() {
 
         if (seasonQuestion > 5) {
           // stage = 2;
-          state = 'question';
-          seasonQuestion = 1;
           stageScene='blackOut'
+          state = 'question';
+          // seasonQuestion = 1;
         }
       }
     } else if (stage == 2) { // 가을 응답
@@ -988,9 +988,9 @@ function mouseClicked() {
 
         if (seasonQuestion > 5) {
           // stage = 3;
-          state = 'question';
-          seasonQuestion = 1;
           stageScene='blackOut'
+          state = 'question';
+          // seasonQuestion = 1;
         }
       }
     } else if (stage == 3) { //겨울 응답
