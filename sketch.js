@@ -717,7 +717,7 @@ function question() {
           stageScene = 'question';
         }
 
-      } else if (stageScene = 'question') {
+      } else if (stageScene == 'question') {
          if(!snowstep.isPlaying()) {snowstep.loop();}
         image(winter[seasonQuestion], seasonX, seasonY);
         image(winterText[seasonQuestion], width / 2, height / 2);
