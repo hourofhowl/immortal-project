@@ -1161,6 +1161,7 @@ function question2() {
 
   imageMode(CENTER);
   rectMode(CENTER);
+  noStroke();
   switch (step) {
     case 0:
       image(personal[1], width / 2, height / 2);
