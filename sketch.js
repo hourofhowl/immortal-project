@@ -24,6 +24,8 @@ let tunnelSum;
 let tunnelAut;
 let tunnelWin;
 
+let mainbarImg;
+
 let endTime = null;
 let current = 0;
 let state = 'start';
@@ -99,7 +101,9 @@ function preload() {
   // for (let i =0; i < 32; i++){
   //   anim[i] = loadImage("assets/tunnel_"+i+".png");
   // }
-
+  
+  mainbarImg = loadImage("bar/mainbar.png");
+  
   illu1 = loadImage("spring/spring.png");
   illu2 = loadImage("summer/summer.png");
   illu3 = loadImage("autumn/fall.png");
