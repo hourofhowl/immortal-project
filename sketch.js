@@ -277,7 +277,7 @@ function draw() {
     tunnel.display();
   } else if (state == 'notice') {
     notice();
-  } else if (state == 'question') {
+  } else if (state == 'question'|| state === "question2") {
     question();
   } else if (state == 'question2') {
     // if(!soundfade){
