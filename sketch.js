@@ -59,6 +59,8 @@ let enterSummer = false, enterAutumn = false, enterWinter = false;
 let finalTimer = 0;
 let showFinal = false;
 let enterKey=0;
+let tk_upper;
+let tk_lower;
 
 let stageScene = 'tunnel';
 
@@ -97,6 +99,10 @@ function preload() {
   illu2 = loadImage("summer/summer.png");
   illu3 = loadImage("autumn/fall.png");
   illu4 = loadImage("winter/winter.png");
+
+  tk_upper=loadImage("ticket/tk_upper.png");
+  tk_lower=loadImage("ticket/tk_lower.png");
+  
   for (let i = 1; i < 6; i++) {
     spring[i] = loadImage("spring/q1_" + i + ".png");
   }
