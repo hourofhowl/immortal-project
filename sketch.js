@@ -374,9 +374,6 @@ function question() {
 
 
   switch (stage) {
-
-
-
     case 0: {
       if(!sprTheme.isPlaying()) {sprTheme.loop();}
 
@@ -451,7 +448,12 @@ function question() {
         textAlign(CENTER);
         textFont(font2);
         textSize(30);
+        fill(255);
         text("다음 계절로 넘어가볼까요?", width/2, height/2);
+        if (floor(millis() / 700) % 2 == 0) {
+          fill(255);
+          text("Press the Enter key", 1100, 100);
+        }
       }
     }
       break;
@@ -544,7 +546,12 @@ function question() {
         textAlign(CENTER);
         textFont(font2);
         textSize(30);
+        fill(255);
         text("다음 계절로 넘어가볼까요?", width/2, height/2);
+        if (floor(millis() / 700) % 2 == 0) {
+          fill(255);
+          text("Press the Enter key", 1100, 100);
+        }
       }
       break;
 
@@ -643,7 +650,12 @@ function question() {
         textAlign(CENTER);
         textFont(font2);
         textSize(30);
+        fill(255);
         text("다음 계절로 넘어가볼까요?", width/2, height/2);
+        if (floor(millis() / 700) % 2 == 0) {
+          fill(255);
+          text("Press the Enter key", 1100, 100);
+        }
       }
       break;
 
@@ -808,7 +820,7 @@ function mouseClicked() {
         seasonQuestion++;
 
         if (seasonQuestion > 5) {
-          stage = 1;
+          // stage = 1;
           state = 'question';
           seasonQuestion = 1;
           stageScene='blackOut'
@@ -875,7 +887,7 @@ function mouseClicked() {
         seasonQuestion++;
 
         if (seasonQuestion > 5) {
-          stage = 2;
+          // stage = 2;
           state = 'question';
           seasonQuestion = 1;
           stageScene='blackOut'
@@ -939,7 +951,7 @@ function mouseClicked() {
         seasonQuestion++;
 
         if (seasonQuestion > 5) {
-          stage = 3;
+          // stage = 3;
           state = 'question';
           seasonQuestion = 1;
           stageScene='blackOut'
