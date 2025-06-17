@@ -1044,10 +1044,10 @@ function mouseClicked() {
       }
     }
   }
-  if(state=='ticket'&&mouseX<160&&mouseX>40&&mouseY<680&&mouseY>630){
+  if(state=='ticket'&&mouseX<160&&mouseX>40&&mouseY<675&&mouseY>625){
     state='ticketLib'
   }
-  if(state=='ticketLib'&&mouseX>70&&mouseX<170&&mouseY<120&&mouseY>70){
+  if(state=='ticketLib'&&mouseX>70&&mouseX<230&&mouseY<120&&mouseY>70){
     state='ticket';
   }
   console.log("A1=" + answer1);
@@ -1200,13 +1200,13 @@ function ticket() {
   textSize(15);
   text("티켓 둘러보기", 100, 650);
   text("다시 하기", 1180, 650);
-  if(mouseX<160&&mouseX>40&&mouseY<680&&mouseY>630){
+  if(mouseX<160&&mouseX>40&&mouseY<675&&mouseY>625){
     fill(255, 70);
     noStroke()
     rectMode(CENTER);
     rect(100, 655, 120, 50);
   }
-  if(mouseX<1230&&mouseX>1130&&mouseY<680&&mouseY>630){
+  if(mouseX<1230&&mouseX>1130&&mouseY<675&&mouseY>625){
     fill(255, 70);
     noStroke()
     rectMode(CENTER);
@@ -1540,11 +1540,13 @@ function ticketLib(){
   fill(255);
   noStroke();
   triangle(100, 70, 100, 120, 70, 95)
-  textSize(15);
+  textSize(18);
   textAlign(CORNER);
   stroke(255);
-  strokeWeight(1);
   textFont(font2);
+  if(){
+    strokeWeight(2);
+  } else{strokeWeight(1)};
   text("돌아가기", 120, 95);
 }
 
