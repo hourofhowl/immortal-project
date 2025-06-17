@@ -181,7 +181,7 @@ function setup() {
   tunnelSum = new TunnelSum(6, 800);
   tunnelAut = new TunnelAut(6, 800);
   tunnelWin = new TunnelWin(6, 800);
-  tunnel2= new Tunnel(6, 800);
+  tunnel2= new Tunnel2(6, 800);
 
   wave = new Wave(waveSpeed);
   randomDice = int(random(0, 2));
