@@ -188,7 +188,6 @@ class TunnelWin {
       
     }
     imageMode(CORNER);
-image(autumnbarImg, 0, 0);
-
+    image(winterbarImg, 0, 0);
   }
 }
