@@ -265,6 +265,8 @@ function draw() {
     question2();
   } else if (state == 'ticket') {
     ticket();
+  } else if(state=='ticketLib'){
+    ticketLib();
   }
 }
 
@@ -1035,6 +1037,8 @@ function mouseClicked() {
         input = false;
       }
     }
+  } else if(state=='ticketLib'&&mouseX>70&&mouseX<170&&mouseY<120&&mouseY>70){
+    state='ticket';
   }
   console.log("A1=" + answer1);
   console.log('A2=' + answer2);
@@ -1503,6 +1507,19 @@ function ticket() {
     stroke(255);
     text("당신이 디지털 기술의 도래와 함께 빨라졌는지,\n아니면 아직은 자연의 느릿함을 그리워하는지에 따라\n이 파동은 재빠르게 일렁이거나,\n혹은 잔잔히 퍼져나갈 것입니다.", 285, 100);
   }
+}
+
+function ticketLib(){
+  background(30);
+  fill(255);
+  noStroke();
+  triangle(100, 70, 100, 120, 70, 95)
+  textSize(15);
+  textAlign(CORNER);
+  stroke(255);
+  strokeWeight(1);
+  textFont(font2);
+  text("돌아가기", 120, 95);
 }
 
 function gemini() {
