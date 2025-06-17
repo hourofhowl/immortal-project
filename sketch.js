@@ -281,16 +281,16 @@ function draw() {
     mainTheme.pause();
     question();
   } else if (state == 'question2') {
-    if(!soundfade){
-      winTheme.setVolume(0,1.0);
-      snowstep.setVolume(0,1.0)
-      mainTheme.jump(0);
-      mainTheme.setVolume(0);
-      mainTheme.loop();
-      mainTheme.setVolume(1.0,1.0);
+    // if(!soundfade){
+    //   winTheme.setVolume(0,1.0);
+    //   snowstep.setVolume(0,1.0)
+    //   mainTheme.jump(0);
+    //   mainTheme.setVolume(0);
+    //   mainTheme.loop();
+    //   mainTheme.setVolume(1.0,1.0);
 
-      soundfade = true;
-    }
+    //   soundfade = true;
+    // }
     question2();
   } else if (state == 'ticket') {
     ticket();
@@ -793,6 +793,16 @@ function question() {
           rect(976, 430, 202, 60);
         }
       } else if(stageScene=='blackOut'){
+        if(!soundfade){
+      winTheme.setVolume(0,1.0);
+      snowstep.setVolume(0,1.0)
+      mainTheme.jump(0);
+      mainTheme.setVolume(0);
+      mainTheme.loop();
+      mainTheme.setVolume(1.0,1.0);
+
+      soundfade = true;
+    }
         tunnel2.update();
         tunnel2.display();
       }
