@@ -1550,7 +1550,7 @@ function ticketLib(){
   textAlign(CORNER);
   stroke(255);
   textFont(font2);
-  if(){
+  if(mouseX>70&&mouseX<230&&mouseY<120&&mouseY>70){
     strokeWeight(2);
   } else{strokeWeight(1)};
   text("돌아가기", 120, 95);
