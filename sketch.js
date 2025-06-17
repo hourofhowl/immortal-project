@@ -278,7 +278,6 @@ function draw() {
   } else if (state == 'notice') {
     notice();
   } else if (state == 'question') {
-    mainTheme.pause();
     question();
   } else if (state == 'question2') {
     // if(!soundfade){
@@ -403,6 +402,7 @@ function question() {
 
   switch (stage) {
     case 0: {
+       mainTheme.pause();
       if(!sprTheme.isPlaying()) {sprTheme.loop();}
 
       if (stageScene == 'tunnel') {
