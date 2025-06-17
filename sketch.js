@@ -64,7 +64,7 @@ let tk_upper;
 let tk_lower;
 
 let tk_upperX = 0;
-let tk_lowerX = -1 * tk_lower.width;
+let tk_lowerX;
 let scrollSpeed = 1;
 
 let stageScene = 'tunnel';
@@ -248,6 +248,8 @@ function setup() {
       e.preventDefault();
     }
   });
+
+  tk_lowerX = -tk_lower.width;
 }
 
 function draw() {
