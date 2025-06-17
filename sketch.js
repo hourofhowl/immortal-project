@@ -44,7 +44,7 @@ let load = [];
 let blobs = [];
 let step = 0;
 let dice = [];
-let randomDice = 0;
+let randomDice;
 let main = [];
 let texture = [];
 let tk;
