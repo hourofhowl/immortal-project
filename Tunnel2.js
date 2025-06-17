@@ -153,7 +153,7 @@ class Tunnel2 {
       state = "question2"
       // noticeTime = millis();
     }
-    imageMode(CORNER);
-    image(mainbarImg, 0, 0);
+    // imageMode(CORNER);
+    // image(mainbarImg, 0, 0);
   }
 }
