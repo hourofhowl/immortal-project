@@ -44,6 +44,8 @@ class Tunnel {
   }
 
   display() {
+    imageMode(CORNER);
+    image(mainbarImg, 0, 0);
     // 화면 초기화
     noStroke();
     fill(0); // 터널 배경색
