@@ -1187,6 +1187,22 @@ function ticket() {
   textFont(font2);
   text("티켓의 요소들에 마우스 커서를 올려보세요", width/2, 160);
 
+  textSize(15);
+  text("티켓 둘러보기", 100, 650);
+  text("다시 하기", 1180, 650);
+  if(mouseX<160&&mouseX>40&&mouseY<675&&mouseY>625){
+    fill(255, 70);
+    noStroke()
+    rectMode(CENTER);
+    rect(100, 650, 120, 50);
+  }
+  if(mouseX<1230&&mouseX>1130&&mouseY<675&&mouseY>625){
+    fill(255, 70);
+    noStroke()
+    rectMode(CENTER);
+    rect(1180, 650, 100, 50);
+  }
+
   //1. 배경 모션(청각_answer4)
   for (let i = 0; i < answer4.length; i++) {
     if (answer4[i] == 'a') {
