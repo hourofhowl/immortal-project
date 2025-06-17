@@ -1087,9 +1087,7 @@ function mouseClicked() {
     if (step == 0) {
       console.log("now in seasonQ");
       if (endTime != null && millis() - endTime > 500) {
-// -     let select = null;
-     select = null; 
-        // let select = null;
+        let select = null;
         if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 314 && mouseY > 252) {
           select = "spring";
         } else if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 410 && mouseY > 345) {
@@ -1161,6 +1159,7 @@ function question2() {
 
   imageMode(CENTER);
   rectMode(CENTER);
+  noStroke();
   switch (step) {
     case 0:
       image(personal[1], width / 2, height / 2);
