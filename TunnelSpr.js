@@ -198,6 +198,8 @@ class TunnelSpr {
       stageScene = 'illu';
       
     }
+    imageMode(CORNER);
+    image(springbarImg, 0, 0);
 
   }
 }
