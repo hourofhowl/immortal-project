@@ -609,7 +609,7 @@ function question() {
           stageScene = 'question';
         }
 
-      } else if (stageScene = 'question') {
+      } else if (stageScene == 'question') {
         image(autumn[seasonQuestion], seasonX, seasonY);
         image(autumnText[seasonQuestion], width / 2, height / 2);
         if (seasonQuestion == 1) {
