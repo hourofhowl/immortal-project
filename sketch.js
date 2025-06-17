@@ -25,6 +25,10 @@ let tunnelAut;
 let tunnelWin;
 
 let mainbarImg;
+let springbarImg;
+let summerbarImg;
+let autumnbarImg;
+let winterbarImg;
 
 let endTime = null;
 let current = 0;
@@ -103,6 +107,10 @@ function preload() {
   // }
   
   mainbarImg = loadImage("bar/mainbar.png");
+  springbarImg = loadImage("bar/springbar.png");
+  summerbarImg = loadImage("bar/summerbar.png");
+  autumnbarImg = loadImage("bar/autumnbar.png");
+  winterbarImg = loadImage("bar/winterbar.png");
   
   illu1 = loadImage("spring/spring.png");
   illu2 = loadImage("summer/summer.png");
