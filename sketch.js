@@ -1651,14 +1651,14 @@ function ticketLib(){
   let imgWidth = tk_upper.width;
 
   image(tk_upper, tk_upperX, height / 2);
-image(tk_upper, tk_upperX + imgWidth - gap, height / 2);
+image(tk_upper, tk_upperX + imgWidth, height / 2);
 
-if (tk_upperX <= -imgWidth - gap) {
+if (tk_upperX <= -imgWidth) {
   tk_upperX = 0;
 }
 
   image(tk_lower, tk_lowerX, height / 2 + 185);
-image(tk_lower, tk_lowerX + imgWidth + gap, height / 2 + 185);
+image(tk_lower, tk_lowerX + imgWidth + gap + 20, height / 2 + 185);
 
 if (tk_lowerX >= imgWidth + gap) {
   tk_lowerX = -imgWidth;
