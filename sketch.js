@@ -59,8 +59,13 @@ let enterSummer = false, enterAutumn = false, enterWinter = false;
 let finalTimer = 0;
 let showFinal = false;
 let enterKey=0;
+
 let tk_upper;
 let tk_lower;
+
+let tk_upperX = 0;
+let tk_lowerX = 0;
+let scrollSpeed = 1;
 
 let stageScene = 'tunnel';
 
@@ -1549,6 +1554,25 @@ function ticketLib(){
     strokeWeight(2);
   } else{strokeWeight(1)};
   text("돌아가기", 120, 95);
+  
+  tk_upperX -= scrollSpeed;
+  tk_lowerX += scrollSpeed;
+
+  let imgWidth = tk_upper.width;
+
+  image(tk_upper, tk_upperX, height / 2);
+  image(tk_upper, tk_upperX + imgWidth, height / 2);
+
+  if (tk_upperX <= -imgWidth) {
+    tk_upperX = 0;
+  }
+
+  image(tk_lower, tk_lowerX, height / 2);
+  image(tk_lower, tk_lowerX + imgWidth, height / 2);
+
+  if (tk_lowerX <= -imgWidth) {
+    tk_lowerX = 0;
+  }
 }
 
 function gemini() {
