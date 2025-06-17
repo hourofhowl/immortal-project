@@ -315,7 +315,9 @@ function keyPressed() {
   } else if (state == 'question') {
     if (stageScene == 'tunnel'&& key === 'g') {
       stageScene = 'illu';
-    }
+      } else if (stageScene === 'blackOut' && keyCode === ENTER) {
+        stage++;
+        }
   } else if (state == 'question2') {
     if (input && keyCode === BACKSPACE) {
       name = name.slice(0, -1);
@@ -444,6 +446,12 @@ function question() {
             rect(962.5, 475, 215, 50);
           }
         }
+      } else if(stageScene=='blackOut'){
+        background(0);
+        textAlign(CENTER);
+        textFont(font2);
+        textSize(30);
+        text("다음 계절로 넘어가볼까요?", width/2, height/2);
       }
     }
       break;
@@ -531,6 +539,12 @@ function question() {
             rect(200, 440, 180, 50);
           }
         }
+      } else if(stageScene=='blackOut'){
+        background(0);
+        textAlign(CENTER);
+        textFont(font2);
+        textSize(30);
+        text("다음 계절로 넘어가볼까요?", width/2, height/2);
       }
       break;
 
@@ -624,6 +638,12 @@ function question() {
             rect(774, 480, 161, 50);
           }
         }
+      } else if(stageScene=='blackOut'){
+        background(0);
+        textAlign(CENTER);
+        textFont(font2);
+        textSize(30);
+        text("다음 계절로 넘어가볼까요?", width/2, height/2);
       }
       break;
 
@@ -791,6 +811,7 @@ function mouseClicked() {
           stage = 1;
           state = 'question';
           seasonQuestion = 1;
+          stageScene='blackOut'
         }
       }
     } else if (stage == 1) { //여름 응답
@@ -857,6 +878,7 @@ function mouseClicked() {
           stage = 2;
           state = 'question';
           seasonQuestion = 1;
+          stageScene='blackOut'
         }
       }
     } else if (stage == 2) { // 가을 응답
@@ -920,6 +942,7 @@ function mouseClicked() {
           stage = 3;
           state = 'question';
           seasonQuestion = 1;
+          stageScene='blackOut'
         }
       }
     } else if (stage == 3) { //겨울 응답
