@@ -1044,7 +1044,7 @@ function mouseClicked() {
       }
     }
   }
-  if(state=='ticket'&&mouseX<160&&mouseX>40&&mouseY<675&&mouseY>625){
+  if(state=='ticket'&&mouseX<160&&mouseX>40&&mouseY<670&&mouseY>620){
     state=='ticketLib'
   }
   if(state=='ticketLib'&&mouseX>70&&mouseX<170&&mouseY<120&&mouseY>70){
@@ -1200,17 +1200,17 @@ function ticket() {
   textSize(15);
   text("티켓 둘러보기", 100, 650);
   text("다시 하기", 1180, 650);
-  if(mouseX<160&&mouseX>40&&mouseY<675&&mouseY>625){
+  if(mouseX<160&&mouseX>40&&mouseY<670&&mouseY>620){
     fill(255, 70);
     noStroke()
     rectMode(CENTER);
-    rect(100, 650, 120, 50);
+    rect(100, 645, 120, 50);
   }
-  if(mouseX<1230&&mouseX>1130&&mouseY<675&&mouseY>625){
+  if(mouseX<1230&&mouseX>1130&&mouseY<670&&mouseY>620){
     fill(255, 70);
     noStroke()
     rectMode(CENTER);
-    rect(1180, 650, 100, 50);
+    rect(1180, 645, 100, 50);
   }
 
   //1. 배경 모션(청각_answer4)
