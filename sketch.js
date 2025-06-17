@@ -277,7 +277,7 @@ function draw() {
     tunnel.display();
   } else if (state == 'notice') {
     notice();
-  } else if (state == 'question'|| state === "question2") {
+  } else if (state == 'question') {
     question();
   } else if (state == 'question2') {
     // if(!soundfade){
@@ -1074,7 +1074,6 @@ function mouseClicked() {
           stageScene='blackOut';
           console.log("✅ state:", state);
           currentRect = 0;
-          state = 'question2';
           select = null;
           endTime = millis();
           seasonQuestion = 1;
@@ -1152,6 +1151,7 @@ function mouseClicked() {
 
 function question2() {
   background(0);
+  
   for (let b of blobs) {
     b.update();
     b.display();
