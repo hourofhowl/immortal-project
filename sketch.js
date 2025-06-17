@@ -97,7 +97,7 @@ let userChoices = ['main', 'texture', 'dice', 'subtitle', 'wavespeed', 'color', 
 let qrDiv;
 let qrCanvas;
 
-let mainTheme, sprTheme, sumTheme, autTheme, winTheme;
+let mainTheme, sprTheme, sumTheme, autTheme, winTheme, snowstep;
 let soundfade = false;
 
 function preload() {
@@ -171,6 +171,7 @@ function preload() {
   sumTheme = loadSound('sound/summertheme.mp3');
   autTheme = loadSound('sound/autumntheme.mp3');
   winTheme = loadSound('sound/wintertheme.mp3');
+  snowstep = loadSound('sound/snow.mp3')
   
 }
 
@@ -282,6 +283,7 @@ function draw() {
   } else if (state == 'question2') {
     if(!soundfade){
       winTheme.setVolume(0,1.0);
+      snowstep.setVolume(0,1.0)
       mainTheme.jump(0);
       mainTheme.setVolume(0);
       mainTheme.loop();
@@ -470,7 +472,7 @@ function question() {
           }
         }
       } else if(stageScene=='blackOut'){
-        sprTheme.pause()
+        sprTheme.stop()
         if(!sumTheme.isPlaying()) {sumTheme.loop();}
         background(0);
         textAlign(CENTER);
@@ -570,7 +572,7 @@ function question() {
           }
         }
       } else if(stageScene=='blackOut'){
-        sumTheme.pause()
+        sumTheme.stop()
         if(!autTheme.isPlaying()) {autTheme.loop();}
         background(0);
         textAlign(CENTER);
@@ -676,7 +678,7 @@ function question() {
           }
         }
       } else if(stageScene=='blackOut'){
-        autTheme.pause()
+        autTheme.stop()
         if(!winTheme.isPlaying()) {winTheme.loop();}
         background(0);
         textAlign(CENTER);
@@ -716,6 +718,7 @@ function question() {
         }
 
       } else if (stageScene = 'question') {
+         if(!snowstep.isPlaying()) {snowstep.loop();}
         image(winter[seasonQuestion], seasonX, seasonY);
         image(winterText[seasonQuestion], width / 2, height / 2);
         if (seasonQuestion == 1) {
