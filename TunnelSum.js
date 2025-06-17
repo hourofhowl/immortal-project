@@ -187,6 +187,7 @@ class TunnelSum {
       stageScene = 'illu';
       
     }
-
+imageMode(CORNER);
+image(summerbarImg, 0, 0);
   }
 }
