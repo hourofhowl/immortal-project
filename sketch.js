@@ -1512,7 +1512,7 @@ function ticket() {
   textFont(font3);
   textAlign(LEFT)
   fill(0);
-  text(geminiOutput, 272, 432 - 35);
+  text(geminiOutput, 272, 432 - 50);
   userChoices[3] = geminiOutput.replaceAll("\n", "");
 
 
