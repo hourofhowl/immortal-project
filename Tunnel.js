@@ -147,7 +147,7 @@ class Tunnel {
       let combinedAlpha = min(blinkAlpha, 255 - alpha); // 디졸브가 올라올수록 사라짐
 
       noStroke();
-      fill(255, 45, 49, combinedAlpha); // #FF2D31 = (255, 45, 49)
+      fill(159,156,156, combinedAlpha); // #FF2D31 = (255, 45, 49)
       ellipseMode(CENTER);
       ellipse(132.5, 72.5, 15, 15); // 반지름 7.5
     }
