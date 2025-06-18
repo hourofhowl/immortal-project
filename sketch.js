@@ -1800,12 +1800,19 @@ function ticketLib() {
 
   let imgWidth = tk_upper.width;
 
-  image(tk_upper, tk_upperX, height / 2);
-  image(tk_upper, tk_upperX + imgWidth + gap + 50, height / 2);
+  // image(tk_upper, tk_upperX, height / 2);
+  // image(tk_upper, tk_upperX + imgWidth + gap + 50, height / 2);
 
-  if (tk_upperX <= -imgWidth- gap - 50) {
-    tk_upperX = 0;
-  }
+  // if (tk_upperX <= -imgWidth- gap - 50) {
+  //   tk_upperX = 0;
+  // }
+  image(tk_upper, tk_upperX, height / 2);
+image(tk_upper, tk_upperX + imgWidth, height / 2);
+image(tk_upper, tk_upperX + imgWidth * 2, height / 2);
+
+if (tk_upperX <= -imgWidth) {
+  tk_upperX += imgWidth;
+}
 
   image(tk_lower, tk_lowerX, height / 2 + 185);
   image(tk_lower, tk_lowerX + imgWidth + gap + 50, height / 2 + 185);
