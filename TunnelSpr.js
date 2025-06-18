@@ -200,13 +200,21 @@ class TunnelSpr {
       pop();
     }
 
+    if (alpha > 0) {
+  for (let y = 0; y <= height; y++) {
+    let inter = map(y, 0, height, 0, 1);
+    let c = lerpColor(color(255, 240, 150), color(0, 0, 0), alpha / 255); 
+    stroke(c);
+    line(0, y, width, y);
+  }
+}
 
     // 🌑 디졸브 효과를 배경에 적용
-    if (alpha > 0) {
-      fill(0, alpha);
-     noStroke();
-      rect(0, 0, width, height);
-    }
+    //if (alpha > 0) {
+      //fill(0, alpha);
+     //noStroke();
+      //rect(0, 0, width, height);
+    //}
 
 
 
