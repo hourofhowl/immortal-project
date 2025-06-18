@@ -137,7 +137,7 @@ class Tunnel {
 
     // 🔴 깜빡이는 원 (디졸브와 깜빡임 둘 다 반영)
     if (this.aniTime === null) {
-      let blinkAlpha = map(sin(millis() * 0.01), -1, 1, 50, 255);
+      let blinkAlpha = map(sin(millis() * 0.00628), -1, 1, 50, 255);
       let combinedAlpha = min(blinkAlpha, 255 - alpha); // 디졸브가 올라올수록 사라짐
 
       noStroke();
