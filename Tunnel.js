@@ -135,6 +135,12 @@ class Tunnel {
       alpha = constrain(alpha, 0, 255);
     }
 
+     // 🖼️ mainbarImg에 디졸브 적용
+    tint(255, 255 - alpha); // 디졸브가 올라오면 이미지가 사라짐
+    imageMode(CORNER);
+    image(mainbarImg, 0, 0);
+    noTint();
+
     // 🔴 깜빡이는 원 (디졸브와 깜빡임 둘 다 반영)
     if (this.aniTime === null) {
       let blinkAlpha = map(sin(millis() * 0.0037), -1, 1, 50, 255);
@@ -152,12 +158,6 @@ class Tunnel {
       noStroke();
       rect(0, 0, width, height);
     }
-
-    // 🖼️ mainbarImg에 디졸브 적용
-    tint(255, 255 - alpha); // 디졸브가 올라오면 이미지가 사라짐
-    imageMode(CORNER);
-    image(mainbarImg, 0, 0);
-    noTint();
 
     // 디졸브 종료 타이밍 체크
     if (doorScale >= 1.0 && this.aniTime === null) {
