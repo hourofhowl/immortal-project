@@ -379,7 +379,7 @@ function notice() {
   fill(255);
   if (floor(millis() / 700) % 2 == 0) {
     fill(255);
-    text("Press the Enter key", 1100, 100);
+    text("Press the Enter key", 1100, 630);
   }
   stroke(255);
   strokeWeight(1);
