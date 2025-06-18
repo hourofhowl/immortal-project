@@ -159,11 +159,11 @@ class Tunnel2 {
 
 
         // 🌑 디졸브 효과를 배경에 적용
-    if (alpha > 0) {
+    /*if (alpha > 0) {
       fill(0, alpha);
       noStroke();
       rect(0, 0, width, height);
-    }
+    }*/
     
 
     //if (alpha > 0) {
