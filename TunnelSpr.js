@@ -164,7 +164,7 @@ class TunnelSpr {
       strokeWeight(2);
       fill(255);
       text("이제 우리는, 당신 안으로 천천히 들어가 보려 합니다.", width / 2, height - 150);
-    } else if(millis() - this.runTime > 19000 && millis() - this. runTime < 24000) {
+    } else if(millis() - this.runTime > 19000 && millis() - this.runTime < 24000) {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
