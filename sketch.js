@@ -435,7 +435,7 @@ function question() {
 
     // 2. 페이드인 & 확대 효과 (처음 2초간)
     illuAlpha = map(elapsed, 0, 1200, 0, 255, true);
-    illuScale = map(elapsed, 0, 1200, 1.0, 1.5, true);
+    illuScale = map(elapsed, 0, 5000, 1.0, 1.5, true);
 
     // 3. illu 이미지 그리기 (중앙 확대)
     push();
@@ -552,7 +552,7 @@ function question() {
 
     // 2. 페이드인 & 확대 효과 (처음 2초간)
     illuAlpha = map(elapsed, 0, 1200, 0, 255, true);
-    illuScale = map(elapsed, 0, 1200, 1.0, 1.5, true);
+    illuScale = map(elapsed, 0, 5000, 1.0, 1.5, true);
 
     // 3. illu 이미지 그리기 (중앙 확대)
     push();
@@ -684,7 +684,7 @@ function question() {
 
     // 2. 페이드인 & 확대 효과 (처음 2초간)
     illuAlpha = map(elapsed, 0, 1200, 0, 255, true);
-    illuScale = map(elapsed, 0, 1200, 1.0, 1.5, true);
+    illuScale = map(elapsed, 0, 5000, 1.0, 1.5, true);
 
     // 3. illu 이미지 그리기 (중앙 확대)
     push();
@@ -825,7 +825,7 @@ function question() {
 
     // 2. 페이드인 & 확대 효과 (처음 2초간)
     illuAlpha = map(elapsed, 0, 1200, 0, 255, true);
-    illuScale = map(elapsed, 0, 1200, 1.0, 1.5, true);
+    illuScale = map(elapsed, 0, 5000, 1.0, 1.5, true);
 
     // 3. illu 이미지 그리기 (중앙 확대)
     push();
