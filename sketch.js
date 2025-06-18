@@ -1513,7 +1513,7 @@ if (mouseX < 1185 + 115 / 2 && mouseX > 1185 - 115 / 2 &&
   textFont(font3);
   text(name, 404, 387 - 35);
   textFont(font4);
-  textSize(20);
+  textSize(25);
   text(date, 556, 468 - 35.5);
   textAlign(CENTER);
   textFont(font2);
