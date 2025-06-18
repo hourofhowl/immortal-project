@@ -178,7 +178,7 @@ class TunnelWin {
 
     // 터널 끝나기 전까지 이동하는 원
     if (this.runTime !== null) {
-      let moveDuration = 24000; // 터널 종료 전까지
+      let moveDuration = 19000; // 터널 종료 전까지
       let progress = constrain((millis() - this.runTime) / moveDuration, 0, 1);
 
       let circleX = lerp(741.5, 945.5, progress);
