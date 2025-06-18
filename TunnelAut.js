@@ -182,7 +182,7 @@ drawGradientBackground() {
 
    tint(255, 255 - alpha); // 디졸브가 올라오면 이미지가 사라짐
     imageMode(CORNER);
-    image(springbarImg, 0, 0);
+    image(autumnbarImg, 0, 0);
     noTint();
 
     // 터널 끝나기 전까지 이동하는 원
@@ -221,7 +221,5 @@ drawGradientBackground() {
       stageScene = 'illu';
       
     }
-imageMode(CORNER);
-image(autumnbarImg, 0, 0);
   }
 }
