@@ -171,7 +171,7 @@ class Tunnel2 {
     }
 
     if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
-      state = "notice";
+      state = "question2";
     }
 
   }
