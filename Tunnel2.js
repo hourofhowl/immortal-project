@@ -129,20 +129,20 @@ class Tunnel2 {
       text("당신의 감정과 기억을 고스란히 담은 티켓을 만들 준비가 되었나요?", width / 2, height - 150)
     }
 
-    let alpha = 0;
+          let alpha = 0;
     if (doorScale >= 1.0) {
       alpha = map(doorScale, 1.0, 1.2, 0, 600);
       alpha = constrain(alpha, 0, 255);
-
     }
-    
-    imageMode(CORNER);
+
+     // 🖼️ mainbarImg에 디졸브 적용
     tint(255, 255 - alpha); // 디졸브가 올라오면 이미지가 사라짐
+    imageMode(CORNER);
     image(mainbarImg, 0, 0);
     noTint();
 
-    // 터널 끝나기 전까지 이동하는 원
-    if (this.runTime !== null) {
+    // 🔴 깜빡이는 원 (디졸브와 깜빡임 둘 다 반영)
+        if (this.runTime !== null) {
       let moveDuration = 14500; // 터널 종료 전까지
       let progress = constrain((millis() - this.runTime) / moveDuration, 0, 1);
 
@@ -158,29 +158,75 @@ class Tunnel2 {
       pop();
     }
 
-
-    //if (alpha > 0) {
-      //background(0, alpha)}
-    
-  if (doorScale >= 1.0 && this.aniTime === null) {
-    this.aniTime = millis();
-  }
-
-
-    // if (alpha >= 255 && this.aniTime === null) {
-    //   this.aniTime = millis();
-
-    // }
-
-    if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
-      state = "question2"
-      // noticeTime = millis();
+    // 🌑 디졸브 효과를 배경에 적용
+    if (alpha > 0) {
+      fill(0, alpha);
+      noStroke();
+      rect(0, 0, width, height);
     }
 
-  if (alpha > 0) {
-  fill(0, alpha);
-  noStroke();
-  rect(0, 0, width, height);
-}
+    // 디졸브 종료 타이밍 체크
+    if (doorScale >= 1.0 && this.aniTime === null) {
+      this.aniTime = millis();
+    }
+
+    if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
+      state = "notice";
+    }
+
   }
+//     let alpha = 0;
+//     if (doorScale >= 1.0) {
+//       alpha = map(doorScale, 1.0, 1.2, 0, 600);
+//       alpha = constrain(alpha, 0, 255);
+
+//     }
+    
+//     imageMode(CORNER);
+//     tint(255, 255 - alpha); // 디졸브가 올라오면 이미지가 사라짐
+//     image(mainbarImg, 0, 0);
+//     noTint();
+
+//     // 터널 끝나기 전까지 이동하는 원
+//     if (this.runTime !== null) {
+//       let moveDuration = 14500; // 터널 종료 전까지
+//       let progress = constrain((millis() - this.runTime) / moveDuration, 0, 1);
+
+//       let circleX = lerp(945.5, 1148.5, progress);
+//       let circleY = 72.5;
+
+//       push();
+//       translate(circleX, circleY);
+//       noStroke();
+//       fill(255, 45, 49, 255 - alpha); // 디졸브에 맞춰 투명도 감소
+//       ellipseMode(CENTER);
+//       ellipse(0, 0, 15, 15); // 반지름 7.5
+//       pop();
+//     }
+
+
+//     //if (alpha > 0) {
+//       //background(0, alpha)}
+    
+//   if (doorScale >= 1.0 && this.aniTime === null) {
+//     this.aniTime = millis();
+//   }
+
+
+//     // if (alpha >= 255 && this.aniTime === null) {
+//     //   this.aniTime = millis();
+
+//     // }
+
+//     if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
+//       state = "question2"
+//       // noticeTime = millis();
+//     }
+
+//   if (alpha > 0) {
+//   fill(0, alpha);
+//   noStroke();
+//   rect(0, 0, width, height);
+// }
+//   }
 }
