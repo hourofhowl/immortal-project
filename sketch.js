@@ -1662,7 +1662,7 @@ if (mouseX < 1185 + 115 / 2 && mouseX > 1185 - 115 / 2 &&
   textFont(font3);
   textAlign(LEFT,CENTER);
   fill(0);
-  text(geminiOutput, 272, 432-50);
+  text(geminiOutput, 272, 432-40);
   userChoices[3] = geminiOutput.replaceAll("\n", "");
 
 
