@@ -194,7 +194,7 @@ class TunnelSpr {
       push();
       translate(circleX, circleY);
       noStroke();
-      fill(255, 45, 49, 255 - alpha); // 디졸브에 맞춰 투명도 감소
+      fill(255,165,0, 255 - alpha); // 디졸브에 맞춰 투명도 감소
       ellipseMode(CENTER);
       ellipse(0, 0, 15, 15); // 반지름 7.5
       pop();
