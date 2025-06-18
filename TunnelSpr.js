@@ -4,11 +4,7 @@ class TunnelSpr {
     this.depth = depth;
     this.rings = [];
     this.aniTime = null;
-    
     this.runTime = null;
-
-
-
 
     // ㄷ자 개체 초기화 (깊이값 분포)
     for (let i = 0; i < this.numRings; i++) {
@@ -32,14 +28,10 @@ class TunnelSpr {
     for (let ring of this.rings) {
       let dz = (this.depth + 50 - ring.z) * 0.0019;
       ring.z -= dz;
-
     }
 
     let dz = (this.depth + 50 - this.door.z) * 0.0019;
     this.door.z -= dz;
-
-
-
 
   }
 
@@ -137,7 +129,8 @@ class TunnelSpr {
       strokeWeight(2);
       fill(255);
       text("겨울이 지나고, 다시 바람이 부드러워졌습니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 3500 && millis() - this.runTime < 9000) {
+    } 
+    else if (millis() - this.runTime > 3500 && millis() - this.runTime < 9000) {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
@@ -146,7 +139,8 @@ class TunnelSpr {
       strokeWeight(2);
       fill(255);
       text("아직은 차가운 공기 속에서도, 작은 새싹이 고개를 들고, 어느새 개나리가 피어나기 시작합니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 9000 && millis() - this.runTime < 14000) {
+    } 
+    else if (millis() - this.runTime > 9000 && millis() - this.runTime < 14000) {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
@@ -155,7 +149,8 @@ class TunnelSpr {
       strokeWeight(2);
       fill(255);
       text("누군가의 손이 스치듯, 설레는 온기가 당신 곁에 머무릅니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 14000 && millis() - this.runTime < 19000) {
+    } 
+    else if (millis() - this.runTime > 14000 && millis() - this.runTime < 19000) {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
@@ -164,7 +159,8 @@ class TunnelSpr {
       strokeWeight(2);
       fill(255);
       text("이제 우리는, 당신 안으로 천천히 들어가 보려 합니다.", width / 2, height - 150);
-    } else if(millis() - this.runTime > 19000 && millis() - this.runTime < 24000) {
+    } 
+    else if(millis() - this.runTime > 19000 && millis() - this.runTime < 24000) {
       rectMode(CENTER);
       noStroke();
       fill(0, 70);
@@ -179,7 +175,6 @@ class TunnelSpr {
     if (doorScale >= 1.0) {
       alpha = map(doorScale, 1.0, 1.2, 0, 600);
       alpha = constrain(alpha, 0, 255);
-
     }
 
     tint(255, 255 - alpha); // 디졸브가 올라오면 이미지가 사라짐
@@ -221,5 +216,6 @@ class TunnelSpr {
     if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
       stageScene = 'illu';
     }
+    
   }
 }
