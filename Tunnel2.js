@@ -135,8 +135,9 @@ class Tunnel2 {
       alpha = constrain(alpha, 0, 255);
 
     }
-     tint(255, 255 - alpha); // 디졸브가 올라오면 이미지가 사라짐
+    
     imageMode(CORNER);
+    tint(255, 255 - alpha); // 디졸브가 올라오면 이미지가 사라짐
     image(mainbarImg, 0, 0);
     noTint();
 
@@ -179,7 +180,7 @@ class Tunnel2 {
   if (alpha > 0) {
   fill(0, alpha);
   noStroke();
-  rect(0, 0, 1280, 720);
+  rect(0, 0, width, height);
 }
   }
 }
