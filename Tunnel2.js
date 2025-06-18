@@ -135,10 +135,40 @@ class Tunnel2 {
       alpha = constrain(alpha, 0, 255);
 
     }
+     tint(255, 255 - alpha); // 디졸브가 올라오면 이미지가 사라짐
+    imageMode(CORNER);
+    image(springbarImg, 0, 0);
+    noTint();
 
-    if (alpha > 0) {
-      background(0, alpha)
+    // 터널 끝나기 전까지 이동하는 원
+    if (this.runTime !== null) {
+      let moveDuration = 14500; // 터널 종료 전까지
+      let progress = constrain((millis() - this.runTime) / moveDuration, 0, 1);
+
+      let circleX = lerp(945.5, 1148.5, progress);
+      let circleY = 72.5;
+
+      push();
+      translate(circleX, circleY);
+      noStroke();
+      fill(255, 45, 49, 255 - alpha); // 디졸브에 맞춰 투명도 감소
+      ellipseMode(CENTER);
+      ellipse(0, 0, 15, 15); // 반지름 7.5
+      pop();
     }
+
+
+        // 🌑 디졸브 효과를 배경에 적용
+    if (alpha > 0) {
+      fill(0, alpha);
+      noStroke();
+      rect(0, 0, width, height);
+    }
+    
+
+    //if (alpha > 0) {
+      //background(0, alpha)}
+    
   if (doorScale >= 1.0 && this.aniTime === null) {
     this.aniTime = millis();
   }
@@ -153,7 +183,5 @@ class Tunnel2 {
       state = "question2"
       // noticeTime = millis();
     }
-    // imageMode(CORNER);
-    // image(mainbarImg, 0, 0);
   }
 }
