@@ -246,7 +246,7 @@ function setup() {
   //날짜 입력란
   dateInput = createInput();
   dateInput.position(windowWidth/2 - 75, windowHeight/ 2 + 5);
-  dateInput.style('font-size', '35px');
+  dateInput.style('font-size', '45px');
   dateInput.size(110, 65);
   dateInput.style('text-align', 'center');
   dateInput.style('border', 'none');
@@ -1706,9 +1706,9 @@ function ticketLib() {
   }
 
   image(tk_lower, tk_lowerX, height / 2 + 185);
-  image(tk_lower, tk_lowerX + imgWidth + gap + 30, height / 2 + 185);
+  image(tk_lower, tk_lowerX + imgWidth + gap + 50, height / 2 + 185);
 
-if (tk_lowerX >= imgWidth + gap+30) {
+if (tk_lowerX >= imgWidth + gap+50) {
   tk_lowerX = -imgWidth;
 }
 }
