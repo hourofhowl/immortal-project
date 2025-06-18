@@ -1287,6 +1287,9 @@ function mouseClicked() {
   if (state == 'ticketLib' && mouseX > 70 && mouseX < 230 && mouseY < 120 && mouseY > 70) {
     state = 'ticket';
   }
+  if (state=='ticket'&&mouseX < 1185 + 115 / 2 && mouseX > 1185 - 115 / 2 &&mouseY < 656 + 49 / 2 && mouseY > 656 - 49 / 2) {
+    location.reload(); // 페이지 전체 새로고침
+  }
   console.log("A1=" + answer1);
   console.log('A2=' + answer2);
   console.log('A3=' + answer3);
