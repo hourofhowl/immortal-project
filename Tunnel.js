@@ -129,31 +129,44 @@ class Tunnel {
       text("잠들어있던 감각을 깨워 삶을 들여다보세요.", width / 2, height - 150)
     }
 
-    let alpha = 0;
+        let alpha = 0;
     if (doorScale >= 1.0) {
       alpha = map(doorScale, 1.0, 1.2, 0, 600);
       alpha = constrain(alpha, 0, 255);
-
     }
 
+    // 🔴 깜빡이는 원 (디졸브와 깜빡임 둘 다 반영)
+    if (this.aniTime === null) {
+      let blinkAlpha = map(sin(millis() * 0.01), -1, 1, 50, 255);
+      let combinedAlpha = min(blinkAlpha, 255 - alpha); // 디졸브가 올라올수록 사라짐
+
+      noStroke();
+      fill(255, 45, 49, combinedAlpha); // #FF2D31 = (255, 45, 49)
+      ellipseMode(CENTER);
+      ellipse(132.5, 72.5, 15, 15); // 반지름 7.5
+    }
+
+    // 🌑 디졸브 효과를 배경에 적용
     if (alpha > 0) {
-      background(0, alpha)
+      fill(0, alpha);
+      noStroke();
+      rect(0, 0, width, height);
     }
-  if (doorScale >= 1.0 && this.aniTime === null) {
-    this.aniTime = millis();
-  }
 
-
-    // if (alpha >= 255 && this.aniTime === null) {
-    //   this.aniTime = millis();
-
-    // }
-
-    if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
-      state = "notice"
-      // noticeTime = millis();
-    }
+    // 🖼️ mainbarImg에 디졸브 적용
+    tint(255, 255 - alpha); // 디졸브가 올라오면 이미지가 사라짐
     imageMode(CORNER);
     image(mainbarImg, 0, 0);
+    noTint();
+
+    // 디졸브 종료 타이밍 체크
+    if (doorScale >= 1.0 && this.aniTime === null) {
+      this.aniTime = millis();
+    }
+
+    if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
+      state = "notice";
+    }
+
   }
 }
