@@ -1513,7 +1513,7 @@ if (mouseX < 1185 + 115 / 2 && mouseX > 1185 - 115 / 2 &&
   textFont(font3);
   text(name, 404, 387 - 35);
   textFont(font4);
-  textSize(30);
+  textSize(20);
   text(date, 556, 468 - 35.5);
   textAlign(CENTER);
   textFont(font2);
@@ -1675,14 +1675,11 @@ function ticketLib() {
   }
 
   image(tk_lower, tk_lowerX, height / 2 + 185);
-  image(tk_lower, tk_lowerX + imgWidth + gap + 20, height / 2 + 185);
+  image(tk_lower, tk_lowerX + imgWidth + gap + 30, height / 2 + 185);
 
-if (tk_lowerX >= imgWidth + gap+20) {
+if (tk_lowerX >= imgWidth + gap+30) {
   tk_lowerX = -imgWidth;
 }
-  if (tk_lowerX >= imgWidth + gap) {
-    tk_lowerX = -imgWidth;
-  }
 }
 
 function gemini() {
