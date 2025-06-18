@@ -14,6 +14,8 @@ let seasonX, seasonY;
 let xPlus = true;
 let xSpeed = 0.1
 let illuAlpha = 0;
+let illuScale = 1;
+let whiteFade = 0;
 
 let title;
 let font1, font2, font3, font4;
@@ -427,13 +429,42 @@ function question() {
         if (show == null) {
           show = millis();
         }
-        background(255)
-        illuAlpha = map(millis() - show, 0, 1200, 0, 255)
-        tint(255, illuAlpha)
-        image(illu1, width / 2, height / 2);
-        if (millis() - show > 5000) {
-          stageScene = 'question'
-        }
+        // 1. 배경
+    background(255);
+
+    // 2. 페이드인 & 확대 효과 (처음 2초간)
+    illuAlpha = map(elapsed, 0, 1200, 0, 255, true);
+    illuScale = map(elapsed, 0, 1200, 1.2, 1.0, true); // 처음에 1.2배 크기로 시작 → 원래 크기로 축소
+
+    // 3. illu 이미지 그리기 (중앙 확대)
+    push();
+    translate(width / 2, height / 2);
+    scale(illuScale);
+    tint(255, illuAlpha);
+    imageMode(CENTER);
+    image(illu1, 0, 0);
+    pop();
+
+    // 4. 디졸브 아웃 효과 (마지막 1초 동안 하얗게 덮기)
+    if (elapsed > 4000) {
+      whiteFade = map(elapsed, 4000, 5000, 0, 255, true);
+      fill(255, whiteFade);
+      noStroke();
+      rect(0, 0, width, height);
+    }
+
+    // 5. 다음 상태로 전환
+    if (elapsed > 5000) {
+      stageScene = 'question';
+      show = null; // 초기화 (필요 시)
+    }
+        // background(255)
+        // illuAlpha = map(millis() - show, 0, 1200, 0, 255)
+        // tint(255, illuAlpha)
+        // image(illu1, width / 2, height / 2);
+        // if (millis() - show > 5000) {
+        //   stageScene = 'question'
+        // }
       } else if (stageScene == 'question') {
 
         image(spring[seasonQuestion], seasonX, seasonY);
@@ -1675,14 +1706,11 @@ function ticketLib() {
   }
 
   image(tk_lower, tk_lowerX, height / 2 + 185);
-  image(tk_lower, tk_lowerX + imgWidth + gap + 20, height / 2 + 185);
+  image(tk_lower, tk_lowerX + imgWidth + gap + 30, height / 2 + 185);
 
-if (tk_lowerX >= imgWidth + gap+20) {
+if (tk_lowerX >= imgWidth + gap+30) {
   tk_lowerX = -imgWidth;
 }
-  if (tk_lowerX >= imgWidth + gap) {
-    tk_lowerX = -imgWidth;
-  }
 }
 
 function gemini() {
