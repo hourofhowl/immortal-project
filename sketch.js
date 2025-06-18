@@ -520,7 +520,7 @@ function question() {
         textFont(font2);
         textSize(30);
         fill(255);
-        text("다음 계절로 넘어가볼까요?", width / 2, height / 2);
+        text("따스한 햇살과 벚꽃 향기 속, 함께 걷던 그 길에서 어떤 이야기가 피어났나요?\n봄의 터널을 지나, 다음 계절이 조용히 문을 두드립니다.", width / 2, height / 2);
         if (floor(millis() / 700) % 2 == 0) {
           fill(255);
           text("Press the Enter key", 1100, 100);
@@ -654,7 +654,7 @@ function question() {
         textFont(font2);
         textSize(30);
         fill(255);
-        text("다음 계절로 넘어가볼까요?", width / 2, height / 2);
+        text("달궈졌던 바닷길은 조용히 식어가고,\n‘나’를 마주했던 시간들이 고요히 자리 잡았습니다.\n뜨거웠던 바람이 잦아들고, 곧 선선한 바람이 속삭일 차례입니다.", width / 2, height / 2);
         if (floor(millis() / 700) % 2 == 0) {
           fill(255);
           text("Press the Enter key", 1100, 100);
@@ -795,7 +795,7 @@ function question() {
         textFont(font2);
         textSize(30);
         fill(255);
-        text("다음 계절로 넘어가볼까요?", width / 2, height / 2);
+        text("서늘한 바람에 낙엽이 흩날리던 계절의 터널이 지나갑니다.\n짙어진 밤하늘 아래, 하얀 세상이 조용히 모습을 드러냅니다.", width / 2, height / 2);
         if (floor(millis() / 700) % 2 == 0) {
           fill(255);
           text("Press the Enter key", 1100, 100);
