@@ -224,8 +224,7 @@ class TunnelSpr {
     }
 
     if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
-
       stageScene = 'illu';
+    }
   }
-}
 }
