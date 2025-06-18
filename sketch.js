@@ -429,6 +429,7 @@ function question() {
         if (show == null) {
           show = millis();
         }
+        let elapsed = millis() - show;
         // 1. 배경
     background(255);
 
