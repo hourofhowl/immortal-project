@@ -1661,7 +1661,7 @@ if (tk_upperX <= -imgWidth) {
   image(tk_lower, tk_lowerX, height / 2 + 185);
 image(tk_lower, tk_lowerX + imgWidth + gap + 20, height / 2 + 185);
 
-if (tk_lowerX >= imgWidth + gap) {
+if (tk_lowerX >= imgWidth + gap+20) {
   tk_lowerX = -imgWidth;
 }
 }
