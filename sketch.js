@@ -1214,7 +1214,7 @@ function question2() {
         fill(255);
         noStroke();
         textAlign(CENTER, CENTER);
-        text(date, 625, 395);
+        text(date, 625, 365);
       }
       if (mouseX < 810 && mouseX > 720 && mouseY < 425 && mouseY > 365) {
         fill(255, 70);
@@ -1676,6 +1676,9 @@ function ticketLib() {
   image(tk_lower, tk_lowerX, height / 2 + 185);
   image(tk_lower, tk_lowerX + imgWidth + gap + 20, height / 2 + 185);
 
+if (tk_lowerX >= imgWidth + gap+20) {
+  tk_lowerX = -imgWidth;
+}
   if (tk_lowerX >= imgWidth + gap) {
     tk_lowerX = -imgWidth;
   }
