@@ -182,28 +182,12 @@ class TunnelSpr {
 
     }
 
-    if (alpha > 0) {
-      background(255, alpha)
-    }
-
-
-
-    if (alpha >= 255 && this.aniTime === null) {
-      this.aniTime = millis();
-
-    }
-
-    if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
-
-      stageScene = 'illu';
-      
-    }
-    push();
-    tint(255, 255 - alpha); // alpha가 커질수록 이미지 사라짐
+    tint(255, 255 - alpha); // 디졸브가 올라오면 이미지가 사라짐
     imageMode(CORNER);
     image(springbarImg, 0, 0);
-    pop();
-        // 터널 끝나기 전까지 이동하는 원
+    noTint();
+
+    // 터널 끝나기 전까지 이동하는 원
     if (this.runTime !== null) {
       let moveDuration = 24000; // 터널 종료 전까지
       let progress = constrain((millis() - this.runTime) / moveDuration, 0, 1);
@@ -220,8 +204,30 @@ class TunnelSpr {
       pop();
     }
 
-    // 이미지 위에 디졸브 적용
 
+        // 🌑 디졸브 효과를 배경에 적용
+    if (alpha > 0) {
+      fill(0, alpha);
+      noStroke();
+      rect(0, 0, width, height);
+    }
+    
+    //if (alpha > 0) {
+      //background(255, alpha)
+    //}
+
+
+
+    if (alpha >= 255 && this.aniTime === null) {
+      this.aniTime = millis();
+
+    }
+
+    if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
+
+      stageScene = 'illu';
+      
+ 
 
 
   }
