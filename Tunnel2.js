@@ -30,12 +30,12 @@ class Tunnel2 {
   update() {
     if (this.runTime===null) this.runTime = millis();
     for (let ring of this.rings) {
-      let dz = (this.depth + 50 - ring.z) * 0.0022;
+      let dz = (this.depth + 50 - ring.z) * 0.00218;
       ring.z -= dz;
 
     }
 
-    let dz = (this.depth + 50 - this.door.z) * 0.0022;
+    let dz = (this.depth + 50 - this.door.z) * 0.00218;
     this.door.z -= dz;
 
 
