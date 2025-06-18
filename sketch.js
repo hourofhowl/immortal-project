@@ -235,9 +235,9 @@ function setup() {
 
   //날짜 입력란
   dateInput = createInput();
-  dateInput.position(width / 2 - 310, height / 2 + 45);
+  dateInput.position(565, height / 2 + 5);
   dateInput.style('font-size', '35px');
-  dateInput.size(485, 65);
+  dateInput.size(110, 65);
   dateInput.style('text-align', 'center');
   dateInput.style('border', 'none');
   dateInput.style('outline', 'none');
