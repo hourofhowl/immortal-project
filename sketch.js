@@ -1118,13 +1118,13 @@ function mouseClicked() {
       }
     }
     if (step == 2) {
-      if (mouseX > width / 2 - 310 && mouseX < width / 2 + 175 &&
-        mouseY > height / 2 + 45 && mouseY < height / 2 + 110) {
+      if (mouseX > 565 && mouseX < 675 &&
+        mouseY > 365 && mouseY<425) {
         dateInput.show();
         dateInput.value(date);
         dateInput.elt.focus();
         input = true;
-        if (mouseX < 948 && mouseX > 854 && mouseY < 470 && mouseY > 405) {
+        if (mouseX < 810 && mouseX > 720 && mouseY < 425 && mouseY > 365) {
           next = true;
         }
       } else {
@@ -1200,12 +1200,12 @@ function question2() {
         fill(255);
         noStroke();
         textAlign(CENTER, CENTER);
-        text(date, 572.5, 437.5);
+        text(date, 625, 395);
       }
-      if (mouseX < 948 && mouseX > 854 && mouseY < 470 && mouseY > 405) {
+      if (mouseX < 810 && mouseX > 720 && mouseY < 425 && mouseY > 365) {
         fill(255, 70);
         noStroke();
-        rect(901, 438, 94, 62, 10);
+        rect(720, 365, 90, 62, 10);
       }
       if (next) {
         next = false;
