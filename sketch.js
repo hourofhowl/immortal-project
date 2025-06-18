@@ -435,7 +435,7 @@ function question() {
 
     // 2. 페이드인 & 확대 효과 (처음 2초간)
     illuAlpha = map(elapsed, 0, 1200, 0, 255, true);
-    illuScale = map(elapsed, 0, 1200, 1.0, 1.2, true);
+    illuScale = map(elapsed, 0, 1200, 1.0, 1.5, true);
 
     // 3. illu 이미지 그리기 (중앙 확대)
     push();
@@ -460,13 +460,6 @@ function question() {
       stageScene = 'question';
       show = null; // 초기화 (필요 시)
     }
-        // background(255)
-        // illuAlpha = map(millis() - show, 0, 1200, 0, 255)
-        // tint(255, illuAlpha)
-        // image(illu1, width / 2, height / 2);
-        // if (millis() - show > 5000) {
-        //   stageScene = 'question'
-        // }
       } else if (stageScene == 'question') {
 
         image(spring[seasonQuestion], seasonX, seasonY);
@@ -549,18 +542,52 @@ function question() {
       if (stageScene == 'tunnel') {
         tunnelSum.update();
         tunnelSum.display();
-      }
-      else if (stageScene == 'illu') {
+      } else if (stageScene == 'illu') {
         if (show == null) {
           show = millis();
         }
-        background(255)
-        illuAlpha = map(millis() - show, 0, 1200, 0, 255)
-        tint(255, illuAlpha)
-        image(illu2, width / 2, height / 2);
-        if (millis() - show > 5000) {
-          stageScene = 'question';
-        }
+        let elapsed = millis() - show;
+        // 1. 배경
+    background(255);
+
+    // 2. 페이드인 & 확대 효과 (처음 2초간)
+    illuAlpha = map(elapsed, 0, 1200, 0, 255, true);
+    illuScale = map(elapsed, 0, 1200, 1.0, 1.5, true);
+
+    // 3. illu 이미지 그리기 (중앙 확대)
+    push();
+    translate(width / 2, height / 2);
+    scale(illuScale);
+    tint(255, illuAlpha);
+    imageMode(CENTER);
+    image(illu2, 0, 0);
+    pop();
+
+    // 4. 디졸브 아웃 효과 (마지막 1초 동안 하얗게 덮기)
+     if (elapsed > 4000) {
+    let whiteFade = map(elapsed, 4000, 5000, 0, 255, true);
+    noStroke();
+    fill(255, whiteFade);
+    rectMode(CORNER); // ← 반드시 필요!
+    rect(0, 0, 1280, 720); // ← 캔버스 전체를 정확히 덮기
+  }
+
+    // 5. 다음 상태로 전환
+    if (elapsed > 5000) {
+      stageScene = 'question';
+      show = null; // 초기화 (필요 시)
+    }
+      // else if (stageScene == 'illu') {
+      //   if (show == null) {
+      //     show = millis();
+      //   }
+      //   background(255)
+      //   illuAlpha = map(millis() - show, 0, 1200, 0, 255)
+      //   tint(255, illuAlpha)
+      //   image(illu2, width / 2, height / 2);
+      //   if (millis() - show > 5000) {
+      //     stageScene = 'question';
+      //   }
 
       } else if (stageScene == 'question') {
         image(summer[seasonQuestion], seasonX, seasonY);
@@ -651,13 +678,48 @@ function question() {
         if (show == null) {
           show = millis();
         }
-        illuAlpha = map(millis() - show, 0, 1200, 0, 255)
-        background(255)
-        tint(255, illuAlpha)
-        image(illu3, width / 2, height / 2);
-        if (millis() - show > 5000) {
-          stageScene = 'question';
-        }
+        let elapsed = millis() - show;
+        // 1. 배경
+    background(255);
+
+    // 2. 페이드인 & 확대 효과 (처음 2초간)
+    illuAlpha = map(elapsed, 0, 1200, 0, 255, true);
+    illuScale = map(elapsed, 0, 1200, 1.0, 1.5, true);
+
+    // 3. illu 이미지 그리기 (중앙 확대)
+    push();
+    translate(width / 2, height / 2);
+    scale(illuScale);
+    tint(255, illuAlpha);
+    imageMode(CENTER);
+    image(illu3, 0, 0);
+    pop();
+
+    // 4. 디졸브 아웃 효과 (마지막 1초 동안 하얗게 덮기)
+     if (elapsed > 4000) {
+    let whiteFade = map(elapsed, 4000, 5000, 0, 255, true);
+    noStroke();
+    fill(255, whiteFade);
+    rectMode(CORNER); // ← 반드시 필요!
+    rect(0, 0, 1280, 720); // ← 캔버스 전체를 정확히 덮기
+  }
+
+    // 5. 다음 상태로 전환
+    if (elapsed > 5000) {
+      stageScene = 'question';
+      show = null; // 초기화 (필요 시)
+    }
+      //else if (stageScene == 'illu') {
+      //   if (show == null) {
+      //     show = millis();
+      //   }
+      //   illuAlpha = map(millis() - show, 0, 1200, 0, 255)
+      //   background(255)
+      //   tint(255, illuAlpha)
+      //   image(illu3, width / 2, height / 2);
+      //   if (millis() - show > 5000) {
+      //     stageScene = 'question';
+      //   }
 
       } else if (stageScene == 'question') {
         image(autumn[seasonQuestion], seasonX, seasonY);
@@ -757,13 +819,48 @@ function question() {
         if (show == null) {
           show = millis();
         }
-        illuAlpha = map(millis() - show, 0, 1200, 0, 255)
-        background(255)
-        tint(255, illuAlpha)
-        image(illu4, width / 2, height / 2);
-        if (millis() - show > 5000) {
-          stageScene = 'question';
-        }
+        let elapsed = millis() - show;
+        // 1. 배경
+    background(255);
+
+    // 2. 페이드인 & 확대 효과 (처음 2초간)
+    illuAlpha = map(elapsed, 0, 1200, 0, 255, true);
+    illuScale = map(elapsed, 0, 1200, 1.0, 1.5, true);
+
+    // 3. illu 이미지 그리기 (중앙 확대)
+    push();
+    translate(width / 2, height / 2);
+    scale(illuScale);
+    tint(255, illuAlpha);
+    imageMode(CENTER);
+    image(illu4, 0, 0);
+    pop();
+
+    // 4. 디졸브 아웃 효과 (마지막 1초 동안 하얗게 덮기)
+     if (elapsed > 4000) {
+    let whiteFade = map(elapsed, 4000, 5000, 0, 255, true);
+    noStroke();
+    fill(255, whiteFade);
+    rectMode(CORNER); // ← 반드시 필요!
+    rect(0, 0, 1280, 720); // ← 캔버스 전체를 정확히 덮기
+  }
+
+    // 5. 다음 상태로 전환
+    if (elapsed > 5000) {
+      stageScene = 'question';
+      show = null; // 초기화 (필요 시)
+    }
+      //else if (stageScene == 'illu') {
+      //   if (show == null) {
+      //     show = millis();
+      //   }
+      //   illuAlpha = map(millis() - show, 0, 1200, 0, 255)
+      //   background(255)
+      //   tint(255, illuAlpha)
+      //   image(illu4, width / 2, height / 2);
+      //   if (millis() - show > 5000) {
+      //     stageScene = 'question';
+      //   }
 
       } else if (stageScene == 'question') {
         if (!snowstep.isPlaying()) { snowstep.loop(); }
