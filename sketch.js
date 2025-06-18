@@ -1200,11 +1200,12 @@ function question2() {
         fill(255);
         noStroke();
         textAlign(CENTER, CENTER);
-        text(date, 625, 395);
+        text(date, 625, 365);
       }
       if (mouseX < 810 && mouseX > 720 && mouseY < 425 && mouseY > 365) {
         fill(255, 70);
         noStroke();
+        rectMode(CORNER);
         rect(720, 365, 90, 62, 10);
       }
       if (next) {
