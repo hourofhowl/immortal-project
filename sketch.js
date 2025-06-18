@@ -2,6 +2,7 @@ const GEMINI_API_KEY = 'AIzaSyCrZCoVlHR1njeO15_k4qARL1rRyL9PRqc'
 let myInput;
 let geminiCalled = false;
 let save = false;
+let cnv;
 
 const supabase = window.supabase.createClient(
   "https://ceptldrtdwoextjwbgqe.supabase.co",
@@ -65,7 +66,7 @@ let show = null;
 let enterSummer = false, enterAutumn = false, enterWinter = false;
 let finalTimer = 0;
 let showFinal = false;
-let enterKey=0;
+let enterKey = 0;
 
 let tk_upper;
 let tk_lower;
@@ -106,21 +107,21 @@ function preload() {
   // for (let i =0; i < 32; i++){
   //   anim[i] = loadImage("assets/tunnel_"+i+".png");
   // }
-  
+
   mainbarImg = loadImage("bar/mainbar.png");
   springbarImg = loadImage("bar/springbar.png");
   summerbarImg = loadImage("bar/summerbar.png");
   autumnbarImg = loadImage("bar/autumnbar.png");
   winterbarImg = loadImage("bar/winterbar.png");
-  
+
   illu1 = loadImage("spring/spring.png");
   illu2 = loadImage("summer/summer.png");
   illu3 = loadImage("autumn/fall.png");
   illu4 = loadImage("winter/winter.png");
 
-  tk_upper=loadImage("ticket/tk_upper.png");
-  tk_lower=loadImage("ticket/tk_lower.png");
-  
+  tk_upper = loadImage("ticket/tk_upper.png");
+  tk_lower = loadImage("ticket/tk_lower.png");
+
   for (let i = 1; i < 6; i++) {
     spring[i] = loadImage("spring/q1_" + i + ".png");
   }
@@ -165,24 +166,31 @@ function preload() {
   qrguide = loadImage("ticket/tk_qrguide.png");
   font3 = loadFont("ticket/name_Pretendard-Medium.otf");
   font4 = loadFont("ticket/date_SometypeMono-Medium.ttf")
-  
+
   mainTheme = loadSound('sound/maintheme.mp3');
   sprTheme = loadSound('sound/springtheme.mp3');
   sumTheme = loadSound('sound/summertheme.mp3');
   autTheme = loadSound('sound/autumntheme.mp3');
   winTheme = loadSound('sound/wintertheme.mp3');
   snowstep = loadSound('sound/snow.mp3')
-  
+
 }
 
 function setup() {
-  createCanvas(1280, 720);
+  
+  cnv = createCanvas(1280, 720);
+  cnv.position(windowWidth/2-640,windowHeight/2-360);
+
+
+  
+
+
   tunnel = new Tunnel(6, 800); // 단위 개수, 깊이
   tunnelSpr = new TunnelSpr(6, 800);
   tunnelSum = new TunnelSum(6, 800);
   tunnelAut = new TunnelAut(6, 800);
   tunnelWin = new TunnelWin(6, 800);
-  tunnel2= new Tunnel2(6, 800);
+  tunnel2 = new Tunnel2(6, 800);
 
   wave = new Wave(waveSpeed);
   randomDice = int(random(0, 2));
@@ -203,7 +211,7 @@ function setup() {
 
   //이름 입력란
   nameInput = createInput();
-  nameInput.position(width / 2 - 310, height / 2 + 20);
+  nameInput.position(windowWidth / 2 - 310, windowHeight/ 2 + 20);
   nameInput.style('font-size', '35px');
   nameInput.size(485, 65);
   nameInput.style('text-align', 'center');
@@ -235,7 +243,7 @@ function setup() {
 
   //날짜 입력란
   dateInput = createInput();
-  dateInput.position(565, height / 2 + 5);
+  dateInput.position(windowWidth/2 - 75, windowHeight/ 2 + 5);
   dateInput.style('font-size', '35px');
   dateInput.size(110, 65);
   dateInput.style('text-align', 'center');
@@ -267,12 +275,18 @@ function setup() {
   tk_lowerX = -tk_lower.width;
 }
 
+function windowResized(){
+  cnv.position(windowWidth / 2 - 640, windowHeight / 2 - 360);
+  nameInput.position(windowWidth / 2 - 310, windowHeight / 2 + 20);
+  dateInput.position(windowWidth / 2 - 75, windowHeight / 2 + 5);
+}
+
 function draw() {
 
   if (state == 'start') {
     start();
   } else if (state == 'anim') {
-    if(!mainTheme.isPlaying()){mainTheme.loop()}
+    if (!mainTheme.isPlaying()) { mainTheme.loop() }
     tunnel.update(); // 이동 속도
     tunnel.display();
   } else if (state == 'notice') {
@@ -293,7 +307,7 @@ function draw() {
     question2();
   } else if (state == 'ticket') {
     ticket();
-  } else if(state=='ticketLib'){
+  } else if (state == 'ticketLib') {
     ticketLib();
   }
 }
@@ -318,31 +332,31 @@ function start() {
 function keyPressed() {
   if (state == 'start') {
     state = 'anim';
-  } else if (state == 'anim'&&key==='g') {
+  } else if (state == 'anim' && key === 'g') {
     state = 'notice';
   }
-  else if(state=='notice'&&keyCode==ENTER){
-    if(enterKey<4){enterKey++;}
-    else if(enterKey==4){
-      state='question'
+  else if (state == 'notice' && keyCode == ENTER) {
+    if (enterKey < 4) { enterKey++; }
+    else if (enterKey == 4) {
+      state = 'question'
     }
   }
-  else if (state == 'notice'&&key==='g') {
+  else if (state == 'notice' && key === 'g') {
     state = 'question';
   } else if (state == 'question') {
-    if (stageScene == 'tunnel'&& key === 'g') {
+    if (stageScene == 'tunnel' && key === 'g') {
       stageScene = 'illu';
     } else if (stageScene === 'blackOut' && keyCode === ENTER) {
-      if(stage==3){
+      if (stage == 3) {
         state = 'question2';
         select = null;
         endTime = millis();
         seasonQuestion = 1;
         step = 0;
-      } else{
-       stage++;
-       stageScene = 'question';
-       seasonQuestion = 1;
+      } else {
+        stage++;
+        stageScene = 'question';
+        seasonQuestion = 1;
       }
     }
   } else if (state == 'question2') {
@@ -367,16 +381,16 @@ function notice() {
   stroke(255);
   strokeWeight(1);
   textSize(30);
-  if(enterKey==0){
-    text("당신은 사계절을 따라 이어지는 터널을 지나며, 여러 질문과 마주하게 됩니다.\n지금 당신이 머무는 계절은 터널 상단에 안내되어 있으니, 천천히 감각을 따라 걸어가 보세요.", width/2, height/2);
-  } else if(enterKey==1){
-    text("‘좋은 답’, ‘나쁜 답’ 같은 건 없습니다.\n그저 당신이 살아오며 느껴온 감각에 조금 더 가까운 보기를 고르면 됩니다.", width/2, height/2);
-  } else if(enterKey==2){
-    text("모든 응답은 내부 알고리즘을 거쳐 세상에 단 하나밖에 없는 ‘전시 티켓’으로 구현되며,\n언젠가 열릴 ‘당신 삶의 전시’를 담고 있을 것입니다. ", width/2, height/2);
-  } else if(enterKey==3){
-    text("감각의 기억을 천천히 떠올리며, 구체적이고 생생하게 상상해보세요.\n점, 선, 면, 그리고 다채로운 색채로 그려진 당신만의 감각 세계가 펼쳐질 것입니다.", width/2, height/2);
-  } else if(enterKey==4){
-    state='question'
+  if (enterKey == 0) {
+    text("당신은 사계절을 따라 이어지는 터널을 지나며, 여러 질문과 마주하게 됩니다.\n지금 당신이 머무는 계절은 터널 상단에 안내되어 있으니, 천천히 감각을 따라 걸어가 보세요.", width / 2, height / 2);
+  } else if (enterKey == 1) {
+    text("‘좋은 답’, ‘나쁜 답’ 같은 건 없습니다.\n그저 당신이 살아오며 느껴온 감각에 조금 더 가까운 보기를 고르면 됩니다.", width / 2, height / 2);
+  } else if (enterKey == 2) {
+    text("모든 응답은 내부 알고리즘을 거쳐 세상에 단 하나밖에 없는 ‘전시 티켓’으로 구현되며,\n언젠가 열릴 ‘당신 삶의 전시’를 담고 있을 것입니다. ", width / 2, height / 2);
+  } else if (enterKey == 3) {
+    text("감각의 기억을 천천히 떠올리며, 구체적이고 생생하게 상상해보세요.\n점, 선, 면, 그리고 다채로운 색채로 그려진 당신만의 감각 세계가 펼쳐질 것입니다.", width / 2, height / 2);
+  } else if (enterKey == 4) {
+    state = 'question'
     enterKey = 0;
   }
 }
@@ -402,8 +416,8 @@ function question() {
 
   switch (stage) {
     case 0: {
-       mainTheme.pause();
-      if(!sprTheme.isPlaying()) {sprTheme.loop();}
+      mainTheme.pause();
+      if (!sprTheme.isPlaying()) { sprTheme.loop(); }
 
       if (stageScene == 'tunnel') {
         tunnelSpr.update();
@@ -471,15 +485,15 @@ function question() {
             rect(962.5, 475, 215, 50);
           }
         }
-      } else if(stageScene=='blackOut'){
+      } else if (stageScene == 'blackOut') {
         sprTheme.stop()
-        if(!sumTheme.isPlaying()) {sumTheme.loop();}
+        if (!sumTheme.isPlaying()) { sumTheme.loop(); }
         background(0);
         textAlign(CENTER);
         textFont(font2);
         textSize(30);
         fill(255);
-        text("다음 계절로 넘어가볼까요?", width/2, height/2);
+        text("다음 계절로 넘어가볼까요?", width / 2, height / 2);
         if (floor(millis() / 700) % 2 == 0) {
           fill(255);
           text("Press the Enter key", 1100, 100);
@@ -571,15 +585,15 @@ function question() {
             rect(200, 440, 180, 50);
           }
         }
-      } else if(stageScene=='blackOut'){
+      } else if (stageScene == 'blackOut') {
         sumTheme.stop()
-        if(!autTheme.isPlaying()) {autTheme.loop();}
+        if (!autTheme.isPlaying()) { autTheme.loop(); }
         background(0);
         textAlign(CENTER);
         textFont(font2);
         textSize(30);
         fill(255);
-        text("다음 계절로 넘어가볼까요?", width/2, height/2);
+        text("다음 계절로 넘어가볼까요?", width / 2, height / 2);
         if (floor(millis() / 700) % 2 == 0) {
           fill(255);
           text("Press the Enter key", 1100, 100);
@@ -677,15 +691,15 @@ function question() {
             rect(774, 480, 161, 50);
           }
         }
-      } else if(stageScene=='blackOut'){
+      } else if (stageScene == 'blackOut') {
         autTheme.stop()
-        if(!winTheme.isPlaying()) {winTheme.loop();}
+        if (!winTheme.isPlaying()) { winTheme.loop(); }
         background(0);
         textAlign(CENTER);
         textFont(font2);
         textSize(30);
         fill(255);
-        text("다음 계절로 넘어가볼까요?", width/2, height/2);
+        text("다음 계절로 넘어가볼까요?", width / 2, height / 2);
         if (floor(millis() / 700) % 2 == 0) {
           fill(255);
           text("Press the Enter key", 1100, 100);
@@ -718,7 +732,7 @@ function question() {
         }
 
       } else if (stageScene == 'question') {
-         if(!snowstep.isPlaying()) {snowstep.loop();}
+        if (!snowstep.isPlaying()) { snowstep.loop(); }
         image(winter[seasonQuestion], seasonX, seasonY);
         image(winterText[seasonQuestion], width / 2, height / 2);
         if (seasonQuestion == 1) {
@@ -792,17 +806,17 @@ function question() {
           fill(255, 70);
           rect(976, 430, 202, 60);
         }
-      } else if(stageScene=='blackOut'){
-        if(!soundfade){
-      winTheme.setVolume(0,1.0);
-      snowstep.setVolume(0,1.0)
-      mainTheme.jump(0);
-      mainTheme.setVolume(0);
-      mainTheme.loop();
-      mainTheme.setVolume(1.0,1.0);
+      } else if (stageScene == 'blackOut') {
+        if (!soundfade) {
+          winTheme.setVolume(0, 1.0);
+          snowstep.setVolume(0, 1.0)
+          mainTheme.jump(0);
+          mainTheme.setVolume(0);
+          mainTheme.loop();
+          mainTheme.setVolume(1.0, 1.0);
 
-      soundfade = true;
-    }
+          soundfade = true;
+        }
         tunnel2.update();
         tunnel2.display();
       }
@@ -870,7 +884,7 @@ function mouseClicked() {
 
         if (seasonQuestion > 5) {
           // stage = 1;
-          stageScene='blackOut'
+          stageScene = 'blackOut'
           state = 'question';
           // seasonQuestion = 1;
         }
@@ -937,7 +951,7 @@ function mouseClicked() {
 
         if (seasonQuestion > 5) {
           // stage = 2;
-          stageScene='blackOut'
+          stageScene = 'blackOut'
           state = 'question';
           // seasonQuestion = 1;
         }
@@ -1001,7 +1015,7 @@ function mouseClicked() {
 
         if (seasonQuestion > 5) {
           // stage = 3;
-          stageScene='blackOut'
+          stageScene = 'blackOut'
           state = 'question';
           // seasonQuestion = 1;
         }
@@ -1071,7 +1085,7 @@ function mouseClicked() {
         seasonQuestion++;
 
         if (seasonQuestion > 5) {
-          stageScene='blackOut';
+          stageScene = 'blackOut';
           console.log("✅ state:", state);
           currentRect = 0;
           select = null;
@@ -1119,7 +1133,7 @@ function mouseClicked() {
     }
     if (step == 2) {
       if (mouseX > 565 && mouseX < 675 &&
-        mouseY > 365 && mouseY<425) {
+        mouseY > 365 && mouseY < 425) {
         dateInput.show();
         dateInput.value(date);
         dateInput.elt.focus();
@@ -1133,11 +1147,11 @@ function mouseClicked() {
       }
     }
   }
-  if(state=='ticket'&&mouseX<160&&mouseX>40&&mouseY<675&&mouseY>625){
-    state='ticketLib'
+  if (state == 'ticket' && mouseX < 160 && mouseX > 40 && mouseY < 675 && mouseY > 625) {
+    state = 'ticketLib'
   }
-  if(state=='ticketLib'&&mouseX>70&&mouseX<230&&mouseY<120&&mouseY>70){
-    state='ticket';
+  if (state == 'ticketLib' && mouseX > 70 && mouseX < 230 && mouseY < 120 && mouseY > 70) {
+    state = 'ticket';
   }
   console.log("A1=" + answer1);
   console.log('A2=' + answer2);
@@ -1151,7 +1165,7 @@ function mouseClicked() {
 
 function question2() {
   background(0);
-  
+
   for (let b of blobs) {
     b.update();
     b.display();
@@ -1205,7 +1219,9 @@ function question2() {
       if (mouseX < 810 && mouseX > 720 && mouseY < 425 && mouseY > 365) {
         fill(255, 70);
         noStroke();
+        rectMode(CORNER);
         rect(720, 365, 90, 62, 10);
+        rectMode(CENTER);
       }
       if (next) {
         next = false;
@@ -1286,18 +1302,18 @@ function ticket() {
   strokeWeight(2);
   textAlign(CENTER);
   textFont(font2);
-  text("티켓의 요소들에 마우스 커서를 올려보세요", width/2, 160);
+  text("티켓의 요소들에 마우스 커서를 올려보세요", width / 2, 160);
 
   textSize(15);
   text("티켓 둘러보기", 100, 650);
   text("다시 하기", 1180, 650);
-  if(mouseX<160&&mouseX>40&&mouseY<675&&mouseY>625){
+  if (mouseX < 160 && mouseX > 40 && mouseY < 675 && mouseY > 625) {
     fill(255, 70);
     noStroke()
     rectMode(CENTER);
     rect(100, 655, 120, 50);
   }
-  if(mouseX<1230&&mouseX>1130&&mouseY<675&&mouseY>625){
+  if (mouseX < 1230 && mouseX > 1130 && mouseY < 675 && mouseY > 625) {
     fill(255, 70);
     noStroke()
     rectMode(CENTER);
@@ -1626,7 +1642,7 @@ function ticket() {
   }
 }
 
-function ticketLib(){
+function ticketLib() {
   background(30);
   qrDiv.hide();
   fill(255);
@@ -1636,10 +1652,10 @@ function ticketLib(){
   textAlign(CORNER);
   stroke(255);
   textFont(font2);
-  if(mouseX>70&&mouseX<230&&mouseY<120&&mouseY>70){
+  if (mouseX > 70 && mouseX < 230 && mouseY < 120 && mouseY > 70) {
     strokeWeight(2);
     text("돌아가기", 120, 95);
-  } else{
+  } else {
     strokeWeight(1);
     text("돌아가기", 120, 95);
   };
@@ -1651,18 +1667,18 @@ function ticketLib(){
   let imgWidth = tk_upper.width;
 
   image(tk_upper, tk_upperX, height / 2);
-image(tk_upper, tk_upperX + imgWidth, height / 2);
+  image(tk_upper, tk_upperX + imgWidth, height / 2);
 
-if (tk_upperX <= -imgWidth) {
-  tk_upperX = 0;
-}
+  if (tk_upperX <= -imgWidth) {
+    tk_upperX = 0;
+  }
 
   image(tk_lower, tk_lowerX, height / 2 + 185);
-image(tk_lower, tk_lowerX + imgWidth + gap + 20, height / 2 + 185);
+  image(tk_lower, tk_lowerX + imgWidth + gap + 20, height / 2 + 185);
 
-if (tk_lowerX >= imgWidth + gap) {
-  tk_lowerX = -imgWidth;
-}
+  if (tk_lowerX >= imgWidth + gap) {
+    tk_lowerX = -imgWidth;
+  }
 }
 
 function gemini() {
