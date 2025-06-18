@@ -30,12 +30,12 @@ class Tunnel2 {
   update() {
     if (this.runTime===null) this.runTime = millis();
     for (let ring of this.rings) {
-      let dz = (this.depth + 50 - ring.z) * 0.002;
+      let dz = (this.depth + 50 - ring.z) * 0.0022;
       ring.z -= dz;
 
     }
 
-    let dz = (this.depth + 50 - this.door.z) * 0.002;
+    let dz = (this.depth + 50 - this.door.z) * 0.0022;
     this.door.z -= dz;
 
 
@@ -123,9 +123,9 @@ class Tunnel2 {
       text("네 개의 계절, 그리고 네 개의 터널을 지나오며 당신은 당신의 시간들을 마주했습니다.", width / 2, height - 150);
     } else if (millis() - this.runTime > 4500 && millis() - this.runTime < 12000) {
       text("계절마다 하나씩 꺼내본 감각과 기억, 그 조각들이 하나하나 쌓여 지금 이 순간의 당신을 완성했습니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 12000 && millis() - this.runTime < 16000) {
+    } else if (millis() - this.runTime > 12000 && millis() - this.runTime < 16500) {
       text("이제 이 터널의 끝에서, 우리는 당신의 삶을 전시하려 합니다.", width / 2, height - 150);
-    } else if (millis() - this.runTime > 16000 && millis() - this.runTime < 20500) {
+    } else if (millis() - this.runTime > 16500 && millis() - this.runTime < 21000) {
       text("당신의 감정과 기억을 고스란히 담은 티켓을 만들 준비가 되었나요?", width / 2, height - 150)
     }
 
