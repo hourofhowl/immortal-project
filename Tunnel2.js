@@ -48,7 +48,7 @@ class Tunnel2 {
     // 화면 초기화
     noStroke();
     fill(0); // 터널 배경색
-    rect(0, 0, width, height);
+    rect(0, 0, 1280, 720);
     noFill();
     strokeWeight(3);
 
@@ -162,7 +162,7 @@ class Tunnel2 {
     if (alpha > 0) {
       fill(0, alpha);
       noStroke();
-      rect(0, 0, width, height);
+      rect(0, 0, 1280, 720);
     }
 
     // 디졸브 종료 타이밍 체크
