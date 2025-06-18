@@ -199,7 +199,7 @@ function setup() {
   userSeed = generateSeed();
   qrDiv = createDiv('');
   qrDiv.id('qrcode');
-  qrDiv.position(1170, 50);
+  qrDiv.position(windowWidth/2-640+1170, windowHeight/2-360+50);
   qrDiv.hide();
 
 
@@ -279,6 +279,7 @@ function windowResized(){
   cnv.position(windowWidth / 2 - 640, windowHeight / 2 - 360);
   nameInput.position(windowWidth / 2 - 310, windowHeight / 2 + 20);
   dateInput.position(windowWidth / 2 - 75, windowHeight / 2 + 5);
+  qrDiv.position(windowWidth/2-640+1170, windowHeight/2-360+50);
 }
 
 function draw() {
@@ -1526,7 +1527,7 @@ function ticket() {
 
   noStroke();
   textFont(font3);
-  textAlign(LEFT)
+  textAlign(LEFT);
   fill(0);
   text(geminiOutput, 272, 432 - 50);
   userChoices[3] = geminiOutput.replaceAll("\n", "");
