@@ -1304,21 +1304,21 @@ function ticket() {
   textFont(font2);
   text("티켓의 요소들에 마우스 커서를 올려보세요", width / 2, 160);
 
-  textSize(15);
-  text("티켓 둘러보기", 100, 650);
-  text("다시 하기", 1180, 650);
-  if (mouseX < 160 && mouseX > 40 && mouseY < 675 && mouseY > 625) {
-    fill(255, 70);
-    noStroke()
-    rectMode(CENTER);
-    rect(100, 655, 120, 50);
+  if (mouseX < 114 + 73.5 && mouseX > 114 - 73.5 &&
+    mouseY < 655 + 25 && mouseY > 655 - 25) {
+  fill(255, 70);
+  noStroke();
+  rectMode(CENTER);
+  rect(114, 655, 147, 50);
   }
-  if (mouseX < 1230 && mouseX > 1130 && mouseY < 675 && mouseY > 625) {
-    fill(255, 70);
-    noStroke()
-    rectMode(CENTER);
-    rect(1180, 655, 100, 50);
-  }
+  
+if (mouseX < 1185 + 115 / 2 && mouseX > 1185 - 115 / 2 &&
+    mouseY < 656 + 49 / 2 && mouseY > 656 - 49 / 2) {
+  fill(255, 70);
+  noStroke();
+  rectMode(CENTER);
+  rect(1185, 656, 115, 49);
+}
 
   //1. 배경 모션(청각_answer4)
   for (let i = 0; i < answer4.length; i++) {
