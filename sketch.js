@@ -435,7 +435,7 @@ function question() {
 
     // 2. 페이드인 & 확대 효과 (처음 2초간)
     illuAlpha = map(elapsed, 0, 1200, 0, 255, true);
-    illuScale = map(elapsed, 0, 1200, 1.2, 1.0, true); // 처음에 1.2배 크기로 시작 → 원래 크기로 축소
+    illuScale = map(elapsed, 0, 1200, 1.0, 1.2, true);
 
     // 3. illu 이미지 그리기 (중앙 확대)
     push();
@@ -447,12 +447,13 @@ function question() {
     pop();
 
     // 4. 디졸브 아웃 효과 (마지막 1초 동안 하얗게 덮기)
-    if (elapsed > 4000) {
-      whiteFade = map(elapsed, 4000, 5000, 0, 255, true);
-      fill(255, whiteFade);
-      noStroke();
-      rect(0, 0, width, height);
-    }
+     if (elapsed > 4000) {
+    let whiteFade = map(elapsed, 4000, 5000, 0, 255, true);
+    noStroke();
+    fill(255, whiteFade);
+    rectMode(CORNER); // ← 반드시 필요!
+    rect(0, 0, 1280, 720); // ← 캔버스 전체를 정확히 덮기
+  }
 
     // 5. 다음 상태로 전환
     if (elapsed > 5000) {
