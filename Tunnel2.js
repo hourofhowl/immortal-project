@@ -162,6 +162,7 @@ class Tunnel2 {
     if (alpha > 0) {
       fill(0, alpha);
       noStroke();
+      rectMode(CORNER);
       rect(0, 0, 1280, 720);
     }
 
