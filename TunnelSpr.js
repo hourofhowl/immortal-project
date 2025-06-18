@@ -198,8 +198,30 @@ class TunnelSpr {
       stageScene = 'illu';
       
     }
+        // 터널 끝나기 전까지 이동하는 원
+    if (this.runTime !== null) {
+      let moveDuration = 24000; // 터널 종료 전까지
+      let progress = constrain((millis() - this.runTime) / moveDuration, 0, 1);
+
+      let circleX = lerp(132.5, 335.5, progress);
+      let circleY = 72.5;
+
+      push();
+      translate(circleX, circleY);
+      noStroke();
+      fill(255, 45, 49, 255 - alpha); // 디졸브에 맞춰 투명도 감소
+      ellipseMode(CENTER);
+      ellipse(0, 0, 15, 15); // 반지름 7.5
+      pop();
+    }
+
+    // 이미지 위에 디졸브 적용
+    push();
+    tint(255, 255 - alpha); // alpha가 커질수록 이미지 사라짐
     imageMode(CORNER);
     image(springbarImg, 0, 0);
+    pop();
+
 
   }
 }
