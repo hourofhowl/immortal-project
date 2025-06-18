@@ -48,7 +48,7 @@ class Tunnel2 {
     // 화면 초기화
     noStroke();
     fill(0); // 터널 배경색
-    rect(0, 0, 1280, 720);
+    rect(0, 0, width, height);
     noFill();
     strokeWeight(3);
 
