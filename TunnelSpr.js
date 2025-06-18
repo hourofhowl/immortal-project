@@ -200,6 +200,7 @@ class TunnelSpr {
       pop();
     }
 
+    /*
     if (alpha > 0) {
   for (let y = 0; y <= height; y++) {
     let inter = map(y, 0, height, 0, 1);
@@ -208,13 +209,14 @@ class TunnelSpr {
     line(0, y, width, y);
   }
 }
+*/
 
-    // 🌑 디졸브 효과를 배경에 적용
-    //if (alpha > 0) {
-      //fill(0, alpha);
-     //noStroke();
-      //rect(0, 0, width, height);
-    //}
+    🌑 디졸브 효과를 배경에 적용
+    if (alpha > 0) {
+      fill(0, alpha);
+     noStroke();
+      rect(0, 0, width, height);
+    }
 
 
 
