@@ -205,7 +205,7 @@ class TunnelSpr {
     }
 
 
-        // 🌑 디졸브 효과를 배경에 적용
+    // 🌑 디졸브 효과를 배경에 적용
     if (alpha > 0) {
       fill(0, alpha);
      noStroke();
@@ -216,7 +216,6 @@ class TunnelSpr {
 
     if (alpha >= 255 && this.aniTime === null) {
       this.aniTime = millis();
-
     }
 
     if (this.aniTime !== null && millis() - this.aniTime >= 1000) {
