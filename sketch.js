@@ -1281,7 +1281,7 @@ function mouseClicked() {
       }
     }
   }
-  if (state == 'ticket' && mouseX < 160 && mouseX > 40 && mouseY < 675 && mouseY > 625) {
+  if (state == 'ticket' && mouseX < 114 + 73.5 && mouseX > 114 - 73.5 &&mouseY < 655 + 25 && mouseY > 655 - 25) {
     state = 'ticketLib'
   }
   if (state == 'ticketLib' && mouseX > 70 && mouseX < 230 && mouseY < 120 && mouseY > 70) {
