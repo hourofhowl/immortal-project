@@ -1220,7 +1220,7 @@ function mouseClicked() {
 
         if (seasonQuestion > 5) {
           stageScene = 'blackOut';
-          console.log("✅ state:", state);
+          // console.log("✅ state:", state);
           currentRect = 0;
           select = null;
           endTime = millis();
@@ -1232,7 +1232,7 @@ function mouseClicked() {
   }
   if (state == 'question2') {
     if (step == 0) {
-      console.log("now in seasonQ");
+      // console.log("now in seasonQ");
       if (endTime != null && millis() - endTime > 500) {
         let select = null;
         if (mouseX < width / 2 + 255 && mouseX > width / 2 - 255 && mouseY < 314 && mouseY > 252) {
@@ -1290,14 +1290,14 @@ function mouseClicked() {
   if (state=='ticket'&&mouseX < 1185 + 115 / 2 && mouseX > 1185 - 115 / 2 &&mouseY < 656 + 49 / 2 && mouseY > 656 - 49 / 2) {
     location.reload(); // 페이지 전체 새로고침
   }
-  console.log("A1=" + answer1);
-  console.log('A2=' + answer2);
-  console.log('A3=' + answer3);
-  console.log('A4=' + answer4);
-  console.log('A5=' + answer5);
-  console.log('A6=' + answer6);
-  console.log('name=' + name);
-  console.log('date=' + date);
+  // console.log("A1=" + answer1);
+  // console.log('A2=' + answer2);
+  // console.log('A3=' + answer3);
+  // console.log('A4=' + answer4);
+  // console.log('A5=' + answer5);
+  // console.log('A6=' + answer6);
+  // console.log('name=' + name);
+  // console.log('date=' + date);
 }
 
 function question2() {
@@ -1676,7 +1676,7 @@ if (mouseX < 1185 + 115 / 2 && mouseX > 1185 - 115 / 2 &&
     if (save == false) {
 
       storeResponseInSupabase(userSeed, userChoices)
-      print(userChoices);
+      // print(userChoices);
       save = true
     }
   }
@@ -1826,7 +1826,7 @@ function gemini() {
   userChoices[8] = geminiInput
   generateContent(geminiInput, function (responseText) {
 
-    console.log("Sketch.js에서 받은 Gemini 응답:", responseText);
+    // console.log("Sketch.js에서 받은 Gemini 응답:", responseText);
     geminiOutput = responseText
 
 
@@ -1865,8 +1865,8 @@ async function storeResponseInSupabase(seed, responseText) {
     .insert([{ id: seed, responses: responseText }]);
 
   if (error) {
-    console.error("저장 실패:", error);
+    // console.error("저장 실패:", error);
   } else {
-    console.log("저장 성공:", data);
+    // console.log("저장 성공:", data);
   }
 }
