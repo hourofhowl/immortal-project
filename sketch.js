@@ -238,11 +238,11 @@ function setup() {
     }
   });
 
-  nameInput.elt.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-      e.preventDefault(); // 엔터 동작 무력화
-    }
-  });
+  // nameInput.elt.addEventListener('keydown', function (e) {
+  //   if (e.key === 'Enter') {
+  //     e.preventDefault(); // 엔터 동작 무력화
+  //   }
+  // });
 
   //날짜 입력란
   dateInput = createInput();
@@ -269,11 +269,11 @@ function setup() {
       step = 3;
     }
   });
-  dateInput.elt.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-    }
-  });
+  // dateInput.elt.addEventListener('keydown', function (e) {
+  //   if (e.key === 'Enter') {
+  //     e.preventDefault();
+  //   }
+  // });
 
   tk_lowerX = -tk_lower.width;
 }
