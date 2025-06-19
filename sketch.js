@@ -1797,18 +1797,11 @@ triangle(100, 45, 100, 95, 70, 70);
     text("돌아가기", 120, 70);
   };
 
-  let gap = 100
   tk_upperX -= scrollSpeed;
   tk_lowerX += scrollSpeed;
 
   let imgWidth = tk_upper.width;
 
-  // image(tk_upper, tk_upperX, height / 2);
-  // image(tk_upper, tk_upperX + imgWidth + gap + 50, height / 2);
-
-  // if (tk_upperX <= -imgWidth- gap - 50) {
-  //   tk_upperX = 0;
-  // }
   image(tk_upper, tk_upperX, height / 2);
 image(tk_upper, tk_upperX + imgWidth, height / 2);
 image(tk_upper, tk_upperX + imgWidth * 2, height / 2);
@@ -1818,9 +1811,9 @@ if (tk_upperX <= -imgWidth) {
 }
 
   image(tk_lower, tk_lowerX, height / 2 + 185);
-  image(tk_lower, tk_lowerX + imgWidth + gap + 50, height / 2 + 185);
+  image(tk_lower, tk_lowerX + imgWidth, height / 2 + 185);
 
-if (tk_lowerX >= imgWidth + gap+50) {
+if (tk_lowerX >= imgWidth) {
   tk_lowerX = -imgWidth;
 }
 }
