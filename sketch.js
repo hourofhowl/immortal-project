@@ -1784,17 +1784,17 @@ function ticketLib() {
   qrDiv.hide();
   fill(255);
   noStroke();
-  triangle(100, 70, 100, 120, 70, 95)
+ triangle(100, 55, 100, 105, 70, 80);
   textSize(18);
   textAlign(CORNER);
   stroke(255);
   textFont(font2);
   if (mouseX > 70 && mouseX < 230 && mouseY < 120 && mouseY > 70) {
     strokeWeight(2);
-    text("돌아가기", 120, 95);
+    text("돌아가기", 120, 80);
   } else {
     strokeWeight(1);
-    text("돌아가기", 120, 95);
+    text("돌아가기", 120, 80);
   };
 
   let gap = 100
