@@ -221,13 +221,14 @@ function setup() {
   nameInput.style('outline', 'none');
   nameInput.style('background-color', 'transparent');
   nameInput.style('color', 'white');
+  nameInput.attribute('maxlength', 10);
   nameInput.hide();
 
-  nameInput.input(() => {
-    if (nameInput.value().length > 10) {
-      nameInput.value(nameInput.value().substring(0, 10));
-    }
-  });
+  // nameInput.input(() => {
+  //   // if (nameInput.value().length > 10) {
+  //   //   nameInput.value(nameInput.value().substring(0, 10));
+  //   // }
+  // });
   nameInput.changed(() => {
     name = nameInput.value();
     nameInput.hide();
