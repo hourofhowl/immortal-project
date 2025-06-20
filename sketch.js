@@ -179,7 +179,7 @@ function preload() {
 }
 
 function setup() {
-  
+  frameRate(60);
   cnv = createCanvas(1280, 720);
   cnv.position(windowWidth/2-640,windowHeight/2-360);
 
