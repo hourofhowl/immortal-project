@@ -1861,13 +1861,28 @@ function generateSeed() {
 }
 
 async function storeResponseInSupabase(seed, responseText) {
+
+  console.log("Supabase 저장 시도");
+  console.log("seed:", seed);
+  console.log("responses:", responseText);
+
   const { data, error } = await supabase
     .from('userResponses')
-    .insert([{ id: seed, responses: responseText }]);
+    .insert([
+      {
+        id: seed,
+        responses: responseText
+      }
+    ])
+    .select();
 
   if (error) {
-    // console.error("저장 실패:", error);
+    console.error("❌ Supabase 저장 실패");
+    console.error("code:", error.code);
+    console.error("message:", error.message);
+    console.error("details:", error.details);
+    console.error("hint:", error.hint);
   } else {
-    // console.log("저장 성공:", data);
+    console.log("✅ Supabase 저장 성공:", data);
   }
 }
