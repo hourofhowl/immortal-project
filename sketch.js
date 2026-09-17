@@ -5,8 +5,8 @@ let save = false;
 let cnv;
 
 const supabase = window.supabase.createClient(
-  "https://ceptldrtdwoextjwbgqe.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNlcHRsZHJ0ZHdvZXh0andiZ3FlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkxNzU5ODcsImV4cCI6MjA2NDc1MTk4N30.rpEootIz8HQWwZH0DahC-pTk9jUH0xbJwQJ261YB2LI"     // 🔁 당신의 API 키로 교체
+  "https://pkjymvbwcbcqmvhatpcs.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBranltdmJ3Y2JjcW12aGF0cGNzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2MjUwNDAsImV4cCI6MjEwNTIwMTA0MH0.NPzGH8Jbt7cWwOywaaUpfcTX9I0ponQJB2cnLsCuhKc"     // 🔁 당신의 API 키로 교체
 )
 let userSeed;
 
